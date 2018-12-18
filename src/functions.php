@@ -135,6 +135,18 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-require get_template_directory() . '/inc/custom-post-types.php';
 
+/**
+ * Custom taxonomies for Journal.
+ */
+require get_template_directory() . '/inc/custom-taxonomies.php';
+
+/**
+ * Custom metaboxes for Journal.
+ */
+require get_template_directory() . '/inc/custom-metaboxes.php';
+
+/**
+ * Load scripts, styles and fonts.
+ */
 require get_template_directory() . '/inc/load-scripts-and-styles.php';
