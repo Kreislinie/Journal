@@ -1,97 +1,99 @@
 /*!
-Theme Name: Gulp_s
-Theme URI: 
+Theme Name: Journal
+Theme URI: https://github.com/Kreislinie/Journal
 Author: Simon Mettler
 Author URI: https://simonmettler.com
 Description: 
-Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
+Version: 0.1.1
+License: GNU General Public License v3
+License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: journal
-Tags: 
 */
 
+/* =============================================================
+  TABLE OF CONTENTS:
+  - Normalize
+  - Typography
+  - Elements
+  - Forms
+  - Navigation
+    - Links
+    - Menus
+  - Accessibility
+  - Alignments
+  - Clearings
+  - Widgets
+  - Content
+    - Posts and pages
+    - Comments
+  - Infinite scroll
+  - Media
+    - Captions
+    - Galleries
+==============================================================*/
+
 /*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
+  Variables and mixins
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 
 /*--------------------------------------------------------------
-# Normalize
+  Normalize
 --------------------------------------------------------------*/
 @import "normalize";
 
 /*--------------------------------------------------------------
-# Typography
+  Typography
 --------------------------------------------------------------*/
 @import "typography/typography";
 
 /*--------------------------------------------------------------
-# Elements
+  Elements
 --------------------------------------------------------------*/
 @import "elements/elements";
 
 /*--------------------------------------------------------------
-# Forms
+  Forms
 --------------------------------------------------------------*/
 @import "forms/forms";
 
 /*--------------------------------------------------------------
-# Navigation
+  Navigation
 --------------------------------------------------------------*/
 @import "navigation/navigation";
 
 /*--------------------------------------------------------------
-# Accessibility
+  Accessibility
 --------------------------------------------------------------*/
 @import "modules/accessibility";
 
 /*--------------------------------------------------------------
-# Alignments
+  Alignments
 --------------------------------------------------------------*/
 @import "modules/alignments";
 
 /*--------------------------------------------------------------
-# Clearings
+  Clearings
 --------------------------------------------------------------*/
 @import "modules/clearings";
 
 /*--------------------------------------------------------------
-# Widgets
+  Widgets
 --------------------------------------------------------------*/
 @import "site/secondary/widgets";
 
 /*--------------------------------------------------------------
-# Content
+  Content
 --------------------------------------------------------------*/
 @import "site/site";
 
 /*--------------------------------------------------------------
-# Infinite scroll
+  Infinite scroll
 --------------------------------------------------------------*/
 @import "modules/infinite-scroll";
 
 /*--------------------------------------------------------------
-# Media
+  Media
 --------------------------------------------------------------*/
 @import "media/media";
