@@ -1,3 +1,0 @@
-# Journal
-
-Work in progress
