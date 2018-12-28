@@ -150,3 +150,8 @@ require get_template_directory() . '/inc/custom-metaboxes.php';
  * Load scripts, styles and fonts.
  */
 require get_template_directory() . '/inc/load-scripts-and-styles.php';
+
+/**
+ * Adujust admin bar and admin sidebar.
+ */
+require get_template_directory() . '/inc/admin-bar.php';

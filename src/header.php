@@ -10,6 +10,13 @@
  */
 
 ?>
+
+<?php  if( ! is_user_logged_in() ) :
+            wp_safe_redirect( get_dashboard_url() );
+            exit; 
+endif;
+?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
