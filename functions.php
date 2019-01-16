@@ -163,9 +163,9 @@ require get_template_directory() . '/inc/admin-bar.php';
  */
 require 'inc/vendors/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/Kreislinie/Journal',
+	'https://github.com/Kreislinie/bitjournal',
 	__FILE__,
-	'journal'
+	'bitjournal'
 );
 
 $myUpdateChecker->getVcsApi()->enableReleaseAssets();
