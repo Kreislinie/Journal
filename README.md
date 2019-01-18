@@ -1,3 +1,3 @@
-# Journal
+# bitjournal
 
 Work in progress

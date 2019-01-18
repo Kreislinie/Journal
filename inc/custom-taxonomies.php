@@ -1,15 +1,15 @@
 <?php
 /**
- * journal register custom taxonomies
+ * bitjournal register custom taxonomies
  * 
- * @package journal
+ * @package bitjournal
  * 
  */
 
 /**
  * Create and register people taxonomy for posts
  */
-function journal_people_taxonomy() {
+function bitjournal_people_taxonomy() {
 
 	$labels = array(
 		'name'                           => 'People',
@@ -47,7 +47,7 @@ function journal_people_taxonomy() {
   
 }
 
-add_action( 'init', 'journal_people_taxonomy' );
+add_action( 'init', 'bitjournal_people_taxonomy' );
 
 /**
  * Create menu for people taxonomy
@@ -55,7 +55,7 @@ add_action( 'init', 'journal_people_taxonomy' );
  * @link https://wp-kama.com/49/register-taxonomy-without-post-type
  * 
  */
-function journal_add_people_menu() {
+function bitjournal_add_people_menu() {
 
 	$taxname = 'people';
 
@@ -84,4 +84,4 @@ function journal_add_people_menu() {
   
 }
 
-add_action( 'admin_menu', 'journal_add_people_menu' );
+add_action( 'admin_menu', 'bitjournal_add_people_menu' );

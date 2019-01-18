@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package journal
+ * @package bitjournal
  */
 
 ?>
@@ -29,7 +29,7 @@ endif;
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'journal' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bitjournal' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
@@ -44,10 +44,10 @@ endif;
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$journal_description = get_bloginfo( 'description', 'display' );
-			if ( $journal_description || is_customize_preview() ) :
+			$bitjournal_description = get_bloginfo( 'description', 'display' );
+			if ( $bitjournal_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $journal_description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo $bitjournal_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 

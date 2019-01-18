@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package journal
+ * @package bitjournal
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses journal_header_style()
+ * @uses bitjournal_header_style()
  */
-function journal_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'journal_custom_header_args', array(
+function bitjournal_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'bitjournal_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'journal_header_style',
+		'wp-head-callback'       => 'bitjournal_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'journal_custom_header_setup' );
+add_action( 'after_setup_theme', 'bitjournal_custom_header_setup' );
 
-if ( ! function_exists( 'journal_header_style' ) ) :
+if ( ! function_exists( 'bitjournal_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see journal_custom_header_setup().
+	 * @see bitjournal_custom_header_setup().
 	 */
-	function journal_header_style() {
+	function bitjournal_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*
