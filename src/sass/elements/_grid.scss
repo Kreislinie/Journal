@@ -1,0 +1,11 @@
+.site-content {
+  display: grid;
+  grid-template-columns: auto minmax(20px, 600px) auto;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". content .";
+}
+
+.site-main {
+  display: grid;
+  grid-area: content;
+}

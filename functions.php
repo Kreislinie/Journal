@@ -104,11 +104,6 @@ function bitjournal_widgets_init() {
 add_action( 'widgets_init', 'bitjournal_widgets_init' );
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -129,11 +124,6 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/custom-taxonomies.php';
 
 /**
- * Custom metaboxes for bitjournal.
- */
-require get_template_directory() . '/inc/custom-metaboxes.php';
-
-/**
  * Load scripts, styles and fonts.
  */
 require get_template_directory() . '/inc/load-scripts-and-styles.php';
@@ -144,15 +134,20 @@ require get_template_directory() . '/inc/load-scripts-and-styles.php';
 require get_template_directory() . '/inc/admin-bar.php';
 
 /**
+ * Add backend pages and menu.
+ */
+require get_template_directory() . '/inc/backend-pages.php';
+
+/**
  * Load update checker by Yahnis Elsts.
  * 
  * @link https://github.com/YahnisElsts/plugin-update-checker
  */
 require 'inc/vendors/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/Kreislinie/bitbitjournal',
+	'https://github.com/Kreislinie/bitjournal',
 	__FILE__,
-	'bitbitjournal'
+	'bitjournal'
 );
 
 $myUpdateChecker->getVcsApi()->enableReleaseAssets();

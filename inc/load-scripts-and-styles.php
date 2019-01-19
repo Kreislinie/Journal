@@ -6,6 +6,8 @@
 
 function bitjournal_scripts() {
   
+  wp_enqueue_style( 'dashicons' );
+
   wp_enqueue_style( 'bitjournal-style', get_stylesheet_directory_uri() . '/style.min.css' );
 
   wp_enqueue_script( 'bitjournal-custom', get_template_directory_uri() . '/js/custom.min.js', array(), null, true );
