@@ -19,8 +19,6 @@ if ( ! function_exists( 'bitjournal_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on bitjournal, use a find and replace
-		 * to change 'bitjournal' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'bitjournal', get_template_directory() . '/languages' );
 
@@ -71,21 +69,6 @@ endif;
 add_action( 'after_setup_theme', 'bitjournal_setup' );
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function bitjournal_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'bitjournal_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'bitjournal_content_width', 0 );
-
-/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
@@ -102,6 +85,11 @@ function bitjournal_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'bitjournal_widgets_init' );
+
+/**
+ * Setup pages if template activated.
+ */
+require get_template_directory() . '/inc/setup.php';
 
 /**
  * Custom template tags for this theme.

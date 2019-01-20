@@ -3,20 +3,32 @@
 /**
  * Hide menu-pages on admin sidebar.
  */
-function remove_menus(){  
+function bj_remove_menus() {  
 
-  remove_menu_page( 'edit.php?post_type=page' );    //Pages  
+  // remove_menu_page( 'edit.php?post_type=page' );    //Pages  
   remove_menu_page( 'edit-comments.php' );          //Comments  
-  remove_menu_page( 'themes.php' );                 //Appearance  
+  // remove_menu_page( 'themes.php' );                 //Appearance  
   remove_menu_page( 'plugins.php' );                //Plugins  
   remove_menu_page( 'users.php' );                  //Users  
   remove_menu_page( 'tools.php' );                  //Tools  
-  remove_menu_page( 'options-general.php' );        //Settings  
+  // remove_menu_page( 'options-general.php' );        //Settings  
   remove_menu_page( 'index.php' );                  //Dashboard
-  remove_menu_page( 'edit.php' );                  //Post edit
+  // remove_menu_page( 'edit.php' );                  //Post edit
 
 }  
-add_action( 'admin_menu', 'remove_menus' );  
+add_action( 'admin_menu', 'bj_remove_menus' ); 
+
+function bj_admin_menu_image() {
+    
+  add_menu_page(
+    'Page Title', 
+    '<img src="https://d1u5p3l4wpay3k.cloudfront.net/minecraft_gamepedia/8/85/Knowledge_book.png"><h3>bitjournal</h3>', 
+    'edit_posts', 
+    'click-action', 
+    'your_new_menu', 
+    'your-favicon-path', 1);
+}
+add_action('admin_menu', 'bj_admin_menu_image');
 
 /**
  * Create menu for people taxonomy

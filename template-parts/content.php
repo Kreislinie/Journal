@@ -29,7 +29,16 @@
 			),
 			'<span class="edit-link">',
 			'</span>'
-		);
+    );
+    
+    if ( 'post' === get_post_type() ) :
+			?>
+			<div class="entry-meta">
+				<?php
+				bitjournal_posted_on();
+				?>
+			</div><!-- .entry-meta -->
+		<?php endif;
 
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -37,15 +46,7 @@
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				bitjournal_posted_on();
-				bitjournal_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		?>
 	</header><!-- .entry-header -->
 
 	<?php bitjournal_post_thumbnail(); ?>

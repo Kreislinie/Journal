@@ -53,6 +53,9 @@ endif;
 
 		<nav id="site-navigation" class="main-navigation">
 
+<a href="<?php home_url() ?>"></a>
+
+
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

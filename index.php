@@ -17,8 +17,13 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+<h1>index</h1>
 
-		<?php
+  <a href="<?php echo admin_url('edit.php'); ?>">Manage all entries</a>
+    <?php 
+    // display people
+    var_dump(get_terms(['taxonomy' => 'people', 'hide_empty' => false]));
+
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) :
@@ -27,7 +32,7 @@ get_header();
           <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
           
 				</header>
-				<?php
+				<?php 
 			endif;
 
 			/* Start the Loop */
