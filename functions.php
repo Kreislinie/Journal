@@ -92,6 +92,11 @@ add_action( 'widgets_init', 'bitjournal_widgets_init' );
 require get_template_directory() . '/inc/setup.php';
 
 /**
+ * Setup pages if template activated.
+ */
+require get_template_directory() . '/inc/custom-fields.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';

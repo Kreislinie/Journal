@@ -12,6 +12,7 @@ get_header();
 		<main id="main" class="site-main">
 
     <p>ToDo: display all people</p>
+    <?php var_dump(get_terms(['taxonomy' => 'people', 'hide_empty' => false])); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

@@ -20,9 +20,7 @@ get_header();
 <h1>index</h1>
 
   <a href="<?php echo admin_url('edit.php'); ?>">Manage all entries</a>
-    <?php 
-    // display people
-    var_dump(get_terms(['taxonomy' => 'people', 'hide_empty' => false]));
+    <?php
 
 		if ( have_posts() ) :
 
