@@ -13,4 +13,4 @@ add_action( 'wp_before_admin_bar_render', 'my_admin_bar_render' );
 /**
  * Hide frontend adminbar.
  */
-add_filter('show_admin_bar', '__return_false');
+// add_filter('show_admin_bar', '__return_false');

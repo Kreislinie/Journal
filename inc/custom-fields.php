@@ -23,7 +23,7 @@ function bj_people_cmb2_fields() {
  		'desc' => esc_html__( 'Add a photo of the person (optional)', 'bitjournal' ), 
  		'id'   => $prefix . 'picture',
     'type' => 'file', 
-    'options' => array( 'url' => false ),
+    'options' => array( 'url' => false )
   ) ); 
 
 } 
