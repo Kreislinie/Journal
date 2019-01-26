@@ -12,15 +12,22 @@ get_header();
 
 	<div id="primary" class="main-grid content-area">
 		<main id="main" class="content site-main">
-
+<h1>taxonomy people</h1>
     <?php if ( have_posts() ) : ?>
+      
+      <header class="page-header">
+        <?php
+      $term = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
+echo $term->description; 
+$avatar = wp_get_attachment_image(get_term_meta( $term->term_id, 'bj_people_cmb2_picture_id', true ), array('70') ); 
+echo $avatar; 
 
-			<header class="page-header">
-        <h1>bj archive general</h1>
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
+
+?>
+
+
+        
+
 			</header><!-- .page-header -->
 
       <?php

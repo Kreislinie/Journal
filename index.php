@@ -15,8 +15,8 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div id="primary" class="main-grid content-area">
+		<main id="main" class="content site-main">
 <h1>index</h1>
 
   <a href="<?php echo admin_url('edit.php'); ?>">Manage all entries</a>
