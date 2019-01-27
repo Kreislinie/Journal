@@ -79,7 +79,7 @@ function cp_change_post_object() {
     $labels->add_new = __('Add Entry');
     $labels->add_new_item = __('Add Entry');
     $labels->edit_item = __('Edit Entry');
-    $labels->new_item = __('News');
+    $labels->new_item = __('Entry');
     $labels->view_item = __('View Entry');
     $labels->search_items = __('Search Entries');
     $labels->not_found = __('No Entries found');
@@ -91,7 +91,7 @@ function cp_change_post_object() {
 add_action( 'init', 'cp_change_post_object' );
 
 // change icon for entries
-function ccd_menu_news_icon() {
+function bj_menu_entry_icon() {
 global $menu;
 foreach ( $menu as $key => $val ) {
   if ( __( 'Entries') == $val[0] ) {
@@ -99,7 +99,7 @@ foreach ( $menu as $key => $val ) {
   }
 }
 }
-add_action( 'admin_menu', 'ccd_menu_news_icon' );
+add_action( 'admin_menu', 'bj_menu_entry_icon' );
 
 
 /**
