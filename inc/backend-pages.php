@@ -26,7 +26,7 @@ function bj_admin_menu_image() {
     'edit_posts', 
     'click-action', 
     'your_new_menu', 
-    'your-favicon-path', 1);
+    '', 1);
 }
 add_action('admin_menu', 'bj_admin_menu_image');
 
@@ -64,8 +64,38 @@ function bitjournal_add_people_menu() {
   }
   
 }
-
 add_action( 'admin_menu', 'bitjournal_add_people_menu' );
+
+
+function bj_add_moods_menu() {
+
+	$taxname = 'moods';
+
+	$is_mood = isset( $_GET['taxonomy'] ) && $_GET['taxonomy'] === $taxname;
+
+	// cancel 'current' for posts (taxonomy attaches there by default, even if not set post_type when taxonomy is registered
+	$is_mood && add_filter( 'parent_file', function( $parent_file ) {
+		return false;
+	} );
+
+	// add a taxonomy menu item
+  $menu_title = 'Moods';
+  
+	add_menu_page( 'Moods', $menu_title, 'manage_options', "edit-tags.php?taxonomy=$taxname", null, 'dashicons-smiley', 9 );
+  
+  // fix some parameters of the added menu item
+  $menu_item = & $GLOBALS['menu'][ key( wp_list_filter( $GLOBALS['menu'], [$menu_title] ) ) ];
+  
+	foreach( $menu_item as & $val ) {
+		// add 'current' class if need
+		if( false !== strpos( $val, 'menu-top' ) )
+			$val = 'menu-top'. ( $is_people ? ' current' : '' );
+
+		$val = preg_replace( '~toplevel_page[^ ]+~', "toplevel_page_$taxname", $val );
+  }
+  
+}
+add_action( 'admin_menu', 'bj_add_moods_menu' );
 
 
 /**

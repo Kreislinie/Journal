@@ -93,6 +93,11 @@ require get_template_directory() . '/inc/admin-bar.php';
 require get_template_directory() . '/inc/backend-pages.php';
 
 /**
+ * Add backend pages and menu.
+ */
+require get_template_directory() . '/inc/vendors/cmb2-icon-picker/cmb2-icon-picker.php';
+
+/**
  * Load update checker by Yahnis Elsts.
  * 
  * @link https://github.com/YahnisElsts/plugin-update-checker
