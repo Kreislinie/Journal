@@ -17,43 +17,37 @@ get_header();
 
 	<div id="primary" class="main-grid content-area">
 		<main id="main" class="content site-main">
+
+
+
 <h1>index</h1>
 
+
+
   <a href="<?php echo admin_url('edit.php'); ?>">Manage all entries</a>
-    <?php
+  <?php
+$custom_query = new WP_Query( 
+    array(
+        'post_type' => array('health-record', 'post' ),
+        'posts_per_page' => 100
+    ) 
+);
+if ( $custom_query->have_posts() ) : while ( $custom_query->have_posts() ) : $custom_query->the_post();
 
-		if ( have_posts() ) :
+    the_post_thumbnail($size);
+    the_title();
+    the_content();
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-          <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-          
-				</header>
-				<?php 
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
+endwhile;  wp_reset_query();
 
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
-		?>
+    ?>
+    
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

@@ -18,7 +18,7 @@ function bj_frontend_scripts() {
   
 }
 
-add_action( 'wp_enqueue_scripts', 'bj_backend_scripts' );
+add_action( 'wp_enqueue_scripts', 'bj_frontend_scripts' );
 
 
 function bj_backend_scripts() {

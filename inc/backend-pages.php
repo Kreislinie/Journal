@@ -100,10 +100,12 @@ add_action( 'admin_menu', 'bj_add_moods_menu' );
 
 /**
  * Change dashboard Posts name to Entries.
- */
+ 
 function cp_change_post_object() {
   $get_post_type = get_post_type_object('post');
   $labels = $get_post_type->labels;
+  $args = $get_post_type->args;
+
     $labels->name = __('Entries');
     $labels->singular_name = __('Entry');
     $labels->add_new = __('Add Entry');
@@ -131,7 +133,15 @@ foreach ( $menu as $key => $val ) {
 }
 add_action( 'admin_menu', 'bj_menu_entry_icon' );
 
-
+add_filter('register_post_type_args', 'movies_to_films', 10, 2);
+function movies_to_films($args, $post_type){
+ 
+    if ($post_type == 'post'){
+        $args['rewrite']['menu_icon'] = 'dashicons-welcome-comments';
+    }
+ 
+    return $args;
+}
 /**
  * Create admin redirect menu items
  * 

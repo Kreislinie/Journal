@@ -35,3 +35,36 @@ function bitjournal_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'bitjournal_pingback_header' );
+
+
+/** 
+* Display archive post count between <span> tags
+*/
+function bj_archive_post_count( $link_html ) {
+  $link_html = str_replace( '</a>&nbsp;(', '</a> <span class="archiveCount">', $link_html );
+  $link_html = str_replace( ')', '</span>', $link_html );
+  return $link_html;
+}
+
+add_filter( 'get_archives_link', 'bj_archive_post_count' );
+
+/** 
+* Hide default WP post type
+*/
+function bj_remove_default_post_type() {
+  remove_menu_page( 'edit.php' );
+}
+
+add_action( 'admin_menu', 'bj_remove_default_post_type' );
+
+function bj_remove_default_post_type_menu_bar( $wp_admin_bar ) {
+  $wp_admin_bar->remove_node( 'new-post' );
+}
+
+add_action( 'admin_bar_menu', 'bj_remove_default_post_type_menu_bar', 999 );
+
+function bj_remove_draft_widget(){
+    remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+}
+
+add_action( 'wp_dashboard_setup', 'bj_remove_draft_widget', 999 );

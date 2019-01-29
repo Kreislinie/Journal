@@ -87,7 +87,7 @@ function bj_moods_taxonomy() {
     'labels'                         => $labels
   );
   
-  register_taxonomy( 'moods', array( 'post' ), $args );
+  register_taxonomy( 'moods', array( 'movies' ), $args );
   
 }
 

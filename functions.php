@@ -47,15 +47,21 @@ if ( ! function_exists( 'bitjournal_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'bitjournal_setup' );
 
+
+define( 'DISALLOW_FILE_EDIT', true );
+
+
+
 /**
  * Setup pages if template activated.
  */
 require get_template_directory() . '/inc/setup.php';
 
 /**
- * Setup pages if template activated.
+ * Custom cmb2 fields and post types.
  */
 require get_template_directory() . '/inc/custom-fields.php';
+require get_template_directory() . '/inc/custom-post-types.php';
 
 /**
  * Custom template tags for this theme.
