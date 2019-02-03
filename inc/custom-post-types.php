@@ -18,7 +18,7 @@ function bj_custom_post_types() {
     'all_items'           => __( 'All Entries', 'bitjournal' ),
     'view_item'           => __( 'View Entry', 'bitjournal' ),
     'add_new_item'        => __( 'Add New Entry', 'bitjournal' ),
-    'add_new'             => __( 'Add Entry', 'bitjournal' ),
+    'add_new'             => __( 'Add New', 'bitjournal' ),
     'edit_item'           => __( 'Edit Entry', 'bitjournal' ),
     'update_item'         => __( 'Update Entry', 'bitjournal' ),
     'search_items'        => __( 'Search Entries', 'bitjournal' ),
@@ -60,7 +60,7 @@ function bj_custom_post_types() {
     'publicly_queryable'  => true,
     'show_in_rest'        => true, // Gutenberg needs this...
     'capability_type'     => 'post',
-    'supports'            => array( 'editor', 'title' ),
+    'supports'            => array( 'editor', 'title', 'category' ),
   );
 
   $args_healt_record = array(
@@ -79,7 +79,7 @@ function bj_custom_post_types() {
     'publicly_queryable'  => true,
     'show_in_rest'        => true, // Gutenberg needs this...
     'capability_type'     => 'post',
-    'supports'            => array( 'editor', 'title' ),
+    'supports'            => array( 'editor', 'title', 'category' ),
   );
     
   // Registering Entry and Health Record post types

@@ -116,3 +116,25 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 );
 
 $myUpdateChecker->getVcsApi()->enableReleaseAssets();
+
+add_filter( 'rest_authentication_errors', function( $result ) {
+  if ( ! empty( $result ) ) {
+      return $result;
+  }
+  if ( ! is_user_logged_in() ) {
+      return new WP_Error( 'rest_not_logged_in', 'You are not currently logged in.', array( 'status' => 401 ) );
+  }
+  return $result;
+});
+
+function itsme_disable_feed() {
+  wp_die( __( 'No feed available, please visit the <a href="'. esc_url( home_url( '/' ) ) .'">homepage</a>!' ) );
+}
+
+add_action('do_feed', 'itsme_disable_feed', 1);
+add_action('do_feed_rdf', 'itsme_disable_feed', 1);
+add_action('do_feed_rss', 'itsme_disable_feed', 1);
+add_action('do_feed_rss2', 'itsme_disable_feed', 1);
+add_action('do_feed_atom', 'itsme_disable_feed', 1);
+add_action('do_feed_rss2_comments', 'itsme_disable_feed', 1);
+add_action('do_feed_atom_comments', 'itsme_disable_feed', 1);

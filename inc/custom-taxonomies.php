@@ -43,7 +43,7 @@ function bj_people_taxonomy() {
     'labels'                         => $labels
   );
   
-  register_taxonomy( 'people', array( 'post' ), $args );
+  register_taxonomy( 'people', array( 'entry' ), $args );
   
 }
 
@@ -87,7 +87,7 @@ function bj_moods_taxonomy() {
     'labels'                         => $labels
   );
   
-  register_taxonomy( 'moods', array( 'movies' ), $args );
+  register_taxonomy( 'moods', array( 'entry' ), $args );
   
 }
 
