@@ -1,20 +1,39 @@
-$color__background-body: rgb(232, 235, 235);
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+$color__bitjournal-blue:      rgb(98, 199, 227);
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
+$color__background-body:      rgb(245, 245, 245);
+$color__background-screen:    #f1f1f1;
+$color__background-hr:        #ccc;
+$color__background-button:    #e6e6e6;
+$color__background-pre:       #eee;
+$color__background-ins:       #fff9c0;
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
+$color__text-main:            rgb(60, 60, 60);
+$color__text-screen:          #21759b;
+$color__text-input:           #666;
+$color__text-input-focus:     #111;
+$color__link:                 royalblue;
+$color__link-visited:         purple;
+$color__link-hover:           midnightblue;
+
+
+$color__border-button:        #ccc #ccc #bbb;
+$color__border-button-hover:  #ccc #bbb #aaa;
+$color__border-button-focus:  #aaa #bbb #bbb;
+$color__border-input:         #ccc;
+$color__border-abbr:          #666;
+
+
+
+
+$border__default-radius:  7px;
+
+
+// Shadows
+$shadow__default:         0 0px 14px rgba(0,0,0,0.13);
+$shadow__default-hover:   0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$shadow__minimal:         1px 0px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14);
+
+// mesurements
+$default-button-height:   45px;
+$small-button-height:     30px;
+$content-width-small:     950px;
