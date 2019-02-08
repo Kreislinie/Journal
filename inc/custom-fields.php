@@ -63,9 +63,9 @@ function bj_people_cmb2_fields() {
 add_action( 'cmb2_admin_init', 'bj_people_cmb2_fields' ); 
 
 
-function bj_moods_cmb2_fields() {
+function bj_emotions_cmb2_fields() {
 
-  $prefix = 'bj_moods_cmb2_'; 
+  $prefix = 'bj_emotions_cmb2_'; 
  
   /** 
    * Metabox to add fields to categories and tags 
@@ -73,7 +73,7 @@ function bj_moods_cmb2_fields() {
   $cmb_people = new_cmb2_box( array( 
     'id'               => $prefix . 'box',
     'object_types'     => array( 'term' ),
-    'taxonomies'       => array( 'moods' )
+    'taxonomies'       => array( 'emotions' )
   ) ); 
 
   $cmb_people->add_field( array(
@@ -209,4 +209,4 @@ function bj_moods_cmb2_fields() {
 
 }
 
-add_action( 'cmb2_admin_init', 'bj_moods_cmb2_fields' ); 
+add_action( 'cmb2_admin_init', 'bj_emotions_cmb2_fields' ); 

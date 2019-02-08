@@ -67,9 +67,9 @@ function bitjournal_add_people_menu() {
 add_action( 'admin_menu', 'bitjournal_add_people_menu' );
 
 
-function bj_add_moods_menu() {
+function bj_add_emotions_menu() {
 
-	$taxname = 'moods';
+	$taxname = 'emotions';
 
 	$is_mood = isset( $_GET['taxonomy'] ) && $_GET['taxonomy'] === $taxname;
 
@@ -79,9 +79,9 @@ function bj_add_moods_menu() {
 	} );
 
 	// add a taxonomy menu item
-  $menu_title = 'Moods';
+  $menu_title = 'Emotions';
   
-	add_menu_page( 'Moods', $menu_title, 'manage_options', "edit-tags.php?taxonomy=$taxname", null, 'dashicons-smiley', 9 );
+	add_menu_page( 'Emotions', $menu_title, 'manage_options', "edit-tags.php?taxonomy=$taxname", null, 'dashicons-smiley', 9 );
   
   // fix some parameters of the added menu item
   $menu_item = & $GLOBALS['menu'][ key( wp_list_filter( $GLOBALS['menu'], [$menu_title] ) ) ];
@@ -95,7 +95,7 @@ function bj_add_moods_menu() {
   }
   
 }
-add_action( 'admin_menu', 'bj_add_moods_menu' );
+add_action( 'admin_menu', 'bj_add_emotions_menu' );
 
 
 /**

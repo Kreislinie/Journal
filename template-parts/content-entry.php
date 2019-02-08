@@ -15,20 +15,20 @@
      * Display mood term meta of current post
     */ 
 
-    $moods = wp_get_post_terms(get_the_ID(), 'moods'); 
+    $emotions = wp_get_post_terms(get_the_ID(), 'emotions'); 
 
-    if ( ! empty( $moods ) && ! is_wp_error( $moods ) ) {
+    if ( ! empty( $emotions ) && ! is_wp_error( $emotions ) ) {
 
-      foreach ( $moods as $term ) {
+      foreach ( $emotions as $term ) {
         
-        $mood_link = get_term_link( $term );
-        $mood_icon = get_term_meta( $term->term_id, 'bj_moods_cmb2_icon', true ); 
+        $emotion_link = get_term_link( $term );
+        $emotion_icon = get_term_meta( $term->term_id, 'bj_emotions_cmb2_icon', true ); 
         
         ?>
 
-        <a href="<?php echo esc_url( $mood_link ); ?>">
-          <div class="mood-flag">
-          <i class="<?php echo $mood_icon ?>"></i>
+        <a href="<?php echo esc_url( $emotion_link ); ?>">
+          <div class="emotion-flag">
+          <i class="<?php echo $emotion_icon ?>"></i>
             <span><?php echo $term->name;?></span>
           </div> 
         </a>

@@ -53,24 +53,24 @@ add_action( 'init', 'bj_people_taxonomy' );
 /**
  * Create and register mood taxonomy
  */
-function bj_moods_taxonomy() {
+function bj_emotions_taxonomy() {
 
 	$labels = array(
-		'name'                           => 'Mood',
-		'singular_name'                  => 'Mood',
-		'search_items'                   => 'Search Mood',
-		'all_items'                      => 'All Moods',
-		'edit_item'                      => 'Edit Mood',
-		'update_item'                    => 'Update Mood',
-		'add_new_item'                   => 'Add New Mood',
-		'new_item_name'                  => 'New Mood Name',
-		'menu_name'                      => 'Moods',
-		'view_item'                      => 'View Mood',
-		'popular_items'                  => 'Popular Moods',
-		'separate_items_with_commas'     => 'Separate Moods with commas',
-		'add_or_remove_items'            => 'Add or remove Moods',
-		'choose_from_most_used'          => 'Choose from the most used Moods',
-		'not_found'                      => 'No Mood found'
+		'name'                           => 'Emotions',
+		'singular_name'                  => 'Emotion',
+		'search_items'                   => 'Search Emotions',
+		'all_items'                      => 'All Emotions',
+		'edit_item'                      => 'Edit Emotion',
+		'update_item'                    => 'Update Emotion',
+		'add_new_item'                   => 'Add New Emotion',
+		'new_item_name'                  => 'New Emotion Name',
+		'menu_name'                      => 'Emotions',
+		'view_item'                      => 'View Emotion',
+		'popular_items'                  => 'Popular Emotions',
+		'separate_items_with_commas'     => 'Separate Emotions with commas',
+		'add_or_remove_items'            => 'Add or remove Emotions',
+		'choose_from_most_used'          => 'Choose from the most used Emotions',
+		'not_found'                      => 'No Emotion found'
 	);
 
   $args = array(
@@ -83,12 +83,12 @@ function bj_moods_taxonomy() {
     'query_var'                      => true,
     'show_in_menu'                   => false,
     'show_in_rest'                   => true,
-    'rewrite'                        => array( 'slug' => 'mood' ),
+    'rewrite'                        => array( 'slug' => 'emotion' ),
     'labels'                         => $labels
   );
   
-  register_taxonomy( 'moods', array( 'entry' ), $args );
+  register_taxonomy( 'emotions', array( 'entry' ), $args );
   
 }
 
-add_action( 'init', 'bj_moods_taxonomy' );
+add_action( 'init', 'bj_emotions_taxonomy' );
