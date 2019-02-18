@@ -39,14 +39,13 @@
     endif;
   ?>
 
+
+
+
 <header class="entry-header">
 
 
 
-
-			<div class="entry-meta">
-				<?php	bitjournal_posted_on(); ?>
-			</div><!-- .entry-meta -->
 		<?php 
 
     if ( is_singular() ) :

@@ -11,10 +11,11 @@
 
 ?>
 
-<?php  if( ! is_user_logged_in() ) :
-            wp_safe_redirect( get_dashboard_url() );
-            exit; 
-endif;
+<?php  
+  if( ! is_user_logged_in() ) :
+    wp_safe_redirect( get_dashboard_url() );
+    exit; 
+  endif;
 ?>
 
 <!doctype html>
@@ -33,27 +34,47 @@ endif;
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$bitjournal_description = get_bloginfo( 'description', 'display' );
-			if ( $bitjournal_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $bitjournal_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+
+
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
 
-<a href="<?php home_url() ?>"></a>
+    <!-- bitjournal Logo -->
+    <a href="<?php echo home_url() ?>">
+      <img src="<?php echo get_template_directory_uri() . '/img/bitjournal-logo_path_wide.svg'?>" alt="bitjournal Logo" >
+    </a>
+
+    
+    <?php	
+    /**
+     * Display post navigation and date
+     */
+    if( is_single() ) : ?>
+
+      <div class="entry-meta">
+
+        <p>
+          <?php 
+          previous_post_link('%link', '<i class="fas fa-angle-left"></i>');
+          bitjournal_posted_on(); 
+          next_post_link('%link', '<i class="fas fa-angle-right"></i>');
+          ?>
+        </p>
+
+      </div>
+
+    <?php endif; ?>
+      
+      <div class="navbar-right">
+        <a href="">Entries</a>
+        <a href="">Health Records</a>
+        <a href="">Archive</a>
+      </div>
+
+
+
+
 
 
 		</nav><!-- #site-navigation -->
