@@ -1,13 +1,16 @@
 <?php 
 
-/** 
-* Hook in and add a metabox to add fields to taxonomy terms 
+/**
+ * PEOPLE
+ * 
+ * Custom fields:
+ * - 
 */ 
 function bj_people_cmb2_fields() {
 
  	$prefix = 'bj_people_cmb2_'; 
   
- 	/** 
+ 	/*
  	 * Metabox to add fields to categories and tags 
  	 */ 
  	$cmb_people = new_cmb2_box( array( 
@@ -62,6 +65,12 @@ function bj_people_cmb2_fields() {
 
 add_action( 'cmb2_admin_init', 'bj_people_cmb2_fields' ); 
 
+/**
+ * EMOTIONS
+ * 
+ * Custom fields:
+ * - 
+*/ 
 
 function bj_emotions_cmb2_fields() {
 
@@ -70,13 +79,23 @@ function bj_emotions_cmb2_fields() {
   /** 
    * Metabox to add fields to categories and tags 
    */ 
-  $cmb_people = new_cmb2_box( array( 
+  $cmb_emotions = new_cmb2_box( array( 
     'id'               => $prefix . 'box',
     'object_types'     => array( 'term' ),
     'taxonomies'       => array( 'emotions' )
   ) ); 
 
-  $cmb_people->add_field( array(
+  $cmb_emotions->add_field( array(
+    'name'    => 'Test Color Picker',
+    'id'      => $prefix . 'color',
+    'type'    => 'colorpicker',
+    'default' => '#21b6d3',
+    // 'options' => array(
+    // 	'alpha' => true, // Make this a rgba color picker.
+    // ),
+  ) );
+
+  $cmb_emotions->add_field( array(
     'name'        => __( 'Icon', 'bitjournal' ),
     'id'          => $prefix . 'icon',	
     'type'    => 'icon_picker',

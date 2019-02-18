@@ -17,17 +17,18 @@
 
     $emotions = wp_get_post_terms(get_the_ID(), 'emotions'); 
 
-    if ( ! empty( $emotions ) && ! is_wp_error( $emotions ) ) {
+    if ( ! empty( $emotions ) && ! is_wp_error( $emotions ) ) :
 
       foreach ( $emotions as $term ) {
         
         $emotion_link = get_term_link( $term );
-        $emotion_icon = get_term_meta( $term->term_id, 'bj_emotions_cmb2_icon', true ); 
+        $emotion_icon = get_term_meta( $term->term_id, 'bj_emotions_cmb2_icon', true );
+        $emotion_color = get_term_meta( $term->term_id, 'bj_emotions_cmb2_color', true ); 
         
         ?>
 
         <a href="<?php echo esc_url( $emotion_link ); ?>">
-          <div class="emotion-flag">
+          <div class="emotion-flag" style="background-color: <?php echo $emotion_color ?>;">
           <i class="<?php echo $emotion_icon ?>"></i>
             <span><?php echo $term->name;?></span>
           </div> 
@@ -35,7 +36,7 @@
         <?php
       }
 
-    } 
+    endif;
   ?>
 
 <header class="entry-header">
@@ -67,12 +68,15 @@
 	<div class="entry-content">
 		<?php
 		the_content();
-    ?>
 
+  /*
+  * Display edit link if singular.
+  */
+  if ( is_singular() ) :
 
-<?php 
+    edit_post_link( 'Edit Entry', '<div class="edit-entry-link"><i class="fas fa-pencil-alt"></i> ', '</div>');
 
-edit_post_link( 'Edit Entry', '<div class="edit-entry-link"><i class="fas fa-pencil-alt"></i> ', '</div>');
+  endif;
 
 
 

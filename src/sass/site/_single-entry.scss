@@ -26,24 +26,25 @@
 .entry-meta {
 margin-bottom: -12px;
 
-a {
-  text-decoration: none;
-  font-size: 1.2em;
-  color: lighten($color__text-main, 20);
-  font-weight: 300;
+  a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: lighten($color__text-main, 20);
+    font-weight: 300;
+  }
 }
-}
+
 /* ------------------------------------------------------------
   2.0 - Mood Flag
 ------------------------------------------------------------ */
 
 .emotion-flag {
-  padding: 18px 22px;
-  background-color: #c1e40c;
+  padding: 8px 15px;
+  margin-left: 20px;
   color: white;
   float: right;
   white-space: nowrap;
-  transform: translateX($entry-card-padding + 20px) translateY(-$entry-card-padding + 20px);
+
   border-radius: $border__default-radius;
   box-shadow: $shadow__default;
 
@@ -55,14 +56,14 @@ a {
     font-weight: 500;
     font-family: $font__main;
     display: inline-block;
-    transform: translateY(-4px);
+
 
 
   }
 
   // fontawesome icon
   i {
-    font-size: 2em;
+    font-size: 1.2em;
   }
 
 }

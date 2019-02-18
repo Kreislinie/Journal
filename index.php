@@ -28,15 +28,19 @@ get_header();
   <?php
 $custom_query = new WP_Query( 
     array(
-        'post_type' => array('health-record', 'post' ),
+        'post_type' => array('health-record', 'entry' ),
         'posts_per_page' => 100
     ) 
 );
 if ( $custom_query->have_posts() ) : while ( $custom_query->have_posts() ) : $custom_query->the_post();
 
-    the_post_thumbnail($size);
-    the_title();
-    the_content();
+if ( get_post_type() == 'entry' ) {
+  get_template_part( 'template-parts/content', 'entry' );
+} else {
+  get_template_part( 'template-parts/content', 'entry' );
+}
+
+   
 
 endwhile;  wp_reset_query();
 

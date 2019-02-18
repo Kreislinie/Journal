@@ -5,10 +5,10 @@
     ".  head      ." 90px
     ".  content   ." auto
     ".  foot      ." 50px
-  / auto minmax(400px, 980px) auto;
+  / auto minmax(400px, 755px) auto;
 }
 
-.main-grid-sidebar {
+.grid__main-sidebar {
   display: grid;
   grid:   
     ".  head    head    ." 90px
@@ -22,14 +22,3 @@
   grid-area: content;
 }
 
-$entry-card-padding: 90px;
-
-.type-entry {
-  background-color: white;
-  padding: $entry-card-padding;
-}
-
-.card__default {
-  border-radius: $border__default-radius;
-  box-shadow: $shadow__default;
-}
