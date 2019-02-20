@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Hide menu-pages on admin sidebar.
+ * Hide specific menu-pages on admin sidebar.
  */
 function bj_remove_menus() {  
 
@@ -18,23 +18,35 @@ function bj_remove_menus() {
 }  
 add_action( 'admin_menu', 'bj_remove_menus' ); 
 
-function bj_admin_menu_image() {
-    
+
+/**
+ * Add bitjournal settings page
+ */
+function bj_add_settings_page() {
+
   add_menu_page(
-    'Page Title', 
-    '<img src="https://d1u5p3l4wpay3k.cloudfront.net/minecraft_gamepedia/8/85/Knowledge_book.png"><h3>bitjournal</h3>', 
-    'edit_posts', 
-    'click-action', 
-    'your_new_menu', 
-    '', 1);
+    'bitjournal', 
+    'bitjournal', 
+    'manage_options', 
+    'bitjournal', 
+    'bj_settings_page_content', 
+    'dashicons-book-alt', 
+    2
+  );
+
 }
-add_action('admin_menu', 'bj_admin_menu_image');
+
+function bj_settings_page_content() {
+  echo 'yessss';
+}
+
+add_action( 'admin_menu', 'bj_add_settings_page' );
+
 
 /**
  * Create menu for people taxonomy
  * 
  * @link https://wp-kama.com/49/register-taxonomy-without-post-type
- * 
  */
 function bitjournal_add_people_menu() {
 

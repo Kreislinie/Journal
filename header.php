@@ -56,9 +56,10 @@
 
         <p>
           <?php 
-          previous_post_link('%link', '<i class="fas fa-angle-left"></i>');
+
+          previous_post_link('%link', '<i class="fas fa-angle-left" title="' . esc_html__( 'Previous Entry', 'bitjournal' ) . '"></i>');
           bitjournal_posted_on(); 
-          next_post_link('%link', '<i class="fas fa-angle-right"></i>');
+          next_post_link('%link', '<i class="fas fa-angle-right" title="' . esc_html__( 'Next Entry', 'bitjournal' ) . '"></i>');
           ?>
         </p>
 

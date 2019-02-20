@@ -12,6 +12,8 @@ function bj_frontend_scripts() {
 
   wp_enqueue_script( 'bitjournal-skip-link-focus-fix', get_template_directory_uri() . '/js/vendors.min.js', array(), null, true );
 
+  wp_enqueue_script( 'jquery' );
+
   // Fonts
   wp_enqueue_style( 'google-fonts-roboto', 'https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700' );
   wp_enqueue_style( 'font-awesome-default', get_template_directory_uri() . '/vendors/font-awesome/css/fontawesome.min.css' );
