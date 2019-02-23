@@ -67,10 +67,10 @@
 
     <?php endif; ?>
       
-      <div class="navbar-right">
-        <a href="">Entries</a>
-        <a href="">Health Records</a>
-        <a href="">Archive</a>
+      <div class="navbar-right navbar-right__closed">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
 

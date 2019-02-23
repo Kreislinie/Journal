@@ -22,7 +22,7 @@ if ( ! function_exists( 'bitjournal_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			'<a>' . $time_string . '</a>'
 		);
 
 		echo $posted_on;
