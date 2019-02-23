@@ -66,19 +66,20 @@
       </div>
 
     <?php endif; ?>
-      
-      <div class="navbar-right navbar-right__closed">
+
+
+    </nav><!-- #site-navigation -->
+
+    <div class="navbar-right navbar-right__closed">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </div>      
+          
+    <div class="menu-overlay menu-overlay__closed">
+      <p>menu overlay</p>
+    </div>
 
-
-
-
-
-
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

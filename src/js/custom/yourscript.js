@@ -16,7 +16,11 @@ jQuery(document).ready( function ($) {
   $( '.navbar-right' ).on( 'click', function() {
     $(this).toggleClass( 'navbar-right__opened' );
     $(this).toggleClass( 'navbar-right__closed' );
-  } );
 
+    $( '.menu-overlay' ).toggleClass( 'menu-overlay__opened' );
+    $( '.menu-overlay' ).toggleClass( 'menu-overlay__closed' );
+
+
+  } );
 
 });
