@@ -52,7 +52,7 @@ if ( isset( $_GET['activated'] ) && is_admin() ) :
 
   /*
    * Set permalink structure 
-   */   
+   */  
   global $wp_rewrite; 
 
   $wp_rewrite->set_permalink_structure('/%year%/%monthnum%/%day%/%postname%/'); 
@@ -64,3 +64,6 @@ if ( isset( $_GET['activated'] ) && is_admin() ) :
   $wp_rewrite->flush_rules( true );
 
 endif;
+
+
+

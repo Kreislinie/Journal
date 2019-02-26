@@ -21,15 +21,27 @@ get_header();
       'format'  =>  'custom',
       'before'  =>  '<div>',
       'after'   =>  '</div>',
-      'post_type'     => 'post',
+      'post_type'     => 'entry',
       'show_post_count' => true,
-      
+    );
+
+    $archive_monthly = array(
+      'type'    =>  'monthly',
+      'format'  =>  'custom',
+      'before'  =>  '<div>',
+      'after'   =>  '</div>',
+      'post_type'     => 'entry',
+      'show_post_count' => true,
     );
     wp_get_archives($archive_yearly);
-    wp_get_archives('type=monthly'); 
-    wp_get_archives('type=daily'); 
-    
+    wp_get_archives($archive_monthly);    
     ?>
+
+
+
+
+
+
     </main><!-- #main -->
     
 	</div><!-- #primary -->

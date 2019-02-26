@@ -24,9 +24,14 @@ get_header();
       <a href="<?php echo admin_url('edit.php'); ?>">Manage all entries</a>
       
       <?php
+
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+
       $custom_query = new WP_Query( array(
-        'post_type' => array('health-record', 'entry' ),
-        'posts_per_page' => 100
+        'post_type' => 'entry',
+        'posts_per_page' => 5,
+        'paged' => $paged,
       ) );
       
       if ( $custom_query->have_posts() ) : 
@@ -37,15 +42,36 @@ get_header();
           } else {
             get_template_part( 'template-parts/content', 'entry' );
           }
-        endwhile;  
-        
-        wp_reset_query();
 
-        else :
-    
+        endwhile;  
+
+        $total_pages = $custom_query->max_num_pages;
+
+        if ($total_pages > 1) :
+
+          $current_page = max(1, get_query_var('paged'));
+  
+          echo paginate_links(array(
+              'base' => get_pagenum_link(1) . '%_%',
+              'format' => '?page=%#%',
+              'current' => $current_page,
+              'total' => $total_pages,
+              'prev_text'    => __('« prev'),
+              'next_text'    => __('next »'),
+          ));
+
+
+
+        endif;
+
+      else :
+
         get_template_part( 'template-parts/content', 'none' );
         
       endif;
+
+      wp_reset_postdata();
+
       ?>
     
     </div><!-- .area__content -->

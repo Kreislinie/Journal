@@ -45,28 +45,29 @@
       <img src="<?php echo get_template_directory_uri() . '/img/bitjournal-logo_path_wide.svg'?>" alt="bitjournal Logo" >
     </a>
 
-    
+    <div class="entry-meta">
+
     <?php	
     /**
      * Display post navigation and date
      */
-    if( is_single() ) : ?>
+    if( is_single() ) : 
+      previous_post_link('%link', '<p><i class="fas fa-angle-left" title="' . esc_html__( 'Previous Entry', 'bitjournal' ) . '"></i>');
+      bitjournal_posted_on(); 
+      next_post_link('%link', '<i class="fas fa-angle-right" title="' . esc_html__( 'Next Entry', 'bitjournal' ) . '"></i></p>');
+  
+      elseif( is_tax() ) :
+      the_archive_title( '<p>', '</p>' );
 
-      <div class="entry-meta">
+      elseif( is_archive() ) :
+      the_archive_title( '<p>', '</p>' );
 
-        <p>
-          <?php 
 
-          previous_post_link('%link', '<i class="fas fa-angle-left" title="' . esc_html__( 'Previous Entry', 'bitjournal' ) . '"></i>');
-          bitjournal_posted_on(); 
-          next_post_link('%link', '<i class="fas fa-angle-right" title="' . esc_html__( 'Next Entry', 'bitjournal' ) . '"></i>');
-          ?>
-        </p>
 
-      </div>
 
-    <?php endif; ?>
 
+    endif; ?>
+</div><!-- .entry-meta -->
 
     </nav><!-- #site-navigation -->
 

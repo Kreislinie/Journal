@@ -10,22 +10,27 @@
 get_header();
 ?>
 
-	<div id="primary" class="main-grid content-area">
-		<main id="main" class="content site-main">
+<div id="primary" class="content-area">
+		<main id="main" class="grid__main site-main">
+      <div class="area__content">
 
     <?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-        <h1>bj archive general</h1>
 				<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
+        the_archive_description( '<div class="archive-description">', '</div>' );
+
 				?>
 			</header><!-- .page-header -->
 
       <?php
       
-      
+
+            if( is_year() ) :
+              echo '<h1>This is a year archive</h1>';
+            endif;
+
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -45,9 +50,13 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif;
+    endif;
+    
+
+
 		?>
 
+</div><!-- .area__content -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
