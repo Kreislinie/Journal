@@ -21,14 +21,34 @@ get_header();
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
         the_archive_description( '<div class="archive-description">', '</div>' );
 
+
+
+
 				?>
-			</header><!-- .page-header -->
+      </header><!-- .page-header -->
+      
+
 
       <?php
       
 
             if( is_year() ) :
               echo '<h1>This is a year archive</h1>';
+
+
+              $archive_monthly = array(
+                'type'    =>  'monthly',
+                'format'  =>  'custom',
+                'before'  =>  '<div>',
+                'after'   =>  '</div>',
+                'post_type'     => 'entry',
+                'show_post_count' => true,
+              );
+              wp_get_archives($archive_yearly);
+              wp_get_archives($archive_monthly);    
+
+
+
             endif;
 
 			/* Start the Loop */
