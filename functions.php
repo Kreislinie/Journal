@@ -16,11 +16,12 @@ if ( ! function_exists( 'bitjournal_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function bitjournal_setup() {
+
 		/*
-		 * Make theme available for translation.
+		 * TODO: Make theme available for translation
 		 * Translations can be filed in the /languages/ directory.
 		 */
-		load_theme_textdomain( 'bitjournal', get_template_directory() . '/languages' );
+		// load_theme_textdomain( 'bitjournal', get_template_directory() . '/languages' );
 
 		/*
 		 * Let WordPress manage the document title.
@@ -48,6 +49,17 @@ add_action( 'after_setup_theme', 'bitjournal_setup' );
 
 define( 'DISALLOW_FILE_EDIT', true );
 
+/**
+ * Change main query with pre_get_posts in order to show entry CPT
+ */
+add_action( 'pre_get_posts', function ( $q ) {
+
+  if ( $q->is_home() && $q->is_main_query() ) {
+    $q->set( 'posts_per_page', 3 );
+    $q->set( 'post_type', 'entry');
+  }
+
+});
 
 
 /**

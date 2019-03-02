@@ -23,61 +23,29 @@ get_header();
 
       <a href="<?php echo admin_url('edit.php'); ?>">Manage all entries</a>
       
-      <?php
-
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-
-      $custom_query = new WP_Query( array(
-        'post_type' => 'entry',
-        'posts_per_page' => 5,
-        'paged' => $paged,
-      ) );
-      
-      if ( $custom_query->have_posts() ) : 
-        while ( $custom_query->have_posts() ) : $custom_query->the_post();
-          
-          if ( get_post_type() == 'entry' ) {
-            get_template_part( 'template-parts/content', 'entry' );
-          } else {
-            get_template_part( 'template-parts/content', 'entry' );
-          }
-
-        endwhile;  
-
-        $total_pages = $custom_query->max_num_pages;
-
-        if ($total_pages > 1) :
-
-          $current_page = max(1, get_query_var('paged'));
-  
-          echo paginate_links(array(
-              'base' => get_pagenum_link(1) . '%_%',
-              'format' => '?page=%#%',
-              'current' => $current_page,
-              'total' => $total_pages,
-              'prev_text'    => __('« prev'),
-              'next_text'    => __('next »'),
-          ));
+      <?php 
+      if ( have_posts() ) :
+        while ( have_posts() ) : the_post();
 
 
+  				get_template_part( 'template-parts/content', get_post_type() );
 
-        endif;
-
-      else :
-
-        get_template_part( 'template-parts/content', 'none' );
-        
+        endwhile;
       endif;
-
+      
       wp_reset_postdata();
-
-      ?>
-    
+      
+			the_posts_navigation(
+        array(
+          'prev_text'          => __( 'Older entries' ),
+          'next_text'          => __( 'Newer entries' ),
+          'screen_reader_text' => __( 'Entries navigation' ),
+        )
+      );
+            ?>
     </div><!-- .area__content -->
 	</main><!-- #main -->
 </div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
