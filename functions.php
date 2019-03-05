@@ -63,6 +63,24 @@ add_action( 'pre_get_posts', function ( $q ) {
 
 
 /**
+ * Filter the "read more" excerpt string link to the post.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string Modified "read more" excerpt string.
+ */
+function bj_excerpt_more( $more ) {
+  if ( ! is_single() ) {
+      $more = sprintf( '... <a class="read-more" href="%1$s">%2$s<i class="fas fa-angle-right"></i></a>',
+          get_permalink( get_the_ID() ),
+          __( 'read more', 'bitjournal' )
+      );
+  }
+
+  return $more;
+}
+add_filter( 'excerpt_more', 'bj_excerpt_more' );
+
+/**
  * Setup pages if template activated.
  */
 require get_template_directory() . '/inc/setup.php';
