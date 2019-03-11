@@ -48,8 +48,9 @@
 
     if ( is_singular() ) :
       the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<hr><h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+    else :
+      ?><i class="far fa-calendar-alt"></i><?php bitjournal_posted_on();
+			the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
 		endif;
 
     ?>
@@ -59,15 +60,17 @@
 
 	<div class="entry-content">
 
-		<?php
+    <?php
+    if ( is_home() ) {
+      the_excerpt();
+    } else {
     the_content();
-    
-    /**
-     * Display edit link if singular.
-     */
-    if ( is_singular() ) :
-      edit_post_link( 'Edit Entry', '<div class="edit-entry-link"><i class="fas fa-pencil-alt"></i> ', '</div>');
-    endif;
+    edit_post_link( 'Edit Entry', '<div class="edit-entry-link"><i class="fas fa-pencil-alt"></i> ', '</div>');
+    }
+
+
+
+
     ?>
 
   </div><!-- .entry-content -->

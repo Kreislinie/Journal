@@ -22,7 +22,7 @@ if ( ! function_exists( 'bitjournal_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			'<a>' . $time_string . '</a>'
+			'<a class="bj-posted-on">' . $time_string . '</a>'
 		);
 
 		echo $posted_on;
