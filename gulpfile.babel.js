@@ -171,7 +171,7 @@ gulp.task( 'backendstyles', () => {
 		.pipe( gulp.dest( config.styleDestination ) )
 		.pipe( filter( '**/*.css' ) ) // Filtering stream to only css files.
 		.pipe( browserSync.stream() ) // Reloads style.min.css if that is enqueued.
-		.pipe( notify({ message: '\n\n✅  ===> STYLES — completed!\n', onLast: true }) );
+		.pipe( notify({ message: '\n\n✅  ===> BACKEND STYLES — completed!\n', onLast: true }) );
 });
 
 /**
@@ -386,7 +386,7 @@ gulp.task( 'translate', () => {
  */
 gulp.task(
 	'default',
-	gulp.parallel( 'styles', 'vendorsJS', 'customJS', 'images', browsersync, () => {
+	gulp.parallel( 'styles', 'backendstyles', 'vendorsJS', 'customJS', 'images', browsersync, () => {
 		gulp.watch( config.watchPhp, reload ); // Reload on PHP file changes.
     gulp.watch( config.watchStyles, gulp.parallel( 'styles' ) ); // Reload on SCSS file changes.
     gulp.watch( config.watchStylesBackend, gulp.parallel( 'backendstyles' ) ); // Reload on SCSS file changes.
