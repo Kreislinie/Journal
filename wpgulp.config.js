@@ -16,7 +16,8 @@ module.exports = {
 	injectChanges: true,
 
 	// Style options.
-	styleSRC: './src/sass/style.scss', // Path to main .scss file.
+  styleSRC: './src/sass/frontend/style.scss', // Path to main .scss file.
+  stylebackendSRC: './src/sass/backend/style-backend.scss', // Path to main .scss file.
 	styleDestination: './', // Path to place the compiled CSS file. Default set to root folder.
 	outputStyle: 'compact', // Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
 	errLogToConsole: true,
@@ -37,19 +38,20 @@ module.exports = {
 	imgDST: './img/', // Destination folder of optimized images. Must be different from the imagesSRC folder.
 
 	// Watch files paths.
-	watchStyles: './src/sass/**/*.scss', // Path to all *.scss files inside css folder and inside them.
-	watchJsVendor: './src/js/vendor/*.js', // Path to all vendor JS files.
+	watchStyles: './src/sass/frontend/*.scss', // Path to all *.scss files inside css folder and inside them.
+	watchStylesBackend: './src/sass/backend/*.scss', // Path to all *.scss files inside css folder and inside them.
+  watchJsVendor: './src/js/vendor/*.js', // Path to all vendor JS files.
 	watchJsCustom: './src/js/custom/*.js', // Path to all custom JS files.
 	watchPhp: './**/*.php', // Path to all PHP files.
 
 	// Translation options.
-	textDomain: 'WPGULP', // Your textdomain here.
+	textDomain: 'bitjournal', // Your textdomain here.
 	translationFile: 'WPGULP.pot', // Name of the translation file.
 	translationDestination: './languages', // Where to save the translation files.
-	packageName: 'WPGULP', // Package name.
-	bugReport: 'https://AhmadAwais.com/contact/', // Where can users report bugs.
-	lastTranslator: 'Ahmad Awais <your_email@email.com>', // Last translator Email ID.
-	team: 'AhmadAwais <your_email@email.com>', // Team's Email ID.
+	packageName: 'bitjournal', // Package name.
+	bugReport: '', // Where can users report bugs.
+	lastTranslator: '', // Last translator Email ID.
+	team: '', // Team's Email ID.
 
 	// Browsers you care about for autoprefixing. Browserlist https://github.com/ai/browserslist
 	// The following list is set as per WordPress requirements. Though, Feel free to change.
