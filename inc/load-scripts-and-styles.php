@@ -28,6 +28,7 @@ function bj_backend_scripts() {
 
   wp_enqueue_style( 'font-awesome-default', get_template_directory_uri() . '/vendors/font-awesome/css/fontawesome.min.css' );
   wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/vendors/font-awesome/css/all.min.css' );
+  wp_enqueue_style( 'bitjournal-backend-style', get_stylesheet_directory_uri() . '/style-backend.min.css' );
 
 }
 
