@@ -1,6 +1,13 @@
+// Icon color
+.fas , .fa {
+  color: $color__icon;
+}
+
 .entry-title {
   margin: 0;
   clear: none;
+  margin-top: 23px;
+  line-height: 1.2em;
 
   i {
     color: $color__bitjournal-blue;
@@ -10,17 +17,39 @@
 }
 
 .edit-entry-link {
-  background-color: $color__bitjournal-blue;
-  border-radius: $border__default-radius;
-  box-shadow: $shadow__default;
-  padding: 5px 11px;
   float: left;
+  display: block;
+  border-radius: 25px;
+  padding: 2px 3px;
+  margin-right: 15px;
+  
+  a {
+    font-size: .8em;
+  }
 
-  a, i {
+  i {
     color: white;
+  }
+
+  background-color: $color__bitjournal-blue;
+
+
+  a {
     text-decoration: none;
+    // background-color: rgba(0, 0, 0, .05);
+    display: none;
+  
+    color: white;
+
+
+    &:hover {
+      background-color: $color__bitjournal-blue;
+      border: 1px solid $color__bitjournal-blue;
+      color: white;
+    }
 
   }
+
 }
 
 .entry-meta {
@@ -50,6 +79,7 @@
 
 }
 
+
 /* ------------------------------------------------------------
   2.0 - Mood Flag
 ------------------------------------------------------------ */
@@ -60,7 +90,6 @@
   color: white;
   float: right;
   white-space: nowrap;
-
   border-radius: $border__default-radius;
   box-shadow: $shadow__default;
 
@@ -84,46 +113,160 @@
   2.0 - People Cards
 ------------------------------------------------------------ */
 
-.person-overview-container {
-  margin-top: 20px;
-}
-
 .person-overview {
   justify-self: start;
-  background-color: $color__bitjournal-blue;
+  padding: 11px 9px;
+  background-color: hsl(0, 0%, 95%);
   border-radius: $border__default-radius;
-  box-shadow: $shadow__default;
-  padding: 17px 7px;
   float: left;
   text-align: center;
-  width: 128px;
-  height: 165px;
-  margin: 10px 10px 0 0;
+  width: 83px;
+  height: 96px;
+  margin: 0 10px 16px 0;
   cursor: pointer;
 
   img {
     border-radius: 100%;
     border: 3px solid white;
     width: 90px;
+    box-shadow: $shadow__default;
+  }
+
+  p {
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    width: 100%;
+    padding: 0 5px;
+    border-radius: 10px;
+    transform: translateY(-30px);
+    z-index: 5;
+    background-color: white;
+    box-shadow: $shadow__default;
+    font-size: .8em;
+    line-height: 1.5em;
+
   }
 
 }
 
-.person-name-container {
-  display: table; 
-  height: 40px; 
-  overflow: hidden;
+.entry-category {
+  color: $color__text-light;
+  font-size: .8em;
+}
 
-  p {
-    text-rendering: geometricPrecision;
-    display: table-cell; 
-    vertical-align: middle;
-    width: 128px;
-    margin: 0;
-    font-size: 1em;
-    font-weight: 700;
-    line-height: 1em;
+/* ------------------------------------------------------------
+  3.0 - 
+------------------------------------------------------------ */
+
+.area__head {
+  display: grid;
+  grid-area: head;
+  margin-top: 180px;
+}
+
+.entry-header-container {
+  display: inline;
+
+  span {
+    border-radius: 25px;
+    padding: 2px 13px;
+    margin-right: 15px;
+    transition: all .5s;
     color: white;
+    font-size: 0.8em;
+    float: left;
+    display: block;
   }
 
+}
+
+// Mood colors
+#excellent  { background-color: $color__mood-excellent; }
+#very-good  { background-color: $color__mood-very-good; }
+#good       { background-color: $color__mood-good;      }
+#neutral    { background-color: $color__mood-neutral;   }
+#bad        { background-color: $color__mood-bad;       }
+#very-bad   { background-color: $color__mood-very-bad;  }
+#horrible   { background-color: $color__mood-horrible;  }
+
+
+.tags i, .category i {
+  margin-right: 5px;
+  color: $color__text-light;
+}
+
+.tags {
+  margin-bottom: 25px;
+
+  a {
+    text-decoration: none;
+    // background-color: rgba(0, 0, 0, .05);
+    margin-right: 5px;
+    font-size: .8em;
+    padding: 2px 3px;
+    border-radius: 5px;
+    padding: 2px 5px;
+    transition: background-color 0.5s, color 0.2s;
+    border: 1px solid $color__text-light;
+    color: $color__text-light;
+
+    &:hover {
+      background-color: $color__bitjournal-blue;
+      border: 1px solid $color__bitjournal-blue;
+      color: white;
+    }
+
+  }
+
+}
+
+.category {
+  margin-bottom: 13px;
+}
+
+.post-categories {
+  padding: 0;
+  margin: 0;
+  display: inline;
+  list-style: none;
+  
+  li {
+    display: inline;
+    text-decoration: none;
+    padding-right: 20px;
+
+    a {
+      font-size: .9em;
+      text-decoration: none;
+      color: $color__text-light;
+
+      &:before {
+        font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0da";
+        padding: 0 7px;
+      }
+
+      &:first-of-type:before {
+        content: none;
+      }
+
+    }
+
+  }
+
+}
+
+.area__sidebar {
+  display: grid;
+  grid-area: sidebar;
+  margin: 28px 25px 0 0;
+  align-content: baseline;
+  border-width: 1px;
+  border-style: solid;
+  border-left: 0;
+  border-image: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, .5),
+    rgba(0, 0, 0, 0),
+  ) 1 100%;
 }

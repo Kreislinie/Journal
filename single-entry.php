@@ -12,7 +12,6 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="grid__main site-main">
-      <div class="area__content">
 
         <?php
         while ( have_posts() ) :
@@ -23,7 +22,6 @@ get_header();
         endwhile; // End of the loop.
         ?>
 
-      </div><!-- .area__content -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

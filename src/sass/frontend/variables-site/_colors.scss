@@ -8,6 +8,7 @@ $color__background-pre:       #eee;
 $color__background-ins:       #fff9c0;
 
 $color__text-main:            rgb(60, 60, 60);
+$color__text-light:           hsl(0, 0%, 70%);
 $color__text-screen:          #21759b;
 $color__text-input:           #666;
 $color__text-input-focus:     #111;
@@ -22,6 +23,15 @@ $color__border-button-focus:  #aaa #bbb #bbb;
 $color__border-input:         #ccc;
 $color__border-abbr:          #666;
 
+$color__mood-excellent: rgb(3, 175, 54);
+$color__mood-very-good: rgb(123, 205, 62);
+$color__mood-good:      rgb(35, 136, 163);
+$color__mood-neutral:   rgb(20, 183, 189);
+$color__mood-bad:       rgb(255, 170, 0);
+$color__mood-very-bad:  rgb(255, 110, 0);
+$color__mood-horrible:  rgb(235, 35, 29);
+
+$color__icon:  #dedede;
 
 
 
