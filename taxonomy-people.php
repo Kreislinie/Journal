@@ -8,56 +8,94 @@
  */
 
 get_header();
+
+/**
+ * TODO: 
+ * edit_term_link( 'Edit ' . $term->name, '<i class="fas fa-pencil-alt"></i> ' ); 
+ */
+
 ?>
 
-	<div id="primary" class="main-grid content-area">
-		<main id="main" class="content site-main">
-<h1>taxonomy people</h1>
-    <?php if ( have_posts() ) : ?>
-      
-      <header class="page-header">
+<div id="primary" class="content-area">
+  <main id="main" class="grid__main site-main">
+    
+    <header class="entry-header area__head">
+      <div class="people-info-box">
+
         <?php
-      $term = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
-echo $term->description; 
-$avatar = wp_get_attachment_image(get_term_meta( $term->term_id, 'bj_people_cmb2_picture_id', true ), array('70') ); 
-echo $avatar; 
+        /**
+         * Get people term meta.
+         */
+        $term = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
+        $avatar = wp_get_attachment_image_url( get_term_meta( $term->term_id, 'bj_people_cmb2_picture_id', true ), array('400') ); 
+        $sex = get_term_meta( $term->term_id, 'bj_people_cmb2_sex', true );
+        $birth = date( 'd.m.Y', get_term_meta( $term->term_id, 'bj_people_cmb2_birth', true ) );
+        $death = date( 'd.m.Y', get_term_meta( $term->term_id, 'bj_people_cmb2_death', true ) );
+        $relation = get_term_meta( $term->term_id, 'bj_people_cmb2_relation', true);
 
-
-?>
-
-
+        if ( $avatar ) {
+          echo '<div class="people-profile-large" style="background-image: url(' . $avatar . ')"></div>'; 
+        }
         
+        ?> 
 
-			</header><!-- .page-header -->
+        <div class="people-meta">
+        
+          <?php
 
-      <?php
-      
-      
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+          echo '<h2>' . $term->name . ' <i class="' . $sex . '"></i></h2>';
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+          if ( $term->description ) {
+          echo '<p>' . $term->description . '</p>';
+          }
 
-			endwhile;
+          if ( $term->count ) {
+            echo '<span><i class="far fa-bookmark"></i> ' . $term->count . '</span>';
+          }
+          
+          if ( $birth ) {
+            echo '<span><i class="fas fa-birthday-cake"></i> ' . $birth . '</span>';
+          }
 
-			the_posts_navigation();
+          if (  $death ) {
+            echo '<span><i class="fas fa-skull-crossbones"></i> ' . $death . '</span>';
+          }
 
-		else :
+          if ( $relation ) {
+            echo '<span><i class="fas fa-user-friends"></i> ' . $relation . '</span>';
+          }
 
-			get_template_part( 'template-parts/content', 'none' );
+          ?>
+  
+        </div><!-- .people-meta -->
 
-		endif;
-		?>
+      </div><!-- .people-info-box -->
+    </header><!-- .entry-header -->
+  
+    <div class="area__content">
+    
+      <?php 
+      if ( have_posts() ) :
+  
+        while ( have_posts() ) : the_post();
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+          get_template_part( 'template-parts/content', 'people' );
+
+        endwhile;
+
+        the_posts_navigation();
+
+      else :
+  
+        get_template_part( 'template-parts/content', 'none' );
+
+      endif;
+      ?>
+
+    </div><!-- .area__content -->
+
+  </main><!-- #main -->
+</div><!-- .content-area -->
 
 <?php
-get_sidebar();
 get_footer();

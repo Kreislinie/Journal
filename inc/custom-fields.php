@@ -16,9 +16,21 @@ function bj_people_cmb2_fields() {
  		'id'              => $prefix . 'box',
  		'object_types'    => array( 'term' ),
     'taxonomies'      => array( 'people' )
- 	) ); 
+  ) ); 
+   
+  $cmb_people->add_field( array( 
+    'name'             => esc_html__( 'Picture', 'bitjournal' ), 
+    'desc'             => esc_html__( 'Add a photo of the person', 'bitjournal' ), 
+    'id'               => $prefix . 'picture',
+    'type'             => 'file',
+    'options'          => array( 'url' => false ),
+    'column'           => array(
+      'position' => 2,
+      'name'     => 'Photo',
+    ),
+  ) ); 
 
-   $cmb_people->add_field( array(
+  $cmb_people->add_field( array(
     'name'            => 'Relation',
     'desc'            => 'What\'s the relation between you and this person?',
     'id'              => $prefix . 'relation',
@@ -32,35 +44,67 @@ function bj_people_cmb2_fields() {
     ),
   ) );
 
- 	$cmb_people->add_field( array( 
- 		'name'             => esc_html__( 'Picture', 'bitjournal' ), 
- 		'desc'             => esc_html__( 'Add a photo of the person', 'bitjournal' ), 
- 		'id'               => $prefix . 'picture',
-    'type'             => 'file',
-    'options'          => array( 'url' => false ),
-    'column'           => array(
-      'position' => 2,
-      'name'     => 'Photo',
-    ),
-  ) ); 
-
   $cmb_people->add_field( array(
-    'name'             => 'Gender',
-    'id'               => $prefix . 'gender',
-    'type'             => 'radio_inline',
-    'show_option_none' => false,
-    'column'           => array( 
-      'position'  => 4, 
-      'name'      => 'Gender' 
-    ),
-    'options'          => array(
-      'standard'  => esc_html__( 'Female',  'bitjournal' ),
-      'custom'    => esc_html__( 'Male',    'bitjournal' ),
-      'none'      => esc_html__( 'Other',   'bitjournal' ),
-    ),
+    'name' => 'Birthday',
+    'id'   => $prefix . 'birth',
+    'type' => 'text_date_timestamp',
+    // 'timezone_meta_key' => 'wiki_test_timezone',
+    'date_format' => 'j F Y',
   ) );
 
-} 
+  $cmb_people->add_field( array(
+    'name' => 'Death',
+    'id'   => $prefix . 'death',
+    'type' => 'text_date_timestamp',
+    // 'timezone_meta_key' => 'wiki_test_timezone',
+    'date_format' => 'j F Y',
+  ) );
+
+
+
+$cmb_people->add_field( array(
+
+  'name'      => __( 'Sex', 'bitjournal' ),
+  'id'        => $prefix . 'sex',	
+  'type'      => 'icon_picker',
+  'options'   => array(
+    
+    'icons'   => array(
+      'fas fa-venus',
+      'fas fa-transgender',
+      'fas fa-mars',          
+    ),
+
+    'fonts'    => array('Font Awesome 5 Free'),
+    
+  ),
+
+  'column'     => array( true, 'position' => 1 ),
+  'display_cb' => 'bj_custom_sex_column' // Output the display of the column values through a callback.
+
+) );
+
+/**
+ * Manually render a field column display.
+ *
+ * @param  array      $field_args Array of field arguments.
+ * @param  CMB2_Field $field      The field object
+ */
+function bj_custom_sex_column( $field_args, $field ) {
+
+  if ( 'fas fa-genderless' != $field->escaped_value() ) {
+  ?>
+
+  <div class="custom-column-display <?php echo $field->row_classes(); ?>">
+    <span class="<?php echo $field->escaped_value(); ?>" style="font-family: 'Font Awesome 5 Free' !important;"></span>
+  </div>
+  
+  <?php
+  }
+}
+
+}
+
 
 add_action( 'cmb2_admin_init', 'bj_people_cmb2_fields' ); 
 
@@ -89,13 +133,13 @@ function bj_mood_cmb2_fields() {
       'name'       => 'Mood' 
     ),
     'options'          => array(
-      'excellent'  => esc_html__( 'Excellent', 'bitjournal' ),
-      'very-good'  => esc_html__( 'Very good', 'bitjournal' ),
-      'good'       => esc_html__( 'Good',      'bitjournal' ),
-      'neutral'    => esc_html__( 'Neutral',   'bitjournal' ),
-      'bad'        => esc_html__( 'Bad',       'bitjournal' ),
-      'very bad'   => esc_html__( 'Very bad',  'bitjournal' ),
-      'horrible'   => esc_html__( 'Horrible',  'bitjournal' ),
+      'horrible'   => '<span id="horrible">' . esc_html__( 'Horrible',  'bitjournal' ) . '</span>',
+      'very bad'   => '<span id="very-bad">' . esc_html__( 'Very bad',  'bitjournal' ) . '</span>',
+      'bad'        => '<span id="bad">' . esc_html__( 'Bad', 'bitjournal' ) . '</span>',
+      'neutral'    => '<span id="neutral">' . esc_html__( 'Neutral', 'bitjournal' ) . '</span>',
+      'good'       => '<span id="good">' . esc_html__( 'Good', 'bitjournal' ) . '</span>',      
+      'very-good'  => '<span id="very-good">' . esc_html__( 'Very good', 'bitjournal' ) . '</span>',
+      'excellent'  => '<span id="excellent">' . esc_html__( 'Excellent', 'bitjournal' ) . '</span>',
     ),
     'default' => 'neutral',
   ) );
