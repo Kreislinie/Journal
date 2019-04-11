@@ -3,15 +3,11 @@
   float: left;
 
   &:before {
-
-    
-    
     // font awesome icon
     content: "\f104";
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
   }
-
 
 }
 
@@ -21,9 +17,6 @@
   text-align: right;
 
   &:after {
-
-    
-    
     // font awesome icon
     content: "\f105";
     font-family: 'Font Awesome 5 Free';
@@ -39,12 +32,10 @@
 
   .read-more {
     color: $color__bitjournal-blue;
-
   } 
 
   .bj-posted-on {
     display: block;
-
     transform: translateY(8px);
   }
 

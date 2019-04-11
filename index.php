@@ -17,17 +17,17 @@ get_header();
 
 <div id="primary" class="content-area">
 		<main id="main" class="grid__main site-main">
-      <div class="area__content">
-        
-      <h1>index</h1>
 
-      <a href="<?php echo admin_url('edit.php'); ?>">Manage all entries</a>
+    <header class="entry-header area__head">
+      <h2>HEDADHADHA</h2>
+    </header><!-- .entry-header -->
+
       
       <?php 
       if ( have_posts() ) :
         while ( have_posts() ) : the_post();
 
-  				 get_template_part( 'template-parts/content', get_post_type() );
+  				 get_template_part( 'template-parts/content', 'people' );
 
         endwhile;
       endif;
@@ -42,9 +42,9 @@ get_header();
         )
       );
             ?>
-    </div><!-- .area__content -->
-	</main><!-- #main -->
-</div><!-- #primary -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
 <?php
 get_footer();

@@ -6,7 +6,7 @@
 .entry-title {
   margin: 0;
   clear: none;
-  margin-top: 23px;
+  margin-top: 25px;
   line-height: 1.2em;
 
   i {
@@ -16,41 +16,7 @@
 
 }
 
-.edit-entry-link {
-  float: left;
-  display: block;
-  border-radius: 25px;
-  padding: 2px 3px;
-  margin-right: 15px;
-  
-  a {
-    font-size: .8em;
-  }
 
-  i {
-    color: white;
-  }
-
-  background-color: $color__bitjournal-blue;
-
-
-  a {
-    text-decoration: none;
-    // background-color: rgba(0, 0, 0, .05);
-    display: none;
-  
-    color: white;
-
-
-    &:hover {
-      background-color: $color__bitjournal-blue;
-      border: 1px solid $color__bitjournal-blue;
-      color: white;
-    }
-
-  }
-
-}
 
 .entry-meta {
   margin-bottom: -12px;
@@ -75,35 +41,6 @@
 
   i {
     padding: 0 10px;
-  }
-
-}
-
-
-/* ------------------------------------------------------------
-  2.0 - Mood Flag
------------------------------------------------------------- */
-
-.emotion-flag {
-  padding: 8px 15px;
-  margin-left: 20px;
-  color: white;
-  float: right;
-  white-space: nowrap;
-  border-radius: $border__default-radius;
-  box-shadow: $shadow__default;
-
-  span {
-    font-size: 1.2em;
-    padding-left: 12px;
-    font-weight: 500;
-    font-family: $font__main;
-    display: inline-block;
-  }
-
-  // fontawesome icon
-  i {
-    font-size: 1.2em;
   }
 
 }
@@ -145,7 +82,6 @@
     box-shadow: $shadow__default;
     font-size: .8em;
     line-height: 1.5em;
-
   }
 
 }
@@ -165,20 +101,17 @@
   margin-top: 180px;
 }
 
-.entry-header-container {
-  display: inline;
+.mood  {
+  float: left;
+}
 
-  span {
-    border-radius: 25px;
-    padding: 2px 13px;
-    margin-right: 15px;
-    transition: all .5s;
-    color: white;
-    font-size: 0.8em;
-    float: left;
-    display: block;
-  }
-
+.mood span {
+  border-radius: 25px;
+  padding: 3px 13px;
+  margin-right: 18px;
+  transition: all .5s;
+  color: white;
+  font-size: 0.8em;
 }
 
 // Mood colors
@@ -191,7 +124,7 @@
 #horrible   { background-color: $color__mood-horrible;  }
 
 
-.tags i, .category i {
+.tags i, .category i, .date i {
   margin-right: 5px;
   color: $color__text-light;
 }
@@ -219,10 +152,6 @@
 
   }
 
-}
-
-.category {
-  margin-bottom: 13px;
 }
 
 .post-categories {

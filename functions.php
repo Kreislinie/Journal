@@ -61,6 +61,18 @@ add_action( 'pre_get_posts', function ( $q ) {
 
 });
 
+/**
+ * Change main query / tag query with pre_get_posts in order to show entry CPT
+ */
+function bj_entry_queries( $query ) {
+
+  if ( ( $query->is_tag() && $query->is_main_query() ) || ( $query->is_home() && $query->is_main_query() ) ) {
+      $query->set( 'post_type', 'entry' );
+  }
+
+}
+add_action( 'pre_get_posts', 'bj_entry_queries' );
+
 
 /**
  * Filter the "read more" excerpt string link to the post.

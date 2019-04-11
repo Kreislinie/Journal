@@ -2,7 +2,7 @@
   display: grid;
   grid-gap: 10px;
   grid:
-    ".  head      ." 210px
+    ".  head      ." auto
     ".  content   ." auto
     ".  foot      ." 50px
   / auto minmax(400px, 755px) auto;
@@ -11,10 +11,10 @@
 .grid__main-sidebar {
   display: grid;
   grid:   
-    ".  head    head    ." 90px
-    ".  content sidebar ." auto
-    ".  foot    foot    ." auto
-  / auto minmax(400px, 700px) 260px auto;
+    ".    .       head       ." auto
+    ".    sidebar content    ." auto
+    "foot foot    foot    foot" auto
+  / auto  260px minmax(400px, 700px) auto;
 }
 
 .area__content {
