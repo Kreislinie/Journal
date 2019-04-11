@@ -73,9 +73,7 @@ add_action( 'wp_dashboard_setup', 'bj_remove_draft_widget', 999 );
 /**
  * Hide the prefix displayed at the start of archive titles.
  * Author: Ben Gillbanks
- */
-
-/**
+ *
  * Add a span around the title prefix so that the prefix can be hidden with CSS
  * if desired.
  * Note that this will only work with LTR languages.
@@ -112,3 +110,47 @@ function bj_hide_the_archive_title( $title ) {
 }
 
 add_filter( 'get_the_archive_title', 'bj_hide_the_archive_title' );
+
+/**
+ * Display mood post meta and echo mood.
+ */
+function bj_display_mood() {
+
+  $mood = get_post_meta( get_the_ID(), 'bj_mood_cmb2_mood', true );
+
+  echo '<div class="mood">';
+
+  switch( $mood ) {
+
+    case 'excellent': 
+      echo '<span id="excellent">' . esc_html__( 'Excellent', 'bitjournal' ) . '</span>';
+    break;
+
+    case 'very-good':
+      echo '<span id="very-good">' . esc_html__( 'Very good', 'bitjournal' ) . '</span>';
+    break;
+
+    case 'good':
+      echo '<span id="good">' . esc_html__( 'Good', 'bitjournal' ) . '</span>';
+    break;
+
+    case 'neutral':
+      echo '<span id="neutral">' . esc_html__( 'Neutral', 'bitjournal' ) . '</span>';
+    break;
+    
+    case 'bad':
+      echo '<span id="bad">' . esc_html__( 'Bad', 'bitjournal' ) . '</span>';
+    break;
+
+    case 'very-bad':
+      echo '<span id="very-bad">' . esc_html__( 'Very bad',  'bitjournal' ) . '</span>';
+    break;
+
+    case 'horrible':
+      echo '<span id="horrible">' . esc_html__( 'Horrible',  'bitjournal' ) . '</span>';
+    break;
+  } 
+
+  echo '</div>';
+  
+}

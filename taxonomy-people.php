@@ -13,13 +13,13 @@ get_header();
  * TODO: 
  * edit_term_link( 'Edit ' . $term->name, '<i class="fas fa-pencil-alt"></i> ' ); 
  */
-
 ?>
 
 <div id="primary" class="content-area">
   <main id="main" class="grid__main site-main">
     
     <header class="entry-header area__head">
+      <div class="people-background"></div>
       <div class="people-info-box">
 
         <?php
@@ -54,11 +54,11 @@ get_header();
           }
           
           if ( $birth ) {
-            echo '<span><i class="fas fa-birthday-cake"></i> ' . $birth . '</span>';
+            echo '<span><i class="fas fa-star-of-life"></i> ' . $birth . '</span>';
           }
 
           if (  $death ) {
-            echo '<span><i class="fas fa-skull-crossbones"></i> ' . $death . '</span>';
+            echo '<span><i class="fas fa-cross"></i> ' . $death . '</span>';
           }
 
           if ( $relation ) {

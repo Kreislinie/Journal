@@ -60,6 +60,7 @@ function bj_custom_post_types() {
     'publicly_queryable'  => true,
     'show_in_rest'        => true, // Gutenberg needs this...
     'capability_type'     => 'post',
+    'taxonomies'          => array( 'category', 'post_tag' ),
     'supports'            => array( 'editor', 'title', 'category' ),
   );
 
