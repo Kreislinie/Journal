@@ -1,0 +1,58 @@
+.people-info-box {
+  border-radius: $border__default-radius;
+  padding: 20px;
+}
+
+.people-meta {
+  max-width: 660px;
+  background-color: white;  
+  margin: 0 auto 20% auto;
+  border-radius: $border__default-radius;
+  padding: 20px;
+  z-index: 3;
+  text-align: center;
+
+  span {
+    color: $color__text-light;
+    font-size: .9em;
+    padding: 10px;
+  }
+
+}
+
+.people-profile-large {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: $shadow__default;
+  margin: 0 auto 10px auto; 
+}
+
+.date {
+  padding: 0;
+  margin: 0 15px 0 0;
+  list-style: none;
+  float: left;
+  font-size: .9em;
+  line-height: 1.9em;
+  text-decoration: none;
+  color: $color__text-light;
+  
+  i {
+    font-size: 1.2em;
+  }
+
+}
+
+.people-background {
+  background-color: hsl(0, 0%, 95%);
+  height: 632px;
+  top: -50px;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  z-index: -99;
+}

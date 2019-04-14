@@ -52,7 +52,7 @@ if ( isset( $_GET['activated'] ) && is_admin() ) :
 
   /*
    * Set permalink structure 
-   */   
+   */  
   global $wp_rewrite; 
 
   $wp_rewrite->set_permalink_structure('/%year%/%monthnum%/%day%/%postname%/'); 
@@ -63,4 +63,14 @@ if ( isset( $_GET['activated'] ) && is_admin() ) :
   //Flush the rules and tell it to write htaccess
   $wp_rewrite->flush_rules( true );
 
+  /*
+   * Set permalink structure 
+   */ 
+  wp_update_term( 1, 'category', array(
+    'name' => esc_html__('Repeated', 'bitjournal'),
+  ) );
+
 endif;
+
+
+

@@ -16,11 +16,12 @@ if ( ! function_exists( 'bitjournal_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function bitjournal_setup() {
+
 		/*
-		 * Make theme available for translation.
+		 * TODO: Make theme available for translation
 		 * Translations can be filed in the /languages/ directory.
 		 */
-		load_theme_textdomain( 'bitjournal', get_template_directory() . '/languages' );
+		// load_theme_textdomain( 'bitjournal', get_template_directory() . '/languages' );
 
 		/*
 		 * Let WordPress manage the document title.
@@ -36,8 +37,6 @@ if ( ! function_exists( 'bitjournal_setup' ) ) :
 		 */
 		add_theme_support( 'html5', array(
 			'search-form',
-			'comment-form',
-			'comment-list',
 			'gallery',
 			'caption',
 		) );
@@ -50,7 +49,48 @@ add_action( 'after_setup_theme', 'bitjournal_setup' );
 
 define( 'DISALLOW_FILE_EDIT', true );
 
+/**
+ * Change main query with pre_get_posts in order to show entry CPT
+ */
+add_action( 'pre_get_posts', function ( $q ) {
 
+  if ( $q->is_home() && $q->is_main_query() ) {
+    $q->set( 'posts_per_page', 3 );
+    $q->set( 'post_type', 'entry');
+  }
+
+});
+
+/**
+ * Change main query / tag query with pre_get_posts in order to show entry CPT
+ */
+function bj_entry_queries( $query ) {
+
+  if ( ( $query->is_tag() && $query->is_main_query() ) || ( $query->is_home() && $query->is_main_query() ) ) {
+      $query->set( 'post_type', 'entry' );
+  }
+
+}
+add_action( 'pre_get_posts', 'bj_entry_queries' );
+
+
+/**
+ * Filter the "read more" excerpt string link to the post.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string Modified "read more" excerpt string.
+ */
+function bj_excerpt_more( $more ) {
+  if ( ! is_single() ) {
+      $more = sprintf( '... <a class="read-more" href="%1$s">%2$s<i class="fas fa-angle-right"></i></a>',
+          get_permalink( get_the_ID() ),
+          __( 'read more', 'bitjournal' )
+      );
+  }
+
+  return $more;
+}
+add_filter( 'excerpt_more', 'bj_excerpt_more' );
 
 /**
  * Setup pages if template activated.
@@ -72,11 +112,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Custom taxonomies for bitjournal.

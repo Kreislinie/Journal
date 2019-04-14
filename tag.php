@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying entry single posts
+ * The template for displaying archive pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package bitjournal
  */
@@ -10,11 +10,16 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="grid__main site-main">
+	<div id="primary" class="main-grid content-area">
+		<main id="main" class="content site-main">
+<h1>tags</h1>
 
-    <header class="entry-header area__head">
-    </header><!-- .entry-header -->
+
+
+
+        
+
+			</header><!-- .page-header -->
 
 
         <?php
@@ -30,4 +35,5 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
+get_sidebar();
 get_footer();

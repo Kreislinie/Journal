@@ -1,0 +1,67 @@
+.auto-row-grid {
+  width: 100%;
+  display: grid;
+  grid-template-areas: ". . .";
+  grid-gap: 20px;
+  grid-auto-rows: min-content;
+}
+
+.archive-overview {
+  cursor: pointer;
+
+  height: auto;
+
+  background-color: white;
+  box-shadow: $shadow__minimal;
+  border-radius: $border__default-radius;
+
+
+  &__year-link {
+    background-color: $color__bitjournal-blue;
+    color: white;
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    padding: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.7em;
+    border-top-left-radius: $border__default-radius;
+    border-top-right-radius: $border__default-radius;
+
+    &:visited {
+      color: white;
+    }
+
+    &:hover {
+      color: white;
+    }
+
+  }
+  
+  &__month-link {
+    display: block;
+    padding: 5px 20px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    text-decoration: none;
+
+    &:hover {
+      background-color: lighten($color__text-main, 75);
+    }
+
+  }
+
+  &__count {
+    background-color: $color__bitjournal-blue;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    display: block;
+    float: right;
+    text-align: center;
+    color: white;
+    font-size: 0.7em;
+  }
+
+}

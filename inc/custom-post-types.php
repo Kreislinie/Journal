@@ -60,10 +60,11 @@ function bj_custom_post_types() {
     'publicly_queryable'  => true,
     'show_in_rest'        => true, // Gutenberg needs this...
     'capability_type'     => 'post',
+    'taxonomies'          => array( 'category', 'post_tag' ),
     'supports'            => array( 'editor', 'title', 'category' ),
   );
 
-  $args_healt_record = array(
+  $args_health_record = array(
     'labels'              => $labels_health_record,
     'menu_icon'           => 'dashicons-plus-alt',
     'hierarchical'        => false,
@@ -84,7 +85,7 @@ function bj_custom_post_types() {
     
   // Registering Entry and Health Record post types
   register_post_type( 'entry', $args_entry );
-  register_post_type( 'health-record', $args_healt_record );
+  register_post_type( 'health-record', $args_health_record );
 
 }
    

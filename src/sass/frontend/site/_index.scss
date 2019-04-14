@@ -1,0 +1,57 @@
+.nav-previous {
+  width: 50%;
+  float: left;
+
+  &:before {
+    // font awesome icon
+    content: "\f104";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+  }
+
+}
+
+.nav-next {
+  width: 50%;
+  float: right;
+  text-align: right;
+
+  &:after {
+    // font awesome icon
+    content: "\f105";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+  }
+
+}
+
+.home {
+  a {
+  text-decoration: none;
+  }
+
+  .read-more {
+    color: $color__bitjournal-blue;
+  } 
+
+  .bj-posted-on {
+    display: block;
+    transform: translateY(8px);
+  }
+
+  .fa-calendar-alt {
+    float: left;  
+    transform: translateY(10px);
+    color: $color__bitjournal-blue;
+    margin-right: 5px;
+  }
+
+  .entry-content {
+    margin-bottom: 100px;
+  }
+
+  .entry-title {
+    line-height: 1.2em;
+  }
+
+}

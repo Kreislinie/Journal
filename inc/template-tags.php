@@ -22,10 +22,10 @@ if ( ! function_exists( 'bitjournal_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			'<a class="bj-posted-on">' . $time_string . '</a>'
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		echo $posted_on;
 
 	}
 endif;

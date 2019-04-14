@@ -10,44 +10,75 @@
 get_header();
 ?>
 
-	<div id="primary" class="main-grid content-area">
-		<main id="main" class="content site-main">
+<div id="primary" class="content-area">
+		<main id="main" class="grid__main site-main">
+      <div class="area__content">
 
     <?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-        <h1>bj archive general</h1>
 				<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
+        the_archive_description( '<div class="archive-description">', '</div>' );
+
+
+
+
 				?>
-			</header><!-- .page-header -->
+      </header><!-- .page-header -->
+      
+
 
       <?php
       
-      
-			/* Start the Loop */
+
+            if( is_year() ) :
+              echo '<h1>This is a year archive</h1>';
+
+
+              $archive_monthly = array(
+                'type'    =>  'monthly',
+                'format'  =>  'custom',
+                'before'  =>  '<div>',
+                'after'   =>  '</div>',
+                'post_type'     => 'entry',
+                'show_post_count' => true,
+              );
+              wp_get_archives($archive_yearly);
+              wp_get_archives($archive_monthly);    
+
+
+
+            endif;
+
+
 			while ( have_posts() ) :
 				the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
+
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_navigation(
+        array(
+          'prev_text'          => __( 'Older entries', 'bitjournal' ),
+          'next_text'          => __( 'Newer entries', 'bitjournal' ),
+          'screen_reader_text' => __( 'Entries navigation', 'bitjournal' ),
+        )
+      );
 
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif;
+    endif;
+    
+
+
 		?>
 
+</div><!-- .area__content -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
