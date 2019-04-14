@@ -145,9 +145,9 @@ require get_template_directory() . '/inc/vendors/cmb2-icon-picker/cmb2-icon-pick
  */
 require 'inc/vendors/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/Kreislinie/bitjournal/',
+	'https://raw.githubusercontent.com/Kreislinie/bitjournal/master/puc-release.json',
 	__FILE__,
-	'bitjournal'
+	'unique-plugin-or-theme-slug'
 );
 
 $myUpdateChecker->getVcsApi()->enableReleaseAssets();
