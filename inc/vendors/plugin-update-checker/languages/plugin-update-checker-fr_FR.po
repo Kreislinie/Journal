@@ -39,4 +39,4 @@ msgstr "Un problème inconnu est survenu \"%s\""
 
 #: Puc/v4p1/Vcs/PluginUpdateChecker.php:85
 msgid "There is no changelog available."
-msgstr "Il n’y a aucun bitjournal de mise à jour disponible."
+msgstr "Il n’y a aucun journal de mise à jour disponible."
