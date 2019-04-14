@@ -138,18 +138,6 @@ require get_template_directory() . '/inc/backend-pages.php';
  */
 require get_template_directory() . '/inc/vendors/cmb2-icon-picker/cmb2-icon-picker.php';
 
-/**
- * Load update checker by Yahnis Elsts.
- * 
- * @link https://github.com/YahnisElsts/plugin-update-checker
- */
-require 'inc/vendors/plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://raw.githubusercontent.com/Kreislinie/bitjournal/master/puc-release.json',
-	__FILE__,
-	'bitjournal'
-);
-
 
 add_filter( 'rest_authentication_errors', function( $result ) {
   if ( ! empty( $result ) ) {
