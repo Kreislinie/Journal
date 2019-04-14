@@ -147,10 +147,9 @@ require 'inc/vendors/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://raw.githubusercontent.com/Kreislinie/bitjournal/master/puc-release.json',
 	__FILE__,
-	'unique-plugin-or-theme-slug'
+	'bitjournal'
 );
 
-$myUpdateChecker->getVcsApi()->enableReleaseAssets();
 
 add_filter( 'rest_authentication_errors', function( $result ) {
   if ( ! empty( $result ) ) {
