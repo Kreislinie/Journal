@@ -1,14 +1,13 @@
 .people-info-box {
   border-radius: $border__default-radius;
-  padding: 20px;
 }
 
 .people-meta {
-  max-width: 660px;
+  width: 100%;
   background-color: white;  
-  margin: 0 auto 20% auto;
+  margin: 0 auto 0 auto;
   border-radius: $border__default-radius;
-  padding: 20px;
+  padding: 20px 10% 20px 10%;
   z-index: 3;
   text-align: center;
 
@@ -21,6 +20,7 @@
 }
 
 .people-profile-large {
+  border: 5px solid white;
   width: 250px;
   height: 250px;
   border-radius: 100%;
@@ -28,7 +28,7 @@
   background-position: center;
   background-size: cover;
   box-shadow: $shadow__default;
-  margin: 0 auto 10px auto; 
+  margin: -65px auto 65px auto; 
 }
 
 .date {
@@ -48,11 +48,14 @@
 }
 
 .people-background {
+  display: grid;
+  grid-row: 1 / 2;
+  grid-column: 1 / 4;
   background-color: hsl(0, 0%, 95%);
-  height: 632px;
-  top: -50px;
-  width: 100%;
-  left: 0;
-  position: absolute;
+  height: 80%;
   z-index: -99;
+}
+
+.taxonomy-content {
+  margin-top: 175px;
 }

@@ -17,9 +17,9 @@ get_header();
 
 <div id="primary" class="content-area">
   <main id="main" class="grid__main site-main">
-    
+    <div class="people-background"></div>
+      
     <header class="entry-header area__head">
-      <div class="people-background"></div>
       <div class="people-info-box">
 
         <?php
@@ -66,17 +66,17 @@ get_header();
           }
 
           ?>
-  
+
         </div><!-- .people-meta -->
 
       </div><!-- .people-info-box -->
     </header><!-- .entry-header -->
-  
-    <div class="area__content">
+    
+    <div class="area__content taxonomy-content">
     
       <?php 
       if ( have_posts() ) :
-  
+
         while ( have_posts() ) : the_post();
 
           get_template_part( 'template-parts/content', 'people' );
@@ -86,7 +86,7 @@ get_header();
         the_posts_navigation();
 
       else :
-  
+
         get_template_part( 'template-parts/content', 'none' );
 
       endif;

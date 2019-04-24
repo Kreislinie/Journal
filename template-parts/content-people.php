@@ -31,16 +31,20 @@
         echo '</div>';
       }
 
-      /**
+
+      ?>
+    
+    </div><!-- .entry-header-container -->
+
+    <?php
+    /**
        * Display date, title and excerpt.
        */
      
       the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
       the_excerpt();
-      ?>
-    
-    </div><!-- .entry-header-container -->
 
+      ?>
   </article><!-- #post-<?php the_ID(); ?> -->
   
 </div><!-- .entry-content -->

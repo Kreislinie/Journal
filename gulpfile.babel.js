@@ -70,7 +70,6 @@ const beep = require( 'beepbeep' );
 const errorHandler = r => {
 	notify.onError( '\n\n❌  ===> ERROR: <%= error.message %>\n' )( r );
 	beep();
-
 	// this.emit('end');
 };
 

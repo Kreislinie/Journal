@@ -37,7 +37,7 @@ function bj_add_settings_page() {
 }
 
 function bj_settings_page_content() {
-  echo 'yessss 0.3.36';
+  echo 'testing';
 }
 
 add_action( 'admin_menu', 'bj_add_settings_page' );

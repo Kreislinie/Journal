@@ -24,34 +24,3 @@
   }
 
 }
-
-.home {
-  a {
-  text-decoration: none;
-  }
-
-  .read-more {
-    color: $color__bitjournal-blue;
-  } 
-
-  .bj-posted-on {
-    display: block;
-    transform: translateY(8px);
-  }
-
-  .fa-calendar-alt {
-    float: left;  
-    transform: translateY(10px);
-    color: $color__bitjournal-blue;
-    margin-right: 5px;
-  }
-
-  .entry-content {
-    margin-bottom: 100px;
-  }
-
-  .entry-title {
-    line-height: 1.2em;
-  }
-
-}
