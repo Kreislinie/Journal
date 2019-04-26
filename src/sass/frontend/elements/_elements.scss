@@ -12,11 +12,14 @@ body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
+// hr element
 hr {
-	background-color: $color__background-hr;
-	border: 10px;
-	height: 1px;
-	margin-bottom: 1.5em;
+	background-color: $color__icon;
+  border: 10px;
+  height: 2px;
+  margin-bottom: 4.5em;
+  width: 45%;
+  margin-top: 4.5em;
 }
 
 @import "lists";

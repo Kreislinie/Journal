@@ -16,10 +16,13 @@
 
       <?php 
       /**
-       * Display mood post meta and echo mood.
+       * Display mood post meta.
        */
       bj_display_mood();
 
+      /**
+       * Display date.
+       */
       echo '<span class="date"><i class="far fa-calendar-alt"></i>' . get_the_date() . '</span>';
 
       /** 
@@ -30,6 +33,7 @@
         the_category( '', 'multiple' );
         echo '</div>';
       }
+      
 
 
       ?>
@@ -38,13 +42,14 @@
 
     <?php
     /**
-       * Display date, title and excerpt.
-       */
-     
-      the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-      the_excerpt();
+     * Display date, title and excerpt.
+     */
+    $edit_icon = '<a class="edit-entry-link" href="' . get_edit_post_link() . '"><i class="fas fa-pencil-alt"></i></a>';
 
-      ?>
+    the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', $edit_icon . '</a></h2>' );
+    the_excerpt();
+    ?>
+
   </article><!-- #post-<?php the_ID(); ?> -->
   
 </div><!-- .entry-content -->
@@ -63,7 +68,6 @@
 
     
  
-    edit_post_link( 'Edit Entry', '<div class="edit-entry-link"><i class="fas fa-pencil-alt"></i> ', '</div>');
 
    
     ?>
