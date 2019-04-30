@@ -33,9 +33,6 @@
         the_category( '', 'multiple' );
         echo '</div>';
       }
-      
-
-
       ?>
     
     </div><!-- .entry-header-container -->
@@ -47,7 +44,7 @@
     $edit_icon = '<a class="edit-entry-link" href="' . get_edit_post_link() . '"><i class="fas fa-pencil-alt"></i></a>';
 
     the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', $edit_icon . '</a></h2>' );
-    the_excerpt();
+    echo '<div class="link" data-url="' . esc_url( get_permalink() ) . '"><p>' . get_the_excerpt() . '</p></div>';
     ?>
 
   </article><!-- #post-<?php the_ID(); ?> -->

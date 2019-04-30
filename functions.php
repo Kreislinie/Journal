@@ -81,14 +81,15 @@ add_action( 'pre_get_posts', 'bj_entry_queries' );
  * @return string Modified "read more" excerpt string.
  */
 function bj_excerpt_more( $more ) {
+  
   if ( ! is_single() ) {
-      $more = sprintf( '... <a class="read-more" href="%1$s">%2$s<i class="fas fa-angle-right"></i></a>',
-          get_permalink( get_the_ID() ),
-          __( 'read more', 'bitjournal' )
-      );
+
+    $more = ' ...';
+      
   }
 
   return $more;
+
 }
 add_filter( 'excerpt_more', 'bj_excerpt_more' );
 
@@ -149,14 +150,14 @@ add_filter( 'rest_authentication_errors', function( $result ) {
   return $result;
 });
 
-function itsme_disable_feed() {
+function bitjournal_disable_feed() {
   wp_die( __( 'No feed available, please visit the <a href="'. esc_url( home_url( '/' ) ) .'">homepage</a>!' ) );
 }
 
-add_action('do_feed', 'itsme_disable_feed', 1);
-add_action('do_feed_rdf', 'itsme_disable_feed', 1);
-add_action('do_feed_rss', 'itsme_disable_feed', 1);
-add_action('do_feed_rss2', 'itsme_disable_feed', 1);
-add_action('do_feed_atom', 'itsme_disable_feed', 1);
-add_action('do_feed_rss2_comments', 'itsme_disable_feed', 1);
-add_action('do_feed_atom_comments', 'itsme_disable_feed', 1);
+add_action('do_feed', 'bitjournal_disable_feed', 1);
+add_action('do_feed_rdf', 'bitjournal_disable_feed', 1);
+add_action('do_feed_rss', 'bitjournal_disable_feed', 1);
+add_action('do_feed_rss2', 'bitjournal_disable_feed', 1);
+add_action('do_feed_atom', 'bitjournal_disable_feed', 1);
+add_action('do_feed_rss2_comments', 'bitjournal_disable_feed', 1);
+add_action('do_feed_atom_comments', 'bitjournal_disable_feed', 1);

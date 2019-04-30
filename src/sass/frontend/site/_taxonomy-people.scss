@@ -59,3 +59,15 @@
 .taxonomy-content {
   margin-top: 175px;
 }
+
+.read-more {
+  text-decoration: none;
+  color: $color__text-light;
+
+  i {
+    margin-left: 5px;
+    color: $color__text-light;
+
+  }
+  
+}

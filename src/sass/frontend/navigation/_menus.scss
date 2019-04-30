@@ -16,7 +16,7 @@ $navbar-height: 60px;
   }
 
 }
-
+/* OVERLAY MENU 
 .navbar-right {
   z-index: 1005;
 
@@ -100,6 +100,28 @@ $navbar-height: 60px;
   &__opened {
     opacity: 1;
     top: 0;
+  }
+
+}
+*/
+
+
+.navbar-right {
+  z-index: 1005;
+  margin: 18px;
+  text-align: right;
+  right: 0;
+  
+  a {
+    text-decoration: none;
+    display: inline;
+    margin-left: 20px;
+    padding-top: 10px;
+
+    &:hover {
+      font-weight: 700;
+    }    
+
   }
 
 }

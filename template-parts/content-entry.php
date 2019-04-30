@@ -18,17 +18,15 @@
 
         <?php 
         /**
-         * Display mood post meta.
+         * Displays mood post meta.
          */
         bj_display_mood();
 
         /** 
-         * Display category names.
+         * Displays categories.
          */ 
         if ( has_category() ) {
-          echo '<div class="category"><i class="fas fa-sitemap"></i>';
-          the_category( '', 'multiple' );
-          echo '</div>';
+          bj_display_category();
         }
         ?>
 
@@ -36,10 +34,11 @@
 
       <?php 
       /**
-       * Get edit post icon and link.
-       * Display post title with edit icon.
+       * Gets edit post icon and link.
+       * Displays post title with edit icon.
        */
-      $edit_icon = '<a class="edit-entry-link" href="' . get_edit_post_link() . '"><i class="fas fa-pencil-alt"></i></a>';
+      $edit_icon = sprintf( '<a class="edit-entry-link" href="%s"><i class="fas fa-pencil-alt"></i></a>', get_edit_post_link() );
+
       the_title( '<h1 class="entry-title">', $edit_icon . '</h1>' );
 
       /**
@@ -58,40 +57,43 @@
 
   <?php
   /**
-   * Get people term meta.
+   * Gets people term meta.
    */
   $people = wp_get_post_terms(get_the_ID(), 'people'); 
 
   /**
-   * If entry has meta information, display post/post-meta seperator.
+   * Checks if entry has meta information, displays post/post-meta seperator.
    */
   if( $people || has_tag() ) {
     echo '<hr class="post-meta-seperator">';
   }
 
   /**
-   * Display the post tags and FA icon.
+   * Displays the post tags and FA icon.
    */
   the_tags( '<div class="tags"><i class="fas fa-tags"></i>', '', '</div>' ); 
 
 
   /** 
-   * Display people term meta of current post
+   * Displays people term meta of current post.
    */ 
   if ( ! is_wp_error( $people ) && $people ) :
 
     echo '<div class="people-container">';
 
     foreach ( $people as $term ) :
-          
+      
+      /**
+       * Gets link and profile picture.
+       */
       $person_link = get_term_link($term);
       $avatar = wp_get_attachment_image(get_term_meta( $term->term_id, 'bj_people_cmb2_picture_id', true )); ?>
 
-      <div data-url="<?php echo esc_url( $person_link ); ?>" class="person-overview">
+      <div data-url="<?php echo esc_url( $person_link ); ?>" class="link person-overview">
           
         <?php 
         /**
-         * If person has image display it, otherwise display placeholder.
+         * Displays profile picture if person has one, otherwise placeholder.
          */
         if ($avatar) {
 
@@ -99,12 +101,12 @@
 
         } else { 
 
-          echo '<img src="' . get_template_directory_uri() . '/img/no-profile.png' .'" alt="no profile picture">';
+          echo '<img src="' . esc_url( get_template_directory_uri() . '/img/no-profile.png' ) .'" alt="Profile picture placeholder">';
 
         }
         ?>
         
-        <p><?php echo $term->name; // Name of the person. ?></p>
+        <p><?php echo $term->name; // Displays name of the person. ?></p>
 
       </div><!-- .person-overview -->
      

@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions which enhance the theme by hooking into WordPress
+ * Functions which enhance the theme...
  *
  * @package bitjournal
  */
@@ -12,6 +12,7 @@
  * @return array
  */
 function bitjournal_body_classes( $classes ) {
+
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -27,7 +28,7 @@ function bitjournal_body_classes( $classes ) {
 add_filter( 'body_class', 'bitjournal_body_classes' );
 
 /**
- * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+ * Adds a pingback url auto-discovery header for single posts, pages, or attachments.
  */
 function bitjournal_pingback_header() {
 	if ( is_singular() && pings_open() ) {
@@ -38,8 +39,8 @@ add_action( 'wp_head', 'bitjournal_pingback_header' );
 
 
 /** 
-* Display archive post count between <span> tags
-*/
+ * Displays archive post count between <span> tags
+ */
 function bj_archive_post_count( $link_html ) {
   $link_html = str_replace( '</a>&nbsp;(', '</a> <span class="archiveCount">', $link_html );
   $link_html = str_replace( ')', '</span>', $link_html );
@@ -49,8 +50,8 @@ function bj_archive_post_count( $link_html ) {
 add_filter( 'get_archives_link', 'bj_archive_post_count' );
 
 /** 
-* Hide default WP post type
-*/
+ * Hide default WP post type
+ */
 function bj_remove_default_post_type() {
   remove_menu_page( 'edit.php' );
 }
@@ -112,7 +113,7 @@ function bj_hide_the_archive_title( $title ) {
 add_filter( 'get_the_archive_title', 'bj_hide_the_archive_title' );
 
 /**
- * Display mood post meta and echo mood.
+ * Displays mood post meta.
  */
 function bj_display_mood() {
 
@@ -153,4 +154,13 @@ function bj_display_mood() {
 
   echo '</div>';
   
+}
+
+
+function bj_display_category() {
+
+  echo '<div class="category"><i class="fas fa-sitemap"></i>';
+  the_category( '', 'multiple' ) ;
+  echo '</div>';
+
 }

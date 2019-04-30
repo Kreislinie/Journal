@@ -3,9 +3,10 @@
 jQuery(document).ready( function ($) {
 
   /**
-   * Make single entry person card clickable
+   * Makes elements clickable.
+   * Html element needs "link" class. Use data-url html attribute to set url.
    */
-  $( '.person-overview' ).click( function () {
+  $( '.link' ).click( function () {
     window.location = $(this).data( 'url' );
     return false;
   });
@@ -19,8 +20,6 @@ jQuery(document).ready( function ($) {
 
     $( '.menu-overlay' ).toggleClass( 'menu-overlay__opened' );
     $( '.menu-overlay' ).toggleClass( 'menu-overlay__closed' );
-
-
   } );
 
 });
