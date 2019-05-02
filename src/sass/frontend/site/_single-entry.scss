@@ -54,36 +54,50 @@
   2.0 - People Cards
 ------------------------------------------------------------ */
 
+.people-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+}
+
+.single-entry .people-container {
+  display: flex;
+}
+
 .person-overview {
   justify-self: start;
   padding: 11px 9px;
-  background-color: hsl(0, 0%, 95%);
+  // background-color: hsl(0, 0%, 95%);
   border-radius: $border__default-radius;
-  float: left;
+  justify-self: center;
   text-align: center;
-  width: 83px;
-  height: 96px;
+  width: 115px;
   margin: 0 10px 16px 0;
   cursor: pointer;
+  border: 1px solid white;
+  transition: .7s ease all;
+
+
+  &:hover {
+    border: 1px solid $color__bitjournal-blue;
+    background: lighten($color__bitjournal-blue, 50);
+  }
 
   img {
     border-radius: 100%;
-    border: 3px solid white;
+    // border: 3px solid white;
     width: 90px;
     box-shadow: $shadow__default;
   }
 
   p {
     overflow: hidden;
-    white-space: nowrap; 
+    font-weight: 500;
     text-overflow: ellipsis;
     width: 100%;
+    height: 38px;
     padding: 0 5px;
+    margin: 0;
     border-radius: 10px;
-    transform: translateY(-30px);
-    z-index: 5;
-    background-color: white;
-    box-shadow: $shadow__default;
     font-size: .8em;
     line-height: 1.5em;
   }
@@ -107,15 +121,19 @@
 
 .mood  {
   float: left;
-}
 
-.mood span {
-  border-radius: 25px;
-  padding: 3px 13px;
-  margin-right: 18px;
-  transition: all .5s;
-  color: white;
-  font-size: 0.8em;
+  span {
+    border-radius: 25px;
+    padding: 3px 13px;
+    margin-right: 18px;
+    transition: all .5s;
+    color: white;
+    font-size: 0.8em;
+  }
+
+}
+.category {
+  margin-top: 2px;
 }
 
 // Mood colors
