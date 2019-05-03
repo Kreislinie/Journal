@@ -1,3 +1,8 @@
+.people-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+}
+
 .people-info-box {
   border-radius: $border__default-radius;
 }
@@ -72,9 +77,8 @@
   
 }
 
-.page-people .area__head {
-  margin-bottom: 70px;
-  text-align: center;
+.page-people .area__head, .page-archive .area__head {
+  margin-bottom: 100px;
 
   a {
     margin-left: 0;

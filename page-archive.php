@@ -8,69 +8,88 @@
 get_header();
 ?>
 
-<div id="primary" class="content-area">
-		<main id="main" class="grid__main site-main">
-      <div class="area__content">
-      <h1>bitjournal index</h1>
+<div id="primary" class="page-archive content-area">
+  <main id="main" class="grid__main site-main">
 
-<div class="auto-row-grid">
-    
+    <header class="entry-header area__head">
+      <h1><?php echo esc_html__('Archive', 'bitjournal') ?></h1>
+    </header><!-- .entry-header -->
+
+    <div class="area__content auto-grid">
+
+      <?php 
+      /**
+       * 
+       */
+      global $wpdb;
+      $limit = 0;
+      $year_prev = null;
+      $archive = $wpdb->get_results(
+        "SELECT DISTINCT MONTH( post_date ) AS month,
+        YEAR( post_date ) AS year, 
+        COUNT( id ) as post_count FROM $wpdb->posts WHERE post_status = 'publish' and post_date <= now( ) and post_type = 'entry' GROUP BY month,
+        year ORDER BY post_date DESC"
+      );
+
+      /**
+       * Generates an outputs archive overview structure.
+       * 
+       * 'div.archive-overview' always contains one year with
+       * the corresponding year date 'a.archive-overview__year-link' and 
+       * every moth 'a.archive-overview__month-link' in which one or more entry was written.
+       */
+
+       /**
+       * Opens first div.archive-overview.
+       */
+      echo '<div class="archive-overview">';
+
+        foreach($archive as $date) :
+
+          $year_current = $date->year;
+
+          if ($year_current != $year_prev) :
+
+            if ($year_prev != null) { 
+              echo '</div><div class="archive-overview">';
+            }
+
+            /**
+             * Prints year and link to year archive.
+             */
+            printf('<a class="archive-overview__year-link" href="%s/%s/?post_type=entry">%s</a>', get_bloginfo('url'), $date->year, $date->year);
+
+          endif; 
+
+          /**
+           * Gets URL to month archive
+           */
+          $url_month = get_bloginfo('url') . '/' . $date->year . '/' . date("m", mktime(0, 0, 0, $date->month, 1, $date->year)) . '/?post_type=entry';
+          ?>
+
+          <a class="archive-overview__month-link" href="<?php echo $url_month ?>">
+            <span class="archive-overview__month"><?php echo date_i18n("F", mktime(0, 0, 0, $date->month, 1, $date->year)); ?></span>
+            <span class="archive-overview__count"><?php echo $date->post_count; ?></span>
+          </a>
+
+          <?php 
+
+          $year_prev = $year_current;
+        
+        endforeach;
+
+      /**
+       * Closes last div.archive-overview.
+       */
+      echo '</div>';
+
+      ?>
 
 
-
-<?php 
-global $wpdb;
-$limit = 0;
-$year_prev = null;
-$months = $wpdb->get_results(
-  "SELECT DISTINCT MONTH( post_date ) AS month,
-  YEAR( post_date ) AS year, 
-  COUNT( id ) as post_count FROM $wpdb->posts WHERE post_status = 'publish' and post_date <= now( ) and post_type = 'entry' GROUP BY month , 
-  year ORDER BY post_date DESC"
-);
-?>
-
-<div class="archive-overview">
-
-<?php
-foreach($months as $month) :
-
-  $year_current = $month->year;
-
-  if ($year_current != $year_prev) :
-
-    if ($year_prev != null) : 
-    ?>
-
-      </div>
-      <div class="archive-overview">
-    
-    <?php 
-    endif; 
-    ?>
-      
-    <a class="archive-overview__year-link" href="<?php bloginfo('url') ?>/<?php echo $month->year; ?>/?post_type=entry"><?php echo $month->year; ?></a>
-     
-  <?php
-  endif; 
-  ?>
-
-  <a class="archive-overview__month-link" href="<?php bloginfo('url') ?>/<?php echo $month->year; ?>/<?php echo date("m", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>/?post_type=entry">
-  <span class="archive-overview__month"><?php echo date_i18n("F", mktime(0, 0, 0, $month->month, 1, $month->year)); ?></span><span class="archive-overview__count"><?php echo $month->post_count; ?></span></a>
-
-  <?php $year_prev = $year_current; ?>
-
-  <?php
-  if(++$limit >= 10000000) { break; }
+    </div><!-- .area__content -->
   
-endforeach;
-?>
-
-</div><!-- last .archive-overview -->
-</div><!-- .auto-row-grid -->
-</div><!-- .area__content -->
-		</main><!-- #main -->
-	</div><!-- #primary -->
+  </main><!-- #main -->
+</div><!-- .content-area -->
 
 <?php
 get_footer();

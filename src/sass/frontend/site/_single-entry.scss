@@ -3,16 +3,9 @@
   color: $color__icon;
 }
 
-.entry-title {
-  margin: 10px 0 0 0;
-  clear: none;
-  line-height: 1.2em;
-
-  i {
-    color: $color__bitjournal-blue;
-    font-size: 0.5em;
-  }
-
+.entry-title i {
+  color: $color__bitjournal-blue;
+  font-size: 0.5em;
 }
 
 .entry-content {
@@ -53,11 +46,6 @@
 /* ------------------------------------------------------------
   2.0 - People Cards
 ------------------------------------------------------------ */
-
-.people-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
-}
 
 .single-entry .people-container {
   display: flex;
@@ -117,6 +105,11 @@
   display: grid;
   grid-area: head;
   margin-top: 180px;
+
+  h1 {
+    text-align: center;
+  }
+
 }
 
 .mood  {

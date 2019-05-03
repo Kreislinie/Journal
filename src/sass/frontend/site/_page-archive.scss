@@ -1,67 +1,62 @@
-.auto-row-grid {
-  width: 100%;
+
+.auto-grid {
   display: grid;
-  grid-template-areas: ". . .";
-  grid-gap: 20px;
-  grid-auto-rows: min-content;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  grid-gap: 50px;
 }
 
 .archive-overview {
   cursor: pointer;
-
   height: auto;
-
   background-color: white;
-  box-shadow: $shadow__minimal;
   border-radius: $border__default-radius;
-
+  padding: 15px;
 
   &__year-link {
-    background-color: $color__bitjournal-blue;
-    color: white;
+    transition: all ease .4s;
+    color: $color__text-main;
     display: block;
     text-align: center;
-    border-bottom: 1px solid rgb(224, 224, 224);
     padding: 20px;
     text-decoration: none;
     font-weight: 500;
     font-size: 1.7em;
-    border-top-left-radius: $border__default-radius;
-    border-top-right-radius: $border__default-radius;
-
-    &:visited {
-      color: white;
-    }
 
     &:hover {
-      color: white;
+      color: $color__bitjournal-blue;
     }
 
   }
-  
+
   &__month-link {
     display: block;
-    padding: 5px 20px;
-    border-bottom: 1px solid rgb(224, 224, 224);
+    padding: 5px 5px 5px 20px;
+    border: 1px solid $color__ultralight;
     text-decoration: none;
+    transition: all ease .7s;
+    border-radius: $border__default-radius;
+    margin-top: 5px;
 
     &:hover {
-      background-color: lighten($color__text-main, 75);
+      background-color: lighten($color__bitjournal-blue, 50);
+      border: 1px solid $color__bitjournal-blue;
+
     }
 
   }
 
   &__count {
-    background-color: $color__bitjournal-blue;
-    border-radius: 100%;
+    border-left: 1px solid $color__ultralight;
+
     width: 25px;
     height: 25px;
     line-height: 25px;
     display: block;
     float: right;
     text-align: center;
-    color: white;
+
     font-size: 0.7em;
   }
 
 }
+
