@@ -18,9 +18,18 @@ get_header();
 <div id="primary" class="content-area">
   <main id="main" class="grid__main site-main">
 
-    <header class="entry-header area__head">
-      <h1 style="text-align: center;">Simon Mettler</h1>
-    </header><!-- .entry-header -->
+    <?php
+    /**
+     * Displays header with name of user if on first page.
+     * (No header on paged sites.)
+     */
+    $current_user = wp_get_current_user();
+
+    if ( !is_paged() ) {
+      printf( '<header class="entry-header area__head"><h1>%s</h1></header><!-- .entry-header -->', $current_user->user_firstname ); 
+    }
+    ?>
+ 
       
     <div class="area__content taxonomy-content">
     
@@ -33,21 +42,11 @@ get_header();
 
         endwhile;
 
-        the_posts_navigation();
-
       else :
 
         get_template_part( 'template-parts/content', 'none' );
 
       endif;
-      
-			the_posts_navigation(
-        array(
-          'prev_text'          => __( 'Older entries', 'bitjournal' ),
-          'next_text'          => __( 'Newer entries', 'bitjournal' ),
-          'screen_reader_text' => __( 'Entries navigation', 'bitjournal' ),
-        )
-      );
       ?>
 
     </div><!-- .area__content -->

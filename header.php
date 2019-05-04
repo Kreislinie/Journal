@@ -61,15 +61,24 @@
               elseif( is_archive() ) :
               the_archive_title( '<p>', '</p>' );
 
+              elseif( is_home() ) : 
+              the_posts_navigation(
+                array(
+                  'prev_text'          => esc_html__( 'Older entries', 'bitjournal' ),
+                  'next_text'          => esc_html__( 'Newer entries', 'bitjournal' ),
+                  'screen_reader_text' => esc_html__( 'Entries navigation', 'bitjournal' ),
+                )
+              );
+
             endif; 
             ?>
 
           </div><!-- .entry-meta -->
 
           <div class="navbar-right">
-            <a href="<?php echo home_url() . '/people' ?>">People</a>
-            <a href="<?php echo home_url() . '/archive' ?>">Archive</a>
-            <a href="<?php echo home_url() . '/archive' ?>">Health Records</a>
+            <a href="<?php echo home_url() . '/people' ?>"><i class="fas fa-users"></i>People</a>
+            <a href="<?php echo home_url() . '/archive' ?>"><i class="fas fa-boxes"></i>Archive</a>
+            <a href="<?php echo home_url() . '/archive' ?>"><i class="fas fa-book"></i>Home</a>
           </div>
 
         </nav><!-- .main-navigation -->

@@ -3,9 +3,13 @@
   color: $color__icon;
 }
 
-.entry-title i {
-  color: $color__bitjournal-blue;
-  font-size: 0.5em;
+.entry-title {
+  margin-top: 0;
+
+  i {
+    color: $color__bitjournal-blue;
+    font-size: 0.5em;
+  }
 }
 
 .entry-content {

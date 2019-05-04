@@ -111,17 +111,26 @@ $navbar-height: 60px;
   margin: 18px;
   text-align: right;
   right: 0;
+  float: right;
+  width: auto;
   
   a {
     text-decoration: none;
+    cursor: pointer;
     display: inline;
     margin-left: 20px;
     padding-top: 10px;
+    color: $color__text-light;
+    transition: all ease .3s;
 
     &:hover {
-      font-weight: 700;
+color: $color__bitjournal-blue;
     }    
 
+  }
+
+  i {
+    margin-right: 10px;
   }
 
 }
