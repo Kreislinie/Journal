@@ -105,32 +105,80 @@ $navbar-height: 60px;
 }
 */
 
-
+/**
+ * === There's a 3px gap between the menu items a elements. Why? 0.o ===
+ * 
+ * Right (main) menu styling.
+ */
 .navbar-right {
   z-index: 1005;
-  margin: 18px;
   text-align: right;
-  right: 0;
   float: right;
   width: auto;
   
   a {
     text-decoration: none;
     cursor: pointer;
-    display: inline;
-    margin-left: 20px;
-    padding-top: 10px;
-    color: $color__text-light;
-    transition: all ease .3s;
+    display: inline-block;
+    padding: 18px 15px 17px 15px; 
+    transition: all ease .4s;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
 
     &:hover {
-color: $color__bitjournal-blue;
+      background-color: lighten($color__bitjournal-blue, 50);
+      border-left: 1px solid $color__bitjournal_blue;
+      border-right: 1px solid $color__bitjournal_blue;
     }    
 
   }
 
-  i {
-    margin-right: 10px;
+}
+
+/**
+ * Top bar middle menu (mainly used for showing date, page number, ...) styling.
+ */
+.posts-navigation {
+  text-align: center;
+  font-weight: 300;
+  height: 60px;
+  line-height: 60px;
+  font-size: 1em;
+}
+
+/**
+ * Middle menu navigation for paged sites.
+ */
+.nav-next {
+  width: 50%;
+  float: left;
+  text-align: right;
+  padding-right: 25px;
+
+  // Font Awesome Icon: https://fontawesome.com/icons/angle-left?style=solid
+  &:before {
+    content: "\f104";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding: 0 10px;
+    color: $color__icon;
+  }
+
+}
+
+.nav-previous {
+  width: 50%;
+  float: right;
+  text-align: left;
+  padding-left: 25px;
+
+  // Font Awesome Icon: https://fontawesome.com/icons/angle-right?style=solid
+  &:after {
+    content: "\f105";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding: 0 10px;
+    color: $color__icon;
   }
 
 }

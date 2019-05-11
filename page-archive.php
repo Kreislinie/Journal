@@ -62,7 +62,7 @@ get_header();
           endif; 
 
           /**
-           * Gets URL to month archive
+           * Gets month archive URL.
            */
           $url_month = get_bloginfo('url') . '/' . $date->year . '/' . date("m", mktime(0, 0, 0, $date->month, 1, $date->year)) . '/?post_type=entry';
           ?>

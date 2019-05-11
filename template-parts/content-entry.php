@@ -52,7 +52,7 @@
       ?>
 
     </article><!-- #post-<?php the_ID(); ?> -->
-    
+
   </div><!-- .entry-content -->
 
   <?php

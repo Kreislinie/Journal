@@ -20,16 +20,19 @@ get_header();
 
     <?php
     /**
+     * === Is that necessary/usefull? ==
+     * 
      * Displays header with name of user if on first page.
      * (No header on paged sites.)
-     */
+
     $current_user = wp_get_current_user();
 
     if ( !is_paged() ) {
       printf( '<header class="entry-header area__head"><h1>%s</h1></header><!-- .entry-header -->', $current_user->user_firstname ); 
     }
+    */
     ?>
- 
+
       
     <div class="area__content taxonomy-content">
     

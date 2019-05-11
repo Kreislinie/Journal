@@ -39,7 +39,7 @@
 
           <!-- bitjournal Logo -->
           <a href="<?php echo home_url() ?>">
-            <img src="<?php echo get_template_directory_uri() . '/img/bitjournal-logo_path_wide.svg'?>" alt="bitjournal Logo" >
+            <img src="<?php echo get_template_directory_uri() . '/img/bitjournal-logo_path_wide.svg' ?>" alt="bitjournal Logo" >
           </a>
 
           <div class="entry-meta">
@@ -76,9 +76,8 @@
           </div><!-- .entry-meta -->
 
           <div class="navbar-right">
-            <a href="<?php echo home_url() . '/people' ?>"><i class="fas fa-users"></i>People</a>
-            <a href="<?php echo home_url() . '/archive' ?>"><i class="fas fa-boxes"></i>Archive</a>
-            <a href="<?php echo home_url() . '/archive' ?>"><i class="fas fa-book"></i>Home</a>
+            <a href="<?php echo home_url() . '/people' ?>">People</a>
+            <a href="<?php echo home_url() . '/archive' ?>">Archive</a>
           </div>
 
         </nav><!-- .main-navigation -->
