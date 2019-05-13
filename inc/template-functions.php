@@ -25,21 +25,11 @@ function bitjournal_body_classes( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'body_class', 'bitjournal_body_classes' );
 
-/**
- * Adds a pingback url auto-discovery header for single posts, pages, or attachments.
- */
-function bitjournal_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
-	}
-}
-add_action( 'wp_head', 'bitjournal_pingback_header' );
-
-
 /** 
- * Displays archive post count between <span> tags
+ * Displays archive post count as <span> element.
  */
 function bj_archive_post_count( $link_html ) {
   $link_html = str_replace( '</a>&nbsp;(', '</a> <span class="archiveCount">', $link_html );
@@ -50,26 +40,13 @@ function bj_archive_post_count( $link_html ) {
 add_filter( 'get_archives_link', 'bj_archive_post_count' );
 
 /** 
- * Hide default WP post type
+ * Hides default WP post type.
  */
 function bj_remove_default_post_type() {
   remove_menu_page( 'edit.php' );
 }
 
 add_action( 'admin_menu', 'bj_remove_default_post_type' );
-
-function bj_remove_default_post_type_menu_bar( $wp_admin_bar ) {
-  $wp_admin_bar->remove_node( 'new-post' );
-}
-
-add_action( 'admin_bar_menu', 'bj_remove_default_post_type_menu_bar', 999 );
-
-function bj_remove_draft_widget(){
-    remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
-}
-
-add_action( 'wp_dashboard_setup', 'bj_remove_draft_widget', 999 );
-
 
 /**
  * Hide the prefix displayed at the start of archive titles.
@@ -156,7 +133,9 @@ function bj_display_mood() {
   
 }
 
-
+/**
+ * Displays category.
+ */
 function bj_display_category() {
 
   echo '<div class="category"><i class="fas fa-sitemap"></i>';

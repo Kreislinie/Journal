@@ -1,12 +1,6 @@
 <?php 
-
 /**
- * Add custom fields for people taxonomy.
- * 
- * Fields:
- *  - relation
- *  - picture
- *  - gender
+ * Adds custom fields for people taxonomy.
  */ 
 function bj_people_cmb2_fields() {
 
@@ -110,10 +104,7 @@ add_action( 'cmb2_admin_init', 'bj_people_cmb2_fields' );
 
 
 /**
- * Add custom fields for entry post type.
- * 
- * Field:
- *  - moods
+ * Adds custom fields for entry post type.
  */ 
 function bj_mood_cmb2_fields() {
 
@@ -134,7 +125,7 @@ function bj_mood_cmb2_fields() {
     ),
     'options'          => array(
       'horrible'   => '<span id="horrible">' . esc_html__( 'Horrible',  'bitjournal' ) . '</span>',
-      'very bad'   => '<span id="very-bad">' . esc_html__( 'Very bad',  'bitjournal' ) . '</span>',
+      'very-bad'   => '<span id="very-bad">' . esc_html__( 'Very bad',  'bitjournal' ) . '</span>',
       'bad'        => '<span id="bad">' . esc_html__( 'Bad', 'bitjournal' ) . '</span>',
       'neutral'    => '<span id="neutral">' . esc_html__( 'Neutral', 'bitjournal' ) . '</span>',
       'good'       => '<span id="good">' . esc_html__( 'Good', 'bitjournal' ) . '</span>',      
@@ -150,13 +141,8 @@ add_action( 'cmb2_admin_init', 'bj_mood_cmb2_fields' );
 
 
 /**
- * Add custom fields for emotion taxonomy.
- * 
- * Field:
- *  - color
- *  - icon
+ * Adds custom fields for emotion taxonomy.
  */ 
-
 function bj_emotions_cmb2_fields() {
 
   $prefix = 'bj_emotions_cmb2_'; 
