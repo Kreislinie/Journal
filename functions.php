@@ -18,8 +18,8 @@ if ( ! function_exists( 'bitjournal_setup' ) ) :
 	function bitjournal_setup() {
 
 		/*
-		 * TODO: Make theme available for translation
-		 * Translations can be filed in the /languages/ directory.
+		 * === TODO: Make theme available for translation ===
+		 * I know i did a shitty job with that :/
 		 */
 		// load_theme_textdomain( 'bitjournal', get_template_directory() . '/languages' );
 
@@ -50,24 +50,14 @@ add_action( 'after_setup_theme', 'bitjournal_setup' );
 define( 'DISALLOW_FILE_EDIT', true );
 
 /**
- * Change main query with pre_get_posts in order to show entry CPT
- */
-add_action( 'pre_get_posts', function ( $q ) {
-
-  if ( $q->is_home() && $q->is_main_query() ) {
-    $q->set( 'posts_per_page', 3 );
-    $q->set( 'post_type', 'entry');
-  }
-
-});
-
-/**
- * Change main query / tag query with pre_get_posts in order to show entry CPT
+ * Changes main query with pre_get_posts if page is home, tag or archive in order to show entry CPT.
  */
 function bj_entry_queries( $query ) {
 
-  if ( ( $query->is_tag() && $query->is_main_query() ) || ( $query->is_home() && $query->is_main_query() ) ) {
-      $query->set( 'post_type', 'entry' );
+  // Checks if page type is home or archive.
+  if ( $query->is_home() && $query->is_main_query() || is_archive() && $query->is_main_query() ) {
+    $query->set( 'posts_per_page', 3 );
+    $query->set( 'post_type', 'entry');
   }
 
 }
@@ -75,17 +65,15 @@ add_action( 'pre_get_posts', 'bj_entry_queries' );
 
 
 /**
- * Filter the "read more" excerpt string link to the post.
+ * Changes "read more" string to ...
  *
- * @param string $more "Read more" excerpt string.
+ * @param string $more "read more" excerpt string.
  * @return string Modified "read more" excerpt string.
  */
 function bj_excerpt_more( $more ) {
   
   if ( ! is_single() ) {
-
     $more = ' ...';
-      
   }
 
   return $more;
@@ -94,7 +82,7 @@ function bj_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'bj_excerpt_more' );
 
 /**
- * Setup pages if template activated.
+ * Theme setup.
  */
 require get_template_directory() . '/inc/setup.php';
 
