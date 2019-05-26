@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Hide specific menu-pages on admin sidebar.
+ * Hides specific menu-pages on admin sidebar.
  */
 function bj_remove_menus() {  
 
@@ -20,7 +20,7 @@ add_action( 'admin_menu', 'bj_remove_menus' );
 
 
 /**
- * Add bitjournal settings page
+ * Adds bitjournal settings page and loads page content.
  */
 function bj_add_settings_page() {
 
@@ -109,51 +109,6 @@ function bj_add_emotions_menu() {
 }
 add_action( 'admin_menu', 'bj_add_emotions_menu' );
 
-
-/**
- * Change dashboard Posts name to Entries.
- 
-function cp_change_post_object() {
-  $get_post_type = get_post_type_object('post');
-  $labels = $get_post_type->labels;
-  $args = $get_post_type->args;
-
-    $labels->name = __('Entries');
-    $labels->singular_name = __('Entry');
-    $labels->add_new = __('Add Entry');
-    $labels->add_new_item = __('Add Entry');
-    $labels->edit_item = __('Edit Entry');
-    $labels->new_item = __('Entry');
-    $labels->view_item = __('View Entry');
-    $labels->search_items = __('Search Entries');
-    $labels->not_found = __('No Entries found');
-    $labels->not_found_in_trash = __('No Entries found in Trash');
-    $labels->all_items = __('All Entries');
-    $labels->menu_name = __('Entries');
-    $labels->name_admin_bar = __('Entry');
-}
-add_action( 'init', 'cp_change_post_object' );
-
-// change icon for entries
-function bj_menu_entry_icon() {
-global $menu;
-foreach ( $menu as $key => $val ) {
-  if ( __( 'Entries') == $val[0] ) {
-    $menu[$key][6] = 'dashicons-edit';
-  }
-}
-}
-add_action( 'admin_menu', 'bj_menu_entry_icon' );
-
-add_filter('register_post_type_args', 'movies_to_films', 10, 2);
-function movies_to_films($args, $post_type){
- 
-    if ($post_type == 'post'){
-        $args['rewrite']['menu_icon'] = 'dashicons-welcome-comments';
-    }
- 
-    return $args;
-}
 /**
  * Create admin redirect menu items
  * 

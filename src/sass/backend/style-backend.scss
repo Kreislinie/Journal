@@ -1,4 +1,5 @@
 // Variables
+$font__icon: 'Font Awesome 5 Free';
 
 $color__mood-excellent: #03AF36;
 $color__mood-very-good: #7BCD3E;
@@ -8,7 +9,9 @@ $color__mood-bad:       #FFAA00;
 $color__mood-very-bad:  #FF6E00;
 $color__mood-horrible:  rgb(235, 35, 29);
 
-// Backen column styles
+/**
+ * Mood radio buttons styling on edit entry page.
+ */
 .column-bj_mood_cmb2_mood {
 
   span::before {
@@ -50,7 +53,6 @@ $color__mood-horrible:  rgb(235, 35, 29);
   }
 
 }
-
 
 #bj_mood_cmb2_box .cmb2-wrap {
   display: flex;
@@ -110,5 +112,31 @@ $color__mood-horrible:  rgb(235, 35, 29);
     background-color: $color__mood-excellent;
   }
 
+}
 
+/**
+ * Admin bar menu styles
+ */
+#wpadminbar #wp-admin-bar-exit-write {
+  float: right;
+
+  .fas {
+    font-family: $font__icon;
+    font-weight: 900;
+    font-size: 1.4em;
+    margin-left: 8px;
+    transform: translateY(2px);
+  }
+
+}
+
+/**
+ * Hide option fields (which should not be changed by user) and some unnecessary information.
+ */
+.screen-options,          // Post per page option (pages: entries and pages overview).
+.edit-term-notes,         // Information about Terms/Categories (pages: categories and tags overview).
+.term-description-wrap p, // Information about the tag and category description field.
+.term-name-wrap p         // Information about the tag and category name field.
+{
+  display: none;
 }
