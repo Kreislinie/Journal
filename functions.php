@@ -51,6 +51,7 @@ define( 'DISALLOW_FILE_EDIT', true );
 
 /**
  * Changes main query with pre_get_posts if page is home, tag or archive in order to show entry CPT.
+ * Sets frontend posts per page.
  */
 function bj_entry_queries( $query ) {
 
@@ -149,3 +150,28 @@ add_action('do_feed_rss2', 'bitjournal_disable_feed', 1);
 add_action('do_feed_atom', 'bitjournal_disable_feed', 1);
 add_action('do_feed_rss2_comments', 'bitjournal_disable_feed', 1);
 add_action('do_feed_atom_comments', 'bitjournal_disable_feed', 1);
+
+
+function my_edit_per_page( $result, $option, $user ) {
+  return 3;
+}
+add_filter( 'get_user_option_edit_page_per_page', 'my_edit_per_page', 10, 3 );  // for pages
+add_filter( 'get_user_option_edit_entry_per_page', 'my_edit_per_page', 10, 3 );  // for posts
+
+function wpse239290_user_welcome_notice() {
+
+  $current_screen = get_current_screen();
+
+if ( $current_screen->id == 'edit-page' ) {
+  // Show a friendly green notice, and allow it to be dismissed (it will re-appear if the page is reloaded though).
+  $class = 'notice notice-error';
+
+  // Customize the HTML to  fit your preferences.
+  $message = '<p><span class="dashicons dashicons-no"></span> Everything here is managed by bitjournal. Changing things could break your journal. <span class="dashicons dashicons-no"></span></p>';
+
+  printf( '<div class="%1$s"><div class="">%2$s</div></div>', $class, $message ); 
+}
+
+
+}
+add_action( 'admin_notices', 'wpse239290_user_welcome_notice' );

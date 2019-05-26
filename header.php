@@ -1,10 +1,6 @@
 <?php
 /**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * The header gile.
  *
  * @package bitjournal
  */
@@ -25,6 +21,7 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="shortcut icon" type="image/png" href="<?php echo get_template_directory_uri() . '/img/bitjournal-favicon.png' ?>"/>
     <?php wp_head(); ?>
   </head>
 
@@ -36,17 +33,25 @@
 	    <header id="masthead" class="site-header">
     
         <nav id="site-navigation" class="main-navigation">
+          <div class="navbar-left">
 
-          <!-- bitjournal Logo -->
-          <a href="<?php echo home_url() ?>">
-            <img src="<?php echo get_template_directory_uri() . '/img/bitjournal-logo_path_wide.svg' ?>" alt="bitjournal Logo" >
-          </a>
+            <!-- bitjournal Logo -->
+            <a href="<?php echo home_url() ?>">
+              <img src="<?php echo get_template_directory_uri() . '/img/bitjournal-logo_book.svg' ?>" alt="bitjournal Logo" >
+            </a>
 
+            <a href="<?php echo home_url( '/people' ) ?>"><?php esc_html_e( 'People', 'bitjournal' ) ?></a>
+            <a href="<?php echo home_url( '/tags' ) ?>"><?php esc_html_e( 'Tags', 'bitjournal' ) ?></a>
+            <a href="<?php echo home_url( '/archive' ) ?>"><?php esc_html_e( 'Archive', 'bitjournal' ) ?></a>
+          </div>
+          
           <div class="entry-meta">
 
             <?php	
             /**
-             * Displays post navigation and date
+             * Displays centered top bar navigation.
+             * 
+             * Checks if page is single post, taxonomy, archive or home.
              */
             if( is_single() ) : 
               echo '<p>';
@@ -55,13 +60,13 @@
               next_post_link('%link', '<i class="fas fa-angle-right" title="' . esc_html__( 'Next Entry', 'bitjournal' ) . '"></i>');
               echo '</p>';
               
-              elseif( is_tax() ) :
+              elseif ( is_tax() ) :
               the_archive_title( '<p>', '</p>' );
 
-              elseif( is_archive() ) :
+              elseif ( is_archive() ) :
               the_archive_title( '<p>', '</p>' );
 
-              elseif( is_home() ) : 
+              elseif ( is_home() ) : 
               the_posts_navigation(
                 array(
                   'prev_text'          => esc_html__( 'Older entries', 'bitjournal' ),
@@ -76,8 +81,53 @@
           </div><!-- .entry-meta -->
 
           <div class="navbar-right">
-            <a href="<?php echo home_url() . '/people' ?>">People</a>
-            <a href="<?php echo home_url() . '/archive' ?>">Archive</a>
+
+            <?php
+            /**
+             * Creates "Edit mode" menu item.
+             * Checks which page is displayed and links to corresponding backend page.
+             */ 
+            $edit_mode_link = admin_url('admin.php?page=bitjournal');
+
+            // Checks if current page is single entry.
+            if ( is_single() ) {
+
+              $edit_mode_link = get_edit_post_link();
+
+            // Checks if current page is "Home" or "Archive".
+            } elseif ( is_home() || is_page('archive') ) {
+
+              $edit_mode_link = admin_url( 'edit.php?post_type=entry' );
+
+            } elseif ( is_tax() ) {
+
+              $edit_mode_link = get_edit_term_link( get_queried_object()->term_id, get_queried_object()->taxonomy );
+
+            // Checks if current page is a category page.
+            } elseif ( is_category() ) {
+
+              $edit_mode_link = admin_url( 'edit.php?post_type=entry&category_name=' . get_queried_object()->slug );
+
+            // Checks if current page is a tag page.
+            } elseif ( is_tag() ) {
+
+              $edit_mode_link = admin_url( 'edit.php?post_type=entry&tag=' . get_queried_object()->slug );
+
+            // Checks if page is "people".
+            } elseif ( is_page('people') ) {
+
+              $edit_mode_link = admin_url('edit-tags.php?taxonomy=people');
+
+            }
+
+            // Adds page number if paged.
+            if (is_paged()) {
+              $edit_mode_link .= '&paged=' . get_query_var('paged');
+            }
+            ?>
+
+            <a href="<?php echo $edit_mode_link ?>">Edit mode <i class="fas fa-toggle-on"></i></a>
+
           </div>
 
         </nav><!-- .main-navigation -->

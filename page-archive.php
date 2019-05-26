@@ -34,6 +34,7 @@ get_header();
       /**
        * Generates an outputs archive overview structure.
        * 
+       * Structure:
        * 'div.archive-overview' always contains one year with
        * the corresponding year date 'a.archive-overview__year-link' and 
        * every moth 'a.archive-overview__month-link' in which one or more entry was written.

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all people
+ * The template to display all people.
  *
  * @package bitjournal
  */
@@ -22,7 +22,7 @@ get_header();
       /** 
        * Display people term meta
       */ 
-      $terms = get_terms(['taxonomy' => __('people', 'bitjournal'), 'hide_empty' => false]); 
+      $terms = get_terms(['taxonomy' => 'people', 'hide_empty' => false]); 
 
       if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
         echo '<div class="people-container">';

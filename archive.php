@@ -28,7 +28,6 @@ get_header();
       </header><!-- .page-header -->
       
 
-
       <?php
       
 
