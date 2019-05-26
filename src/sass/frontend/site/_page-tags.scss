@@ -1,0 +1,16 @@
+.tags .tag-overview {
+  font-size: 0.9em;
+  border: 1px solid $color__bitjournal-blue;
+  color: $color__text-main;
+
+  span {
+    color: white;
+    padding: 3px 5px 3px 5px;
+    margin-left: -4px;
+    margin-right: 5px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: $color__bitjournal-blue;
+  }
+
+}
