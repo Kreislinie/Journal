@@ -1,16 +1,21 @@
-$navbar-height: 60px;
+/**
+ * Menu related variables.
+ */
+$height__navbar: 50px;
+$size__font-menu: 15px;
+
 
 .main-navigation {
   border-bottom: 1px solid rgb(223, 223, 223);
   background-color: rgb(255, 255, 255);
-  height: $navbar-height;
+  height: $height__navbar;
   position: fixed;
   z-index: 1;
   width: 100%;
-
+  padding: 0 50px;
 
   img {
-    height: $navbar-height;
+    height: $height__navbar;
     padding: 9px;
     float: left;
   }
@@ -111,28 +116,30 @@ $navbar-height: 60px;
  * Right (main) menu styling.
  */
 .navbar-right {
-  z-index: 1005;
   text-align: right;
   float: right;
   width: auto;
   
   a {
+    font-size: $size__font-menu;
     text-decoration: none;
     cursor: pointer;
     display: inline-block;
-    padding: 18px 15px 17px 15px; 
+    line-height: $height__navbar - 1px;
     transition: all ease .4s;
     border-right: 1px solid white;
     border-left: 1px solid white;
 
     &:hover {
-      background-color: lighten($color__bitjournal-blue, 50);
-      border-left: 1px solid $color__bitjournal_blue;
-      border-right: 1px solid $color__bitjournal_blue;
+      color: $color__bitjournal-blue;
     }    
 
   }
 
+}
+
+.navbar-left {
+  float: left;
 }
 
 /**
@@ -141,8 +148,8 @@ $navbar-height: 60px;
 .posts-navigation {
   text-align: center;
   font-weight: 300;
-  height: 60px;
-  line-height: 60px;
+  height: $height__navbar;
+  line-height: $height__navbar;
   font-size: 1em;
 }
 
@@ -158,7 +165,7 @@ $navbar-height: 60px;
   // Font Awesome Icon: https://fontawesome.com/icons/angle-left?style=solid
   &:before {
     content: "\f104";
-    font-family: 'Font Awesome 5 Free';
+    font-family: $font__icon;
     font-weight: 900;
     padding: 0 10px;
     color: $color__icon;
@@ -175,10 +182,38 @@ $navbar-height: 60px;
   // Font Awesome Icon: https://fontawesome.com/icons/angle-right?style=solid
   &:after {
     content: "\f105";
-    font-family: 'Font Awesome 5 Free';
+    font-family: $font__icon;
     font-weight: 900;
     padding: 0 10px;
     color: $color__icon;
+  }
+
+}
+
+
+.entry-meta {
+
+  position: absolute;
+  width: 100%;
+  z-index: -5;
+  font-size: $size__font-menu;
+
+  p {
+    text-align: center;
+    font-weight: 300;
+    height: $height__navbar;
+    line-height: $height__navbar;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    text-align: center;
+    color: $color__text-main;
+  }
+
+  i {
+    padding: 0 10px;
   }
 
 }
