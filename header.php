@@ -33,18 +33,26 @@
 	    <header id="masthead" class="site-header">
     
         <nav id="site-navigation" class="main-navigation">
+
+        <!-- Mobile burger menu -->
+        <a class="mobile-nav-wrap"><span class="mobile-nav"></span></a>
+
+          <!-- Left/burger menu items -->
           <div class="navbar-left">
+            <div>
 
-            <!-- bitjournal Logo -->
-            <a href="<?php echo home_url() ?>">
-              <img src="<?php echo get_template_directory_uri() . '/img/bitjournal-logo_book.svg' ?>" alt="bitjournal Logo" >
-            </a>
+              <!-- bitjournal Logo (Book) -->
+              <a class="home-logo" href="<?php echo home_url() ?>">
+                <img src="<?php echo get_template_directory_uri() . '/img/bitjournal-logo_book.svg' ?>" alt="bitjournal Logo" >
+              </a>
 
-            <a href="<?php echo home_url( '/people' ) ?>"><?php esc_html_e( 'People', 'bitjournal' ) ?></a>
-            <a href="<?php echo home_url( '/tags' ) ?>"><?php esc_html_e( 'Tags', 'bitjournal' ) ?></a>
-            <a href="<?php echo home_url( '/archive' ) ?>"><?php esc_html_e( 'Archive', 'bitjournal' ) ?></a>
+              <a href="<?php echo home_url( '/archive' ) ?>"><?php esc_html_e( 'Archive', 'bitjournal' ) ?></a>
+              <a href="<?php echo home_url( '/people' ) ?>"><?php esc_html_e( 'People', 'bitjournal' ) ?></a>
+              <a href="<?php echo home_url( '/tags' ) ?>"><?php esc_html_e( 'Tags', 'bitjournal' ) ?></a>
+            
+            </div>          
           </div>
-          
+
           <div class="entry-meta">
 
             <?php	

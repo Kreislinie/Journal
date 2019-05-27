@@ -7,19 +7,18 @@ jQuery(document).ready( function ($) {
    * Html element needs "link" class. Use data-url html attribute to set url.
    */
   $( '.link' ).click( function () {
-    window.location = $(this).data( 'url' );
+    window.location = $( this ).data( 'url' );
     return false;
   });
 
   /**
-   * Burger menu navbar right
+   * Burger menu navbar left
    */
-  $( '.navbar-right' ).on( 'click', function() {
-    $(this).toggleClass( 'navbar-right__opened' );
-    $(this).toggleClass( 'navbar-right__closed' );
+  $( '.mobile-nav-wrap' ).on( 'click', function() {
+    $( '.mobile-nav' ).toggleClass( 'active' );
 
-    $( '.menu-overlay' ).toggleClass( 'menu-overlay__opened' );
-    $( '.menu-overlay' ).toggleClass( 'menu-overlay__closed' );
+    $( '.navbar-left' ).toggleClass( 'open' );
+
   } );
 
 });
