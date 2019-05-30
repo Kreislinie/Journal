@@ -169,10 +169,16 @@ span.active {
   font-size: 1em;
 }
 
+.nav-links div:only-child {
+
+  width: 100%;
+  text-align: center;
+  padding: 0;
+}
 /**
  * Middle menu navigation for paged sites.
  */
-.nav-next {
+.nav-previous {
   width: 50%;
   float: left;
   text-align: right;
@@ -189,7 +195,7 @@ span.active {
 
 }
 
-.nav-previous {
+.nav-next {
   width: 50%;
   float: right;
   text-align: left;

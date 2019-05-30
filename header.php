@@ -75,6 +75,7 @@
               the_archive_title( '<p>', '</p>' );
 
               elseif ( is_home() ) : 
+
               the_posts_navigation(
                 array(
                   'prev_text'          => esc_html__( 'Older entries', 'bitjournal' ),
@@ -82,6 +83,7 @@
                   'screen_reader_text' => esc_html__( 'Entries navigation', 'bitjournal' ),
                 )
               );
+
 
             endif; 
             ?>
