@@ -19,7 +19,6 @@ $size__font-menu: 15px;
     align-items: center;
     position: absolute;
 
-
     a {
       display: block;
       text-align: center;
@@ -209,10 +208,11 @@ span.active {
 
 
 .entry-meta {
-
   position: absolute;
   width: 100%;
   z-index: -5;
+  top: 0;
+  left: 0;
   font-size: $size__font-menu;
 
   p {
@@ -241,6 +241,7 @@ span.active {
     width: 100%;
     transform: translateX(-15px);
     padding: 0 15px;
+    top: unset;
   }
 
 }

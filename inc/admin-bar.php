@@ -35,10 +35,6 @@ function bj_add_admin_bar_items( $admin_bar ) {
 
 // var_dump($current_screen);
 
-
-  
-    
-
   // Gets id of term currently beeing edited.
   $term_id = absint( $_GET['tag_ID'] );
   
@@ -48,16 +44,26 @@ function bj_add_admin_bar_items( $admin_bar ) {
   // Sets default link to home url.
   $exit_edit_mode_url = home_url();
 
-  // Checks if current page is "people".
+  // Checks if current page is people overview.
   if ( $current_screen->id == 'edit-people' ) {
 
     $exit_edit_mode_url = home_url( '/people/' );
 
-    // Checks if current page is "single person".
+    // Checks if current page is single person.
     if ( $current_screen->base == 'term' ) {
       $exit_edit_mode_url .= $term->slug;
     }
-  
+    
+  // Checks if current page is tag overview.
+  } elseif ( $current_screen->id == 'edit-post_tag' ) {
+
+    $exit_edit_mode_url = home_url( '/tag/' );
+
+    // Checks if current page is single tag.
+    if ( $current_screen->base == 'term' ) {
+      $exit_edit_mode_url .= $term->slug;
+    }
+
   } elseif ( $pagenow == 'post.php' && $post->post_type == 'entry') {
 
     $exit_edit_mode_url = home_url( '/' . $post->post_type . '/' . $post->post_name );

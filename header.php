@@ -48,7 +48,7 @@
 
               <a href="<?php echo home_url( '/archive' ) ?>"><?php esc_html_e( 'Archive', 'bitjournal' ) ?></a>
               <a href="<?php echo home_url( '/people' ) ?>"><?php esc_html_e( 'People', 'bitjournal' ) ?></a>
-              <a href="<?php echo home_url( '/tags' ) ?>"><?php esc_html_e( 'Tags', 'bitjournal' ) ?></a>
+              <a href="<?php echo home_url( '/tag' ) ?>"><?php esc_html_e( 'Tags', 'bitjournal' ) ?></a>
             
             </div>          
           </div>
@@ -107,7 +107,8 @@
 
               $edit_mode_link = admin_url( 'edit.php?post_type=entry' );
 
-            } elseif ( is_tax() ) {
+            // Checks if current page is Category or Tag.
+            } elseif ( is_tax() || is_tag() ) {
 
               $edit_mode_link = get_edit_term_link( get_queried_object()->term_id, get_queried_object()->taxonomy );
 
@@ -116,15 +117,15 @@
 
               $edit_mode_link = admin_url( 'edit.php?post_type=entry&category_name=' . get_queried_object()->slug );
 
-            // Checks if current page is a tag page.
-            } elseif ( is_tag() ) {
-
-              $edit_mode_link = admin_url( 'edit.php?post_type=entry&tag=' . get_queried_object()->slug );
-
             // Checks if page is "people".
             } elseif ( is_page('people') ) {
 
-              $edit_mode_link = admin_url('edit-tags.php?taxonomy=people');
+              $edit_mode_link = admin_url( 'edit-tags.php?taxonomy=people' );
+            
+            // Checks if page is "tags".
+            } elseif ( is_page('tags') ) {
+
+              $edit_mode_link = admin_url( 'edit-tags.php?taxonomy=post_tag&post_type=entry' );
 
             }
 

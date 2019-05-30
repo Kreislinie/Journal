@@ -11,19 +11,18 @@ get_header();
 <div id="primary" class="content-area">
   <main id="main" class="grid__main site-main">
 
+  <header class="entry-header area__head tags-header">
+      <?php 
+      echo '<h1 class="entry-title">' . single_tag_title('<i class="fas fa-tags"></i>', false) . '</h1>';
+      echo tag_description();
+
+      ?>
+    </header><!-- .entry-header -->
+
     <?php
-    /**
-     * === Is that necessary/usefull? ==
-     * 
-     * Displays header with name of user if on first page.
-     * (No header on paged sites.)
 
-    $current_user = wp_get_current_user();
 
-    if ( !is_paged() ) {
-      printf( '<header class="entry-header area__head"><h1>%s</h1></header><!-- .entry-header -->', $current_user->user_firstname ); 
-    }
-    */
+
     ?>
 
       

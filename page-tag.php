@@ -30,10 +30,10 @@ get_header();
 
         foreach ( $tags as $tag ) :
           
-          $person_link = get_term_link( $tag );
+          $tag_link = get_term_link( $tag );
           ?>
 
-          <a class="tag-overview" href="<?php get_term_link( $tag ) ?>"><span><?php echo $tag->count; ?></span><?php echo $tag->name; ?></a>
+          <a class="tag-overview" href="<?php echo $tag_link ?>"><span><?php echo $tag->count; ?></span><?php echo $tag->name; ?></a>
 
         <?php
         endforeach;

@@ -15,7 +15,7 @@ if ( isset( $_GET['activated'] ) && is_admin() ) :
   $archive_check = get_page_by_title( $archive_title );
 
   $tags_title = __('Tags', 'bitjournal');
-  $tags_page_template = 'page-tags.php';
+  $tags_page_template = 'page-tag.php';
   $tags_check = get_page_by_title( $archive_title );
 
   /**
