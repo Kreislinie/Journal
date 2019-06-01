@@ -13,7 +13,8 @@ $size__font-menu: 15px;
     transform: translateX(-120vw);
     transition: all .8s ease-in-out;
     width: 0;
-    height: calc(100vh - 50px);
+    top: $height__navbar;
+    height: 100vh;
     background: white;
     display: grid;
     align-items: center;
@@ -45,7 +46,12 @@ $size__font-menu: 15px;
   .open {
     position: absolute;
     transform: translateX(-15px);
-    width: 100vw;
+    width: 100%;
+
+    a {
+      margin-left: 0;
+    }
+
   }
 
 }
@@ -245,7 +251,6 @@ span.active {
     background-color: rgb(255, 255, 255);
     bottom:0;
     width: 100%;
-    transform: translateX(-15px);
     padding: 0 15px;
     top: unset;
   }
