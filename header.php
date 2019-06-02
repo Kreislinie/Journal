@@ -137,7 +137,7 @@
             }
             ?>
 
-            <a href="<?php echo $edit_mode_link ?>">Edit mode <i class="fas fa-toggle-on"></i></a>
+            <a href="<?php echo $edit_mode_link ?>">Edit mode <i class="fas fa-toggle-off"></i></a>
 
           </div>
 
