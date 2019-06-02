@@ -83,9 +83,13 @@ function bj_custom_post_types() {
     'supports'            => array( 'editor', 'title', 'category' ),
   );
     
-  // Registering Entry and Health Record post types
+  // Registering Entry post type
   register_post_type( 'entry', $args_entry );
-  register_post_type( 'health-record', $args_health_record );
+  
+  /**
+   * Health entry, maybe for a future bitjournal version...
+   */
+  // register_post_type( 'health-record', $args_health_record );
 
 }
    

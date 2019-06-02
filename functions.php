@@ -55,13 +55,13 @@ define( 'DISALLOW_FILE_EDIT', true );
  */
 function bj_entry_queries( $query ) {
 
-  // Checks if page type is home or archive.
   if ( $query->is_home() && $query->is_main_query() || is_archive() && $query->is_main_query() ) {
     $query->set( 'posts_per_page', 3 );
     $query->set( 'post_type', 'entry');
   }
 
 }
+
 add_action( 'pre_get_posts', 'bj_entry_queries' );
 
 

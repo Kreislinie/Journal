@@ -15,11 +15,11 @@ function bj_remove_admin_bar_items( $wp_admin_bar ) {
   $wp_admin_bar->remove_node( 'new-content' );    // New content item
   $wp_admin_bar->remove_node( 'wp-logo' );        // WordPress logo
   $wp_admin_bar->remove_node( 'site-name' );      // Visit your site item
-  // $wp_admin_bar->remove_node( 'archive' );        // View posts item
+  $wp_admin_bar->remove_node( 'archive' );        // View posts item
   $wp_admin_bar->remove_node( 'my-account' );     // Personal account item
   $wp_admin_bar->remove_node( 'search' );         // Search icon
   $wp_admin_bar->remove_node( 'customize' );      // Customize item
-  // $wp_admin_bar->remove_node( 'view' );           // View post,taxonomy,...item
+  $wp_admin_bar->remove_node( 'view' );           // View post,taxonomy,...item
 
 }
 add_action( 'admin_bar_menu', 'bj_remove_admin_bar_items', 999 );
