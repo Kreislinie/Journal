@@ -11,9 +11,9 @@ get_header();
   <main id="main" class="grid__main site-main">
 
     <header class="entry-header area__head">
-      <?php 
-      printf( '<h1 class="entry-title">Tags <a class="edit-entry-link" href="%s"><i class="fas fa-pencil-alt"></i></a></h1>', admin_url('edit-tags.php?taxonomy=people') );
-      ?>
+      
+      <h1 class="entry-title"><?php esc_html_e('Tags', 'bitjournal') ?></h1>
+      
     </header><!-- .entry-header -->
       
     <div class="area__content entry-content">

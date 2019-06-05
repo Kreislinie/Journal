@@ -10,15 +10,13 @@
     color: $color__bitjournal-blue;
     font-size: 0.5em;
   }
+
 }
 
 .entry-content {
   margin-bottom: 30px;
 }
 
-.entry-header-container {
-  display: flex;
-}
 
 /* ------------------------------------------------------------
   2.0 - People Cards
@@ -68,6 +66,8 @@
 .entry-category {
   color: $color__text-light;
   font-size: .8em;
+  white-space: nowrap;
+
 }
 
 /* ------------------------------------------------------------
@@ -87,6 +87,7 @@
 
 .mood  {
   float: left;
+  white-space: nowrap;
 
   span {
     border-radius: 25px;
@@ -100,6 +101,7 @@
 }
 .category {
   margin-top: 2px;
+  float: left;
 }
 
 // Mood colors
@@ -111,6 +113,9 @@
 #very-bad   { background-color: $color__mood-very-bad;  }
 #horrible   { background-color: $color__mood-horrible;  }
 
+.date {
+  white-space: nowrap;
+}
 
 .tags i, .category i, .date i {
   margin-right: 5px;
