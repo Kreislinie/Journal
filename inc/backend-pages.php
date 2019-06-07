@@ -79,3 +79,14 @@ function bitjournal_add_people_menu() {
   
 }
 add_action( 'admin_menu', 'bitjournal_add_people_menu' );
+
+
+add_filter( 'gettext', 'change_publish_button', 10, 2 );
+
+function change_publish_button( $translation, $text ) {
+if ( 'entry' == get_post_type())
+if ( $text == 'Publish' )
+    return 'Save';
+
+return $translation;
+}

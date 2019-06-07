@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying entry excerpt
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -38,13 +38,9 @@
     </div><!-- .entry-header-container -->
 
     <?php
-    /**
-     * Display date, title and excerpt.
-     */
-    $edit_icon = '<a class="edit-entry-link" href="' . get_edit_post_link() . '"><i class="fas fa-pencil-alt"></i></a>';
-
-    the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', $edit_icon . '</a></h2>' );
-    echo '<div class="link" data-url="' . esc_url( get_permalink() ) . '"><p>' . get_the_excerpt() . '</p></div>';
+    the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+    
+    printf('<div class="link" data-url="%s"><p>%s</p></div>', get_permalink(), get_the_excerpt() );
     ?>
 
   </article><!-- #post-<?php the_ID(); ?> -->

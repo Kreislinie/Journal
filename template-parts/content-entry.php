@@ -33,13 +33,7 @@
       </div><!-- .entry-header-container -->
 
       <?php 
-      /**
-       * Gets edit post icon and link.
-       * Displays post title with edit icon.
-       */
-      $edit_icon = sprintf( '<a class="edit-entry-link" href="%s"><i class="fas fa-pencil-alt"></i></a>', get_edit_post_link() );
-
-      the_title( '<h1 class="entry-title">', $edit_icon . '</h1>' );
+      the_title( '<h1 class="entry-title">', '</h1>' );
 
       /**
        * Display the excerpt if page is home, otherwise display entire content.

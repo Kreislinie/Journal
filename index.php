@@ -10,15 +10,26 @@ get_header();
 
 <div id="primary" class="content-area">
   <main id="main" class="grid__main site-main">
+  
+    <header class="entry-header area__head">
+
+      <?php
+      if(is_archive()) {
+        the_archive_title( '<h1 class="page-title">', '</h1>' );
+        the_archive_description( '<div class="archive-description">', '</div>' );
+      }
+      ?>
+
+    </header><!-- .entry-header -->
 
     <div class="area__content taxonomy-content">
-    
+      
       <?php 
       if ( have_posts() ) :
-
+    
         while ( have_posts() ) : the_post();
 
-          get_template_part( 'template-parts/content', 'people' );
+          get_template_part( 'template-parts/content', 'entry_excerpt' );
 
         endwhile;
 
@@ -30,7 +41,7 @@ get_header();
       ?>
 
     </div><!-- .area__content -->
-  
+    
   </main><!-- #main -->
 </div><!-- .content-area -->
 

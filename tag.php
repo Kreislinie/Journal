@@ -27,7 +27,7 @@ get_header();
 
       
     <div class="area__content taxonomy-content">
-    
+
       <?php 
       if ( have_posts() ) :
 
