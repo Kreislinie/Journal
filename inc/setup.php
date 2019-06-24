@@ -16,7 +16,11 @@ if ( isset( $_GET['activated'] ) && is_admin() ) :
 
   $tags_title = __('Tags', 'bitjournal');
   $tags_page_template = 'page-tag.php';
-  $tags_check = get_page_by_title( $archive_title );
+  $tags_check = get_page_by_title( $tags_title );
+
+  $category_title = __('Categories', 'bitjournal');
+  $category_page_template = 'page-category.php';
+  $category_check = get_page_by_title( $category_title );
 
   /**
    * Array for wp_insert_post 
@@ -38,6 +42,12 @@ if ( isset( $_GET['activated'] ) && is_admin() ) :
   $tags_page = array(
     'post_type' => 'page',
     'post_title' => $tags_title,
+    'post_status' => 'publish'
+  );
+
+  $category_page = array(
+    'post_type' => 'page',
+    'post_title' => $category_title,
     'post_status' => 'publish'
   );
 
@@ -69,6 +79,16 @@ if ( isset( $_GET['activated'] ) && is_admin() ) :
 
     if( !empty( $tags_page_template ) ) {
       update_post_meta( $tags_page_id, '_wp_page_template', $tags_page_template );
+    }
+  }
+
+  // Creates page "tags".
+  if ( !isset( $category_check->ID ) ) {
+
+    $category_page_id = wp_insert_post( $category_page );
+  
+    if( !empty( $category_page_template ) ) {
+      update_post_meta( $category_page_id, '_wp_page_template', $category_page_template );
     }
   }
 

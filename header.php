@@ -49,6 +49,7 @@
               <a href="<?php echo home_url( '/archive' ) ?>"><?php esc_html_e( 'Archive', 'bitjournal' ) ?></a>
               <a href="<?php echo home_url( '/people' ) ?>"><?php esc_html_e( 'People', 'bitjournal' ) ?></a>
               <a href="<?php echo home_url( '/tag' ) ?>"><?php esc_html_e( 'Tags', 'bitjournal' ) ?></a>
+              <a href="<?php echo home_url( '/categories' ) ?>"><?php esc_html_e( 'Categories', 'bitjournal' ) ?></a>
             
             </div>          
           </div>
