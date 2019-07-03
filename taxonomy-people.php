@@ -26,13 +26,13 @@ get_header();
         /**
          * Get people term meta.
          */
-        $term = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
-        $avatar = wp_get_attachment_image_url( get_term_meta( $term->term_id, 'bj_people_cmb2_picture_id', true ), array('400') ); 
-        $sex = get_term_meta( $term->term_id, 'bj_people_cmb2_sex', true );
-        $birth = date( 'd.m.Y', get_term_meta( $term->term_id, 'bj_people_cmb2_birth', true ) );
-        $death = date( 'd.m.Y', get_term_meta( $term->term_id, 'bj_people_cmb2_death', true ) );
-        $relation = get_term_meta( $term->term_id, 'bj_people_cmb2_relation', true);
-
+        $term       = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
+        $avatar     = wp_get_attachment_image_url( get_term_meta( $term->term_id, 'bj_people_cmb2_picture_id', true ), array('400') ); 
+        $sex        = get_term_meta( $term->term_id, 'bj_people_cmb2_sex', true );
+        $birth      = get_term_meta( $term->term_id, 'bj_people_cmb2_birth', true );
+        $death      = get_term_meta( $term->term_id, 'bj_people_cmb2_death', true );
+        $relation   = get_term_meta( $term->term_id, 'bj_people_cmb2_relation', true);
+        
         if ( $avatar ) {
           echo '<div class="people-profile-large" style="background-image: url(' . $avatar . ')"></div>'; 
         }
@@ -54,11 +54,11 @@ get_header();
           }
           
           if ( $birth ) {
-            echo '<span><i class="fas fa-star-of-life"></i> ' . $birth . '</span>';
+            echo '<span><i class="fas fa-star-of-life"></i> ' . date( 'd.m.Y', $birth ) . '</span>';
           }
 
-          if (  $death ) {
-            echo '<span><i class="fas fa-cross"></i> ' . $death . '</span>';
+          if ( $death ) {
+            echo '<span><i class="fas fa-cross"></i> ' . date( 'd.m.Y', $death ) . '</span>';
           }
 
           if ( $relation ) {
