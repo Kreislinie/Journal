@@ -23,7 +23,7 @@
       /**
        * Display date.
        */
-      echo '<span class="date"><i class="far fa-calendar-alt"></i>' . get_the_date() . '</span>';
+      echo '<span class="date-bar"><i class="far fa-calendar-alt"></i>' . get_the_date() . '</span>';
 
         /** 
          * Displays categories.

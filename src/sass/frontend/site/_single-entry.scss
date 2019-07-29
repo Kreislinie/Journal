@@ -113,11 +113,24 @@
 #very-bad   { background-color: $color__mood-very-bad;  }
 #horrible   { background-color: $color__mood-horrible;  }
 
-.date {
+.date-bar {
+  padding: 0;
+  margin: 0 15px 0 0;
+  list-style: none;
+  float: left;
   white-space: nowrap;
+  font-size: .9em;
+  line-height: 1.9em;
+  text-decoration: none;
+  color: $color__text-light;
+  
+  i {
+    font-size: 1.2em;
+  }
+
 }
 
-.tags i, .category-bar i, .date i {
+.tags i, .category-bar i, .date-bar i {
   margin-right: 5px;
   color: $color__text-light;
 }

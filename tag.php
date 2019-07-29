@@ -31,7 +31,7 @@ get_header();
 
         while ( have_posts() ) : the_post();
 
-          get_template_part( 'template-parts/content', 'people' );
+          get_template_part( 'template-parts/content', 'entry_excerpt' );
 
         endwhile;
 

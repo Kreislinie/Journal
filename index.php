@@ -10,13 +10,12 @@ get_header();
 
 <div id="primary" class="content-area">
   <main id="main" class="grid__main site-main">
-  
-    <header class="entry-header area__head">
+
+    <header class="entry-header area__head tags-header">
 
       <?php
-      if(is_archive()) {
+      if( is_archive() ) {
         the_archive_title( '<h1 class="page-title">', '</h1>' );
-        the_archive_description( '<div class="archive-description">', '</div>' );
       }
       ?>
 
