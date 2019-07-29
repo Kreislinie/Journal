@@ -36,7 +36,7 @@ function bj_add_admin_bar_items( $admin_bar ) {
 // var_dump($current_screen);
 
   // Gets id of term currently beeing edited.
-  $term_id = absint( $_GET['tag_ID'] );
+  $term_id = isset( $_GET['tag_ID']) ? $_GET['tag_ID'] : '' ;
   
   // Gets full term.
   $term = get_term($term_id, $taxnow );

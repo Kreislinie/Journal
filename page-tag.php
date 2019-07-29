@@ -19,9 +19,7 @@ get_header();
     <div class="area__content entry-content">
 
       <?php
-      /** 
-       * Display people term meta
-      */ 
+
       $tags = get_tags(); 
 
 
