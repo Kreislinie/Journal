@@ -136,9 +136,9 @@ function bj_display_mood() {
 /**
  * Displays category.
  */
-function bj_display_category() {
+function bj_display_category_bar() {
 
-  echo '<div class="category"><i class="fas fa-sitemap"></i>';
+  echo '<div class="category-bar"><i class="fas fa-sitemap"></i>';
   the_category( '', 'multiple' ) ;
   echo '</div>';
 

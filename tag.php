@@ -1,6 +1,5 @@
 <?php
 /**
- * The template to display all tags.
  *
  * @package bitjournal
  */
@@ -11,11 +10,10 @@ get_header();
 <div id="primary" class="content-area">
   <main id="main" class="grid__main site-main">
 
-  <header class="entry-header area__head tags-header">
+    <header class="entry-header area__head tags-header">
       <?php 
       echo '<h1 class="entry-title">' . single_tag_title('<i class="fas fa-tags"></i>', false) . '</h1>';
       echo tag_description();
-
       ?>
     </header><!-- .entry-header -->
 

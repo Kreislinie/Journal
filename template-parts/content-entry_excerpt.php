@@ -25,14 +25,12 @@
        */
       echo '<span class="date"><i class="far fa-calendar-alt"></i>' . get_the_date() . '</span>';
 
-      /** 
-       * Display category names.
-       */ 
-      if ( has_category() ) {
-        echo '<div class="category"><i class="fas fa-sitemap"></i>';
-        the_category( '', 'multiple' );
-        echo '</div>';
-      }
+        /** 
+         * Displays categories.
+         */ 
+        if ( has_category() ) {
+          bj_display_category_bar();
+        }
       ?>
     
     </div><!-- .entry-header-container -->

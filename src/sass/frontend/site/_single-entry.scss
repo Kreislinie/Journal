@@ -101,7 +101,7 @@
 }
 .category {
   margin-top: 2px;
-  float: left;
+  // float: left;
 }
 
 // Mood colors
@@ -117,7 +117,7 @@
   white-space: nowrap;
 }
 
-.tags i, .category i, .date i {
+.tags i, .category-bar i, .date i {
   margin-right: 5px;
   color: $color__text-light;
 }

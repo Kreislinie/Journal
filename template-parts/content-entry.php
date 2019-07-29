@@ -26,7 +26,7 @@
          * Displays categories.
          */ 
         if ( has_category() ) {
-          bj_display_category();
+          bj_display_category_bar();
         }
         ?>
 
