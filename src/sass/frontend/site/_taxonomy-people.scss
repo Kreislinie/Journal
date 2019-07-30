@@ -69,4 +69,8 @@
     margin-left: 0;
   }
 
+  @media screen and ( max-width: $tablet ) {
+    margin-bottom: 0px;
+  }
+
 }

@@ -7,7 +7,7 @@ $size__font-menu: 15px;
 .mobile-nav-wrap {
   display: none;
 }
-@media only screen and (max-width: $tablet){
+@media only screen and ( max-width: $tablet ) {
 
   .navbar-left {
     transform: translateX(-120vw);
@@ -116,11 +116,7 @@ span.active {
   z-index: 1;
   width: 100%;
   padding: 0 15px;
-
-
-  
-
-  
+  top: 0;
 
   img {
     height: $height__navbar;
@@ -176,7 +172,6 @@ span.active {
 }
 
 .nav-links div:only-child {
-
   width: 100%;
   text-align: center;
   padding: 0;
@@ -190,13 +185,18 @@ span.active {
   text-align: right;
   padding-right: 25px;
 
+  a {
+    padding-left: 25px;
+  }
+
   // Font Awesome Icon: https://fontawesome.com/icons/angle-left?style=solid
   &:before {
     content: "\f104";
     font-family: $font__icon;
     font-weight: 900;
-    padding: 0 10px;
+    margin-right: -13px;
     color: $color__icon;
+    pointer-events: none;
   }
 
 }
@@ -207,13 +207,18 @@ span.active {
   text-align: left;
   padding-left: 25px;
 
+  a {
+    padding-right: 25px;
+  }
+
   // Font Awesome Icon: https://fontawesome.com/icons/angle-right?style=solid
   &:after {
     content: "\f105";
     font-family: $font__icon;
     font-weight: 900;
-    padding: 0 10px;
+    margin-left: -13px;
     color: $color__icon;
+    pointer-events: none;
   }
 
 }

@@ -72,10 +72,8 @@
               elseif ( is_tax() ) :
               the_archive_title( '<p>', '</p>' );
 
-              elseif ( is_archive() ) :
-              the_archive_title( '<p>', '</p>' );
 
-              elseif ( is_home() ) : 
+              elseif ( is_home() || is_archive()) : 
 
               the_posts_navigation(
                 array(
@@ -98,7 +96,7 @@
              * Creates "Edit mode" menu item.
              * Checks which page is displayed and links to corresponding backend page.
              */ 
-            $edit_mode_link = admin_url('admin.php?page=bitjournal');
+            $edit_mode_link = admin_url();
 
             // Checks if current page is single entry.
             if ( is_single() ) {
