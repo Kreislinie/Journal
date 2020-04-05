@@ -36,9 +36,13 @@
     </div><!-- .entry-header-container -->
 
     <?php
-    the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-    
-    printf('<div class="link" data-url="%s"><p>%s</p></div>', get_permalink(), get_the_excerpt() );
+      /**
+       * Get edit post icon and link.
+       * Display post title with edit icon.
+       */
+      $edit_icon = '<a class="edit-entry-link" href="' . get_edit_post_link() . '"><i class="fas fa-pencil-alt"></i></a>';
+      the_title( '<h1 class="entry-title">', $edit_icon . '</h1>' );
+      printf('<div class="link" data-url="%s"><p>%s</p></div>', get_permalink(), get_the_excerpt() );
     ?>
 
   </article><!-- #post-<?php the_ID(); ?> -->

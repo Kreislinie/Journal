@@ -115,7 +115,7 @@ span.active {
   position: fixed;
   z-index: 1;
   width: 100%;
-  padding: 0 15px;
+  padding-left: 15px;
   top: 0;
 
   img {
@@ -132,6 +132,11 @@ span.active {
   text-align: right;
   float: right;
   width: auto;
+
+padding: 0 15px;
+
+
+
 
 
 

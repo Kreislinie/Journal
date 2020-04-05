@@ -93,15 +93,20 @@
 
             <?php
             /**
+             * TODO: There has to be a way more simpler and less hardcoded solution to this...
+             * 
              * Creates "Edit mode" menu item.
              * Checks which page is displayed and links to corresponding backend page.
              */ 
+
             $edit_mode_link = admin_url();
+            $edit_mode_text = esc_html__( 'Manage Entries', 'bitjournal' );
 
             // Checks if current page is single entry.
             if ( is_single() ) {
 
               $edit_mode_link = get_edit_post_link();
+              $edit_mode_text = esc_html__( 'Edit Entry', 'bitjournal' );
 
             // Checks if current page is "Home" or "Archive".
             } elseif ( is_home() || is_page('archive') ) {
@@ -112,31 +117,57 @@
             } elseif ( is_tax() || is_tag() ) {
 
               $edit_mode_link = get_edit_term_link( get_queried_object()->term_id, get_queried_object()->taxonomy );
+              $edit_mode_text = esc_html__( 'Edit Tag', 'bitjournal');
+
+              if (is_tax( 'people' ) ) {
+                $edit_mode_text = esc_html__( 'Edit Person', 'bitjournal');
+              }
 
             // Checks if current page is a category page.
             } elseif ( is_category() ) {
 
-              $edit_mode_link = admin_url( 'edit.php?post_type=entry&category_name=' . get_queried_object()->slug );
+              $edit_mode_link = get_edit_term_link( get_queried_object()->term_id, get_queried_object()->taxonomy );
+              $edit_mode_text = esc_html__( 'Edit Category', 'bitjournal');
 
             // Checks if page is "people".
             } elseif ( is_page('people') ) {
 
-              $edit_mode_link = admin_url( 'edit-tags.php?taxonomy=people' );
+              $edit_mode_link = admin_url( 'edit-tags.php?taxonomy=people&post_type=entry' );
+              $edit_mode_text = esc_html__( 'Manage People', 'bitjournal');
+
+            } elseif ( is_page('categories') ) {
+
+              $edit_mode_link = admin_url( 'edit-tags.php?taxonomy=category&post_type=entry' );
+              $edit_mode_text = esc_html__( 'Manage Categories', 'bitjournal');
             
             // Checks if page is "tags".
             } elseif ( is_page('tags') ) {
 
               $edit_mode_link = admin_url( 'edit-tags.php?taxonomy=post_tag&post_type=entry' );
+              $edit_mode_text = esc_html__( 'Manage Tags', 'bitjournal');
+
+            // Checks if page is "tags".
+            } elseif ( is_archive() ) {
+
+              $year     = get_query_var('year');
+              $monthnum = get_query_var('monthnum');
+              $day      = get_query_var('day');
+
+              $edit_mode_link = admin_url() . $year;
 
             }
+
+            
 
             // Adds page number if paged.
             if (is_paged()) {
               $edit_mode_link .= '&paged=' . get_query_var('paged');
             }
+
+            printf( '<a href="%s" title="%s">Edit mode <i class="fas fa-toggle-off"></i></a>', $edit_mode_link,  $edit_mode_text );
             ?>
 
-            <a href="<?php echo $edit_mode_link ?>">Edit mode <i class="fas fa-toggle-off"></i></a>
+
 
           </div>
 

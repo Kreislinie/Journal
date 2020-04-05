@@ -143,3 +143,13 @@ function bj_display_category_bar() {
   echo '</div>';
 
 }
+
+function my_manage_columns( $columns ) {
+  unset($columns['slugs']);
+  return $columns;
+}
+
+function my_column_init() {
+  add_filter( 'manage_posts_columns' , 'my_manage_columns' );
+}
+add_action( 'admin_init' , 'my_column_init' );

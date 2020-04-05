@@ -123,6 +123,7 @@ function bj_mood_cmb2_fields() {
       'position'   => 4, 
       'name'       => 'Mood' 
     ),
+
     'options'          => array(
       'horrible'   => '<span id="horrible">' . esc_html__( 'Horrible',  'bitjournal' ) . '</span>',
       'very-bad'   => '<span id="very-bad">' . esc_html__( 'Very bad',  'bitjournal' ) . '</span>',
@@ -132,6 +133,7 @@ function bj_mood_cmb2_fields() {
       'very-good'  => '<span id="very-good">' . esc_html__( 'Very good', 'bitjournal' ) . '</span>',
       'excellent'  => '<span id="excellent">' . esc_html__( 'Excellent', 'bitjournal' ) . '</span>',
     ),
+    
     'default' => 'neutral',
   ) );
 
