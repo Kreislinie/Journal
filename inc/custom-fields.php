@@ -14,7 +14,7 @@ function bj_people_cmb2_fields() {
    
   $cmb_people->add_field( array( 
     'name'             => esc_html__( 'Picture', 'bitjournal' ), 
-    'desc'             => esc_html__( 'Add a photo of the person', 'bitjournal' ), 
+    'desc'             => esc_html__( 'Add a portrait of the person', 'bitjournal' ), 
     'id'               => $prefix . 'picture',
     'type'             => 'file',
     'options'          => array( 'url' => false ),
@@ -54,7 +54,19 @@ function bj_people_cmb2_fields() {
     'date_format' => 'j F Y',
   ) );
 
-
+$cmb_people->add_field( array(
+	'name'           => 'Test Taxonomy Select',
+	'desc'           => 'Description Goes Here',
+	'id'             => 'wiki_test_taxonomy_select',
+	'taxonomy'       => 'people', //Enter Taxonomy Slug
+	'type'           => 'taxonomy_select',
+	'remove_default' => 'true', // Removes the default metabox provided by WP core.
+	// Optionally override the args sent to the WordPress get_terms function.
+	'query_args' => array(
+		// 'orderby' => 'slug',
+		// 'hide_empty' => true,
+	),
+) );
 
 $cmb_people->add_field( array(
 
