@@ -1,7 +1,3 @@
-/*.css
-*.map
-/js
-
 # NPM #
 ##########
 # Ignore all directories called node_modules in current folder and any subfolders.
@@ -39,12 +35,12 @@ Thumbs.db
 # Vim generated files #
 ######################
 *.un~
+*.swp
 
 # SASS #
 ##########
 **/.sass-cache
 **/.sass-cache/*
-**/.map
 
 # Composer #
 ##########

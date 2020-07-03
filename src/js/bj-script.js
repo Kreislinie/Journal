@@ -3,7 +3,7 @@
 jQuery(document).ready( function ($) {
 
   /**
-   * Makes elements clickable.
+   * Makes html elements clickable.
    * Html element needs "link" class. Use data-url html attribute to set url.
    */
   $( '.link' ).click( function () {
