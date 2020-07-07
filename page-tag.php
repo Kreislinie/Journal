@@ -1,8 +1,6 @@
 <?php
-/**
- * The template to display all people.
- *
- * @package bitjournal
+/*
+ * Template to display all people.
  */
 
 get_header();
