@@ -943,10 +943,12 @@ span.active {
   color: #dedede; }
 
 .entry-title {
-  margin-top: 0; }
+  margin: 0; }
   .entry-title i {
     color: #0dc8db;
     font-size: 0.5em; }
+  .entry-title a {
+    text-decoration: none; }
 
 .entry-content {
   margin-bottom: 30px; }

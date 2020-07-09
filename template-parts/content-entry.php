@@ -13,8 +13,8 @@
       <div class="entry-header-container">
 
         <?php 
-				// Displays mood and category.
         bj_display_mood();
+
         if ( has_category() ) {
           bj_display_category_bar();
         }
@@ -23,7 +23,7 @@
       </div><!-- .entry-header-container -->
 
       <?php 
-      // Displays post title with edit icon.
+      // Displays entry title, edit icon and content.
       $edit_icon = '<a class="edit-entry-link" href="' . get_edit_post_link() . '"><i class="fas fa-pencil-alt"></i></a>';
       the_title( '<h1 class="entry-title">', $edit_icon . '</h1>' );
 			the_content();
@@ -36,7 +36,6 @@
   <?php
   $people = wp_get_post_terms(get_the_ID(), 'people'); 
 
-	// Displays post meta.
   if( $people || has_tag() ) {
     echo '<hr class="post-meta-seperator">';
   }
