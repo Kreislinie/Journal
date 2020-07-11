@@ -1,6 +1,6 @@
 <?php
 /*
- * Template for displaying person 
+ * Template for displaying a person.
  */
 
 get_header();
@@ -59,6 +59,7 @@ get_header();
         </div><!-- .people-meta -->
 
       </div><!-- .people-info-box -->
+
     </header><!-- .entry-header -->
     
     <div class="area__content taxonomy-content">
@@ -84,6 +85,7 @@ get_header();
     </div><!-- .area__content -->
 
   </main><!-- #main -->
+
 </div><!-- .content-area -->
 
 <?php

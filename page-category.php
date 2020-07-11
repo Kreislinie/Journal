@@ -1,8 +1,6 @@
 <?php
-/**
+/*
  * The template to display all people.
- *
- * @package bitjournal
  */
 
 get_header();
@@ -17,40 +15,40 @@ get_header();
     </header><!-- .entry-header -->
       
     <div class="area__content cat-list">
-    <div>
+			<div>
 
-      <?php
-$categories = get_categories();
+				<?php
+				$categories = get_categories();
 
+				if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) :
 
+					$args = array(
+						'echo'                => 1,
+						'hide_empty'          => 0,
 
-      if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) :
+						'hierarchical'        => true,
+						'order'               => 'ASC',
+						'orderby'             => 'name',
+						'separator'           => '<br />',
+						// 'show_count'          => 1,
+						'show_option_all'     => '',
+						'style'               => 'list',
+						'taxonomy'            => 'category',
+						'title_li'            => '',
+						'use_desc_for_title'  => 1,
+					);
+				
+					wp_list_categories( $args );
 
-          $args = array(
-            'echo'                => 1,
-            'hide_empty'          => 0,
+				endif; 
+				?>
 
-            'hierarchical'        => true,
-            'order'               => 'ASC',
-            'orderby'             => 'name',
-            'separator'           => '<br />',
-            // 'show_count'          => 1,
-            'show_option_all'     => '',
-            'style'               => 'list',
-            'taxonomy'            => 'category',
-            'title_li'            => '',
-            'use_desc_for_title'  => 1,
-        );
-        
-        wp_list_categories( $args );
+			</div>
 
-
-         
-            endif; ?>
-</div>
     </div><!-- .area__content -->
   
   </main><!-- #main -->
+
 </div><!-- .content-area -->
 
 <?php

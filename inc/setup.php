@@ -1,8 +1,6 @@
 <?php
-/**
- * Create needed pages on theme activation
- *
- * @package bitjournal
+/*
+ * Create needed pages on theme activation.
  */
 if ( isset( $_GET['activated'] ) && is_admin() ) :
 
@@ -22,10 +20,9 @@ if ( isset( $_GET['activated'] ) && is_admin() ) :
   $category_page_template = 'page-category.php';
   $category_check = get_page_by_title( $category_title );
 
-  /**
+  /*
    * Array for wp_insert_post 
-   * 
-   * @link https://developer.wordpress.org/reference/functions/wp_insert_post
+   * https://developer.wordpress.org/reference/functions/wp_insert_post
    */   
   $people_page = array(
     'post_type' => 'page',
@@ -82,7 +79,7 @@ if ( isset( $_GET['activated'] ) && is_admin() ) :
     }
   }
 
-  // Creates page "tags".
+  // Creates page "categories".
   if ( !isset( $category_check->ID ) ) {
 
     $category_page_id = wp_insert_post( $category_page );
@@ -93,26 +90,17 @@ if ( isset( $_GET['activated'] ) && is_admin() ) :
   }
 
   /*
-   * Set permalink structure 
+   * Set permalink structure.
    */  
   global $wp_rewrite; 
 
   $wp_rewrite->set_permalink_structure('/%year%/%monthnum%/%day%/%postname%/'); 
 
-  //Set the option
+  // Set the option.
   update_option( "rewrite_rules", FALSE ); 
 
-  //Flush the rules and tell it to write htaccess
+  // Flush the rules and tell it to write htaccess.
   $wp_rewrite->flush_rules( true );
 
-  /*
-   * Set permalink structure 
-   */ 
-  wp_update_term( 1, 'category', array(
-    'name' => esc_html__('Repeated', 'bitjournal'),
-  ) );
-
 endif;
-
-
 

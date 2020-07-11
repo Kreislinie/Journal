@@ -1,13 +1,9 @@
 <?php
 
-/**
- * Hide frontend adminbar.
- */
+// Hide frontend adminbar.
 add_filter( 'show_admin_bar', '__return_false' );
 
-/**
- * Hide admin bar menu items.
- */
+// Hide admin bar menu items.
 function bj_remove_admin_bar_items( $wp_admin_bar ) {
 
   $wp_admin_bar->remove_node( 'updates' );        // Update notification
@@ -24,7 +20,7 @@ function bj_remove_admin_bar_items( $wp_admin_bar ) {
 }
 add_action( 'admin_bar_menu', 'bj_remove_admin_bar_items', 999 );
 
-/**
+/*
  * Creates "Exit edit mode" menu item.
  * Checks which backend page is displayed and links to corresponding frontend page.
  */ 
@@ -33,7 +29,7 @@ function bj_add_admin_bar_items( $admin_bar ) {
   global $taxnow, $pagenow, $post;
   $current_screen = get_current_screen();
 
-// var_dump($current_screen);
+	// var_dump($current_screen);
 
   // Gets id of term currently beeing edited.
   $term_id = isset( $_GET['tag_ID']) ? $_GET['tag_ID'] : '' ;
@@ -91,40 +87,15 @@ function bj_add_admin_bar_items( $admin_bar ) {
     ),
   ));
 
-    $admin_bar->add_menu( array(
-        'id'    => 'my-sub-item',
-        'parent' => 'my-item',
-        'title' => 'My Sub Menu Item',
-        'href'  => '#',
-        'meta'  => array(
-            'title' => __('My Sub Menu Item'),
-            'target' => '_blank',
-            'class' => 'my_menu_item_class'
-        ),
-    ));
-    $admin_bar->add_menu( array(
-        'id'    => 'my-second-sub-item',
-        'parent' => 'my-item',
-        'title' => 'My Second Sub Menu Item',
-        'href'  => '#',
-        'meta'  => array(
-            'title' => __('My Second Sub Menu Item'),
-            'target' => '_blank',
-            'class' => 'my_menu_item_class'
-        ),
-    ));
-
-    /**
-     * Adds add entry menu item
-     */
-    $admin_bar->add_menu( array(
-      'id'    => 'add-entry',
-      'title' => esc_html__( 'Add Entry', 'bitjournal' ),
-      'href'  => admin_url( 'post-new.php?post_type=entry' ),
-      'meta'  => array(
-        'title' => esc_html__( 'Add Entry', 'bitjournal' ),            
-      ),
-    ));
+	// Adds add entry menu item
+	$admin_bar->add_menu( array(
+		'id'    => 'add-entry',
+		'title' => esc_html__( 'Add Entry', 'bitjournal' ),
+		'href'  => admin_url( 'post-new.php?post_type=entry' ),
+		'meta'  => array(
+			'title' => esc_html__( 'Add Entry', 'bitjournal' ),            
+		),
+	));
 
 }
 add_action('admin_bar_menu', 'bj_add_admin_bar_items', 100);

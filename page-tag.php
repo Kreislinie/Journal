@@ -33,7 +33,9 @@ get_header();
 
         <?php
         endforeach;
+				
         echo '</div><!-- .person-overview -->';
+
       endif; ?>
 
     </div><!-- .area__content -->

@@ -1,12 +1,7 @@
 <?php
-/**
- * Template part for displaying a message that posts cannot be found
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package bitjournal
+/*
+ * Template for displaying a message that entry cannot be found.
  */
-
 ?>
 
 <section class="no-results not-found">

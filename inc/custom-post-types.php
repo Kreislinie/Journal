@@ -1,14 +1,11 @@
 <?php 
 
-/**
- * Custom Post-Types
- *
- * @package bitjournal
+/*
+ * Custom Post-Types.
  */
-
 function bj_custom_post_types() {
  
-  // Set UI labels for Custom Post Type
+  // Set UI labels for Custom Post Type.
 
   $labels_entry = array(
     'name'                => __( 'Entries', 'bitjournal' ),
@@ -26,6 +23,7 @@ function bj_custom_post_types() {
     'not_found_in_trash'  => __( 'Not found in Trash', 'bitjournal' ),
   );
 
+	// Not used.
   $labels_health_record = array(
     'name'                => __( 'Health Record', 'bitjournal' ),
     'singular_name'       => __( 'Healt Record', 'bitjournal' ),
@@ -42,7 +40,7 @@ function bj_custom_post_types() {
     'not_found_in_trash'  => __( 'Not found in Trash', 'bitjournal' ),
   );
 
-  // Set other options for Custom Post Type
+  // Set other options for Custom Post Type.
     
   $args_entry = array(
     'labels'              => $labels_entry,
@@ -86,16 +84,18 @@ function bj_custom_post_types() {
   // Registering Entry post type
   register_post_type( 'entry', $args_entry );
   
-  /**
-   * Health entry, maybe for a future bitjournal version...
+  /*
+   * Health entry, maybe for a future version...
+	 *
+	 * register_post_type( 'health-record', $args_health_record );
    */
-  // register_post_type( 'health-record', $args_health_record );
 
 }
    
-  /* Hook into the 'init' action so that the function
-  * Containing our post type registration is not 
-  * unnecessarily executed. 
-  */
+/* Hook into the 'init' action so that the function
+ * containing post type registration is not 
+ * unnecessarily executed. 
+ */
    
-  add_action( 'init', 'bj_custom_post_types', 0 );
+add_action( 'init', 'bj_custom_post_types', 0 );
+

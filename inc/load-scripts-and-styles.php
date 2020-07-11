@@ -1,9 +1,8 @@
 <?php
 
-/* ------------------------------------------
-  LOAD SCRIPTS AND STYLES
-------------------------------------------- */
-
+/*
+ * Load scripts and styles.
+ */
 function bj_frontend_scripts() {
 
   wp_enqueue_style( 'bitjournal-style', get_stylesheet_directory_uri() . '/style.css' );

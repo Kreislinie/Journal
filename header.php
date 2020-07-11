@@ -1,17 +1,13 @@
 <?php
-/**
- * The header gile.
- *
- * @package bitjournal
+/*
+ * The header template.
  */
 
-?>
-
-<?php  
-  if( ! is_user_logged_in() ) :
-    wp_safe_redirect( get_dashboard_url() );
-    exit; 
-  endif;
+// Redirects to login page if user not logged in.
+if( ! is_user_logged_in() ) :
+	wp_safe_redirect( get_dashboard_url() );
+	exit; 
+endif;
 ?>
 
 <!doctype html>
@@ -57,7 +53,7 @@
           <div class="entry-meta">
 
             <?php	
-            /**
+            /*
              * Displays centered top bar navigation.
              * 
              * Checks if page is single post, taxonomy, archive or home.
@@ -92,7 +88,7 @@
           <div class="navbar-right">
 
             <?php
-            /**
+            /*
              * TODO: There has to be a way more simpler and less hardcoded solution to this...
              * 
              * Creates "Edit mode" menu item.
@@ -157,8 +153,6 @@
 
             }
 
-            
-
             // Adds page number if paged.
             if (is_paged()) {
               $edit_mode_link .= '&paged=' . get_query_var('paged');
@@ -167,23 +161,10 @@
             printf( '<a href="%s" title="%s">Edit mode <i class="fas fa-toggle-off"></i></a>', $edit_mode_link,  $edit_mode_text );
             ?>
 
-
-
           </div>
 
         </nav><!-- .main-navigation -->
 
-        <!-- OVERLAY MENU
-        <div class="navbar-right navbar-right__closed">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>      
-              
-        <div class="menu-overlay menu-overlay__closed">
-          <p>menu overlay</p>
-        </div>
-        -->
 	    </header><!-- #masthead -->
 
 	    <div id="content" class="site-content">

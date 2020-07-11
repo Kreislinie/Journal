@@ -1,32 +1,7 @@
 <?php
-/**
+/*
  * Functions which enhance the theme...
- *
- * @package bitjournal
  */
-
-/**
- * Adds custom classes to the array of body classes.
- *
- * @param array $classes Classes for the body element.
- * @return array
- */
-function bitjournal_body_classes( $classes ) {
-
-	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
-	}
-
-	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		$classes[] = 'no-sidebar';
-	}
-
-	return $classes;
-}
-
-add_filter( 'body_class', 'bitjournal_body_classes' );
 
 /** 
  * Displays archive post count as <span> element.
@@ -39,7 +14,7 @@ function bj_archive_post_count( $link_html ) {
 
 add_filter( 'get_archives_link', 'bj_archive_post_count' );
 
-/** 
+/* 
  * Hides default WP post type.
  */
 function bj_remove_default_post_type() {
@@ -48,7 +23,7 @@ function bj_remove_default_post_type() {
 
 add_action( 'admin_menu', 'bj_remove_default_post_type' );
 
-/**
+/*
  * Hide the prefix displayed at the start of archive titles.
  * Author: Ben Gillbanks
  *
@@ -89,7 +64,7 @@ function bj_hide_the_archive_title( $title ) {
 
 add_filter( 'get_the_archive_title', 'bj_hide_the_archive_title' );
 
-/**
+/*
  * Displays mood post meta.
  */
 function bj_display_mood() {
@@ -133,7 +108,7 @@ function bj_display_mood() {
   
 }
 
-/**
+/*
  * Displays category.
  */
 function bj_display_category_bar() {
@@ -153,3 +128,4 @@ function my_column_init() {
   add_filter( 'manage_posts_columns' , 'my_manage_columns' );
 }
 add_action( 'admin_init' , 'my_column_init' );
+
