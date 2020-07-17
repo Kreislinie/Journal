@@ -3,9 +3,7 @@
  * Functions which enhance the theme...
  */
 
-/** 
- * Displays archive post count as <span> element.
- */
+// Displays archive post count as <span> element.
 function bj_archive_post_count( $link_html ) {
   $link_html = str_replace( '</a>&nbsp;(', '</a> <span class="archiveCount">', $link_html );
   $link_html = str_replace( ')', '</span>', $link_html );
@@ -14,9 +12,7 @@ function bj_archive_post_count( $link_html ) {
 
 add_filter( 'get_archives_link', 'bj_archive_post_count' );
 
-/* 
- * Hides default WP post type.
- */
+// Hides default WP post type.
 function bj_remove_default_post_type() {
   remove_menu_page( 'edit.php' );
 }
@@ -30,9 +26,6 @@ add_action( 'admin_menu', 'bj_remove_default_post_type' );
  * Add a span around the title prefix so that the prefix can be hidden with CSS
  * if desired.
  * Note that this will only work with LTR languages.
- *
- * @param string $title Archive title.
- * @return string Archive title with inserted span around prefix.
  */
 function bj_hide_the_archive_title( $title ) {
 
@@ -64,9 +57,7 @@ function bj_hide_the_archive_title( $title ) {
 
 add_filter( 'get_the_archive_title', 'bj_hide_the_archive_title' );
 
-/*
- * Displays mood post meta.
- */
+// Displays mood post meta.
 function bj_display_mood() {
 
   $mood = get_post_meta( get_the_ID(), 'bj_mood_cmb2_mood', true );
@@ -108,9 +99,7 @@ function bj_display_mood() {
   
 }
 
-/*
- * Displays category.
- */
+// Displays category.
 function bj_display_category_bar() {
 
   echo '<div class="category-bar"><i class="fas fa-sitemap"></i>';
