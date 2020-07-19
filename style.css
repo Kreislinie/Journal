@@ -578,9 +578,6 @@ a {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-/**
- * Menu related variables.
- */
 .mobile-nav-wrap {
   display: none; }
 
@@ -743,7 +740,8 @@ span.active {
     font-weight: 300;
     height: 50px;
     line-height: 50px;
-    margin: 0; }
+    margin: 0;
+    font-size: 15px; }
   .entry-meta a {
     text-decoration: none;
     text-align: center;
@@ -1128,7 +1126,7 @@ span.active {
 
 .people-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr)); }
+  grid-template-columns: repeat(auto-fit, minmax(115px, 115px)); }
 
 .people-info-box {
   border-radius: 7px; }

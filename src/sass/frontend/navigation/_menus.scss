@@ -1,12 +1,11 @@
-/**
- * Menu related variables.
- */
+// Menu related variables.
 $height__navbar: 50px;
 $size__font-menu: 15px;
 
 .mobile-nav-wrap {
   display: none;
 }
+
 @media only screen and ( max-width: $tablet ) {
 
   .navbar-left {
@@ -243,6 +242,7 @@ padding: 0 15px;
     height: $height__navbar;
     line-height: $height__navbar;
     margin: 0;
+		font-size: $size__font-menu;
   }
 
   a {
@@ -266,3 +266,4 @@ padding: 0 15px;
   }
 
 }
+
