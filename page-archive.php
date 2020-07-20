@@ -22,7 +22,7 @@ get_header();
       $archive = $wpdb->get_results(
         "SELECT DISTINCT MONTH( post_date ) AS month,
         YEAR( post_date ) AS year, 
-        COUNT( id ) as post_count FROM $wpdb->posts WHERE post_status = 'publish' and post_date <= now( ) and post_type = 'entry' GROUP BY month,
+        COUNT( id ) AS post_count FROM $wpdb->posts WHERE post_status = 'publish' AND post_date <= now( ) AND post_type = 'entry' GROUP BY month,
         year ORDER BY post_date DESC"
       );
 

@@ -27,7 +27,7 @@
 
     else :
 
-      printf( '<p><a href="%s">%s</a></p>', get_admin_url( null, 'post-new.php?post_type=entry' ), esc_html__( 'Create an entry...', 'bitjournal' ) );
+      printf( '<p><a href="%s">%s</a></p>', get_admin_url( null, 'post-new.php?post_type=entry' ), esc_html__( 'Create a new entry...', 'bitjournal' ) );
 
 		endif;
     ?>
