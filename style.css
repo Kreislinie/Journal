@@ -474,15 +474,13 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid;
+  border: none;
   border-color: #ccc #ccc #bbb;
   border-radius: 3px;
   background: #e6e6e6;
   color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
   line-height: 1;
-  padding: .6em 1em .4em; }
+  padding: 8px; }
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
@@ -516,7 +514,7 @@ textarea {
   color: #666;
   border: 1px solid #ccc;
   border-radius: 3px;
-  padding: 3px; }
+  padding: 3px 8px; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -540,6 +538,9 @@ select {
 
 textarea {
   width: 100%; }
+
+.page-error {
+  text-align: center; }
 
 /*--------------------------------------------------------------
   Layout
