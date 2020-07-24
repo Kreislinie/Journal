@@ -17,7 +17,6 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php bitjournal_post_thumbnail(); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>

@@ -69,7 +69,7 @@ endif;
               the_archive_title( '<p>', '</p>' );
 
 
-              elseif ( is_home() || is_archive()) : 
+              elseif ( is_home() || is_archive() || is_search() ) : 
 
               the_posts_navigation(
                 array(
