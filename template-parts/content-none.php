@@ -4,9 +4,11 @@
  */
 ?>
 
+<div class="area__content">
+
 <section class="no-results not-found">
 
-	<header class="page-header">
+	<header class="page-header area__head">
 		<h1 class="page-title"><?php esc_html_e( 'No entries...', 'bitjournal' ); ?></h1>
 	</header><!-- .page-header -->
 
@@ -35,3 +37,4 @@
   </div><!-- .page-content -->
   
 </section><!-- .no-results -->
+</div>
