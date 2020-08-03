@@ -98,4 +98,6 @@ function bj_add_admin_bar_items( $admin_bar ) {
 	));
 
 }
+
 add_action('admin_bar_menu', 'bj_add_admin_bar_items', 100);
+
