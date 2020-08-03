@@ -1,27 +1,26 @@
 <?php
+
 /*
  * Register custom taxonomies.
  */
-
-// People taxonomy
-function bj_people_taxonomy() {
+function bj_taxonomy() {
 
 	$labels = array(
-		'name'                           => 'People',
-		'singular_name'                  => 'Person',
-		'search_items'                   => 'Search Person',
-		'all_items'                      => 'All People',
-		'edit_item'                      => 'Edit Person',
-		'update_item'                    => 'Update Person',
-		'add_new_item'                   => 'Add New Person',
-		'new_item_name'                  => 'New Person Name',
-		'menu_name'                      => 'People',
-		'view_item'                      => 'View Person',
-		'popular_items'                  => 'Popular Person',
-		'separate_items_with_commas'     => 'Separate People with commas',
-		'add_or_remove_items'            => 'Add or remove People',
-		'choose_from_most_used'          => 'Choose from the most used People',
-		'not_found'                      => 'No people found'
+		'name'                           => __('People'),
+		'singular_name'                  => __('Person'),
+		'search_items'                   => __('Search Person'),
+		'all_items'                      => __('All People'),
+		'edit_item'                      => __('Edit Person'),
+		'update_item'                    => __('Update Person'),
+		'add_new_item'                   => __('Add New Person'),
+		'new_item_name'                  => __('New Person Name'),
+		'menu_name'                      => __('People'),
+		'view_item'                      => __('View Person'),
+		'popular_items'                  => __('Popular Person'),
+		'separate_items_with_commas'     => __('Separate People with commas'),
+		'add_or_remove_items'            => __('Add or remove People'),
+		'choose_from_most_used'          => __('Choose from the most used People'),
+		'not_found'                      => __('No people found')
 	);
 
   $args = array(
@@ -42,5 +41,5 @@ function bj_people_taxonomy() {
   
 }
 
-add_action( 'init', 'bj_people_taxonomy' );
+add_action( 'init', 'bj_taxonomy' );
 
