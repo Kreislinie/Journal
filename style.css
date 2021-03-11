@@ -819,6 +819,9 @@ span.active {
   margin-left: auto;
   margin-right: auto; }
 
+.aligntxtcenter {
+  text-align: center; }
+
 /*--------------------------------------------------------------
   Clearings
 --------------------------------------------------------------*/

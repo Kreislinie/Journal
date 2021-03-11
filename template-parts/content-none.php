@@ -4,7 +4,6 @@
  */
 ?>
 
-<div class="area__content">
 
 <section class="no-results not-found">
 
@@ -17,7 +16,7 @@
 		<?php
 		if ( is_home() ) :
 
-      printf( '<a href="%s">%s</a>', get_admin_url( null, 'post-new.php?post_type=entry' ), esc_html__( 'Ready to write your first entry?', 'bitjournal' ) );
+      printf( '<p class="aligntxtcenter"><a href="%s">%s</a></p>', get_admin_url( null, 'post-new.php?post_type=entry' ), esc_html__( 'Ready to write your first entry?', 'bitjournal' ) );
 
 		elseif ( is_search() ) :
 
@@ -33,8 +32,6 @@
 
 		endif;
     ?>
-    
-  </div><!-- .page-content -->
   
 </section><!-- .no-results -->
 </div>
