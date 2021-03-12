@@ -7,16 +7,14 @@
 
 <section class="no-results not-found">
 
-	<header class="page-header area__head">
-		<h1 class="page-title"><?php esc_html_e( 'No entries...', 'bitjournal' ); ?></h1>
-	</header><!-- .page-header -->
+		<h1 class="page-title aligntxtcenter"><?php esc_html_e( 'No entries', 'bitjournal' ); ?></h1>
 
 	<div class="page-content">
 
 		<?php
 		if ( is_home() ) :
 
-      printf( '<p class="aligntxtcenter"><a href="%s">%s</a></p>', get_admin_url( null, 'post-new.php?post_type=entry' ), esc_html__( 'Ready to write your first entry?', 'bitjournal' ) );
+      printf( '<p class="aligntxtcenter"><a href="%s">%s</a></p>', get_admin_url( null, 'post-new.php?post_type=entry' ), esc_html__( 'Write your first entry', 'bitjournal' ) );
 
 		elseif ( is_search() ) :
 
@@ -28,7 +26,7 @@
 
     else :
 
-      printf( '<p><a href="%s">%s</a></p>', get_admin_url( null, 'post-new.php?post_type=entry' ), esc_html__( 'Create a new entry...', 'bitjournal' ) );
+			printf( '<p class="aligntxtcenter"><a href="%s">%s</a></p>', get_admin_url( null, 'post-new.php?post_type=entry' ), esc_html__( 'Create a new entry...', 'bitjournal' ) );
 
 		endif;
     ?>
