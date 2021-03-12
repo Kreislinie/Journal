@@ -9,6 +9,10 @@ $color__mood-bad:       #FFAA00;
 $color__mood-very-bad:  #FF6E00;
 $color__mood-horrible:  rgb(235, 35, 29);
 
+.edit-post-layout .interface-interface-skeleton__content {
+	background-color: white;
+}
+
 /*
  * Mood buttons styling on edit entry page.
  */
@@ -132,7 +136,7 @@ $color__mood-horrible:  rgb(235, 35, 29);
 
 /*
  * Hide option fields and some unnecessary information.
- * TODO: A better option would be to disable them via php if possible.
+ * TODO: A better option would be to disable them via php.
  */
 .screen-options,          // Post per page option (pages: entries and pages overview).
 .edit-term-notes,         // Information about Terms/Categories (pages: categories and tags overview).

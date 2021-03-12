@@ -1,3 +1,6 @@
+.edit-post-layout .interface-interface-skeleton__content {
+  background-color: white; }
+
 /*
  * Mood buttons styling on edit entry page.
  */
@@ -80,7 +83,7 @@
 
 /*
  * Hide option fields and some unnecessary information.
- * TODO: A better option would be to disable them via php if possible.
+ * TODO: A better option would be to disable them via php.
  */
 .screen-options,
 .edit-term-notes,
