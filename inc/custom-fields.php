@@ -1,10 +1,13 @@
 <?php 
 
-/*
+/**
  * Custom field setup via cmb2.
  */
 
-// Adds custom fields for people taxonomy.
+
+/**
+ * Adds custom fields for people taxonomy.
+ */
 function bj_people_cmb2_fields() {
 
  	$prefix = 'bj_people_cmb2_'; 
@@ -16,14 +19,14 @@ function bj_people_cmb2_fields() {
   ) ); 
    
   $cmb_people->add_field( array( 
-    'name'             => esc_html__( 'Picture', 'bitjournal' ), 
-    'desc'             => esc_html__( 'Add a portrait of the person', 'bitjournal' ), 
-    'id'               => $prefix . 'picture',
-    'type'             => 'file',
-    'options'          => array( 'url' => false ),
-    'column'           => array(
-      'position' => 2,
-      'name'     => 'Photo',
+    'name'            => esc_html__( 'Picture', 'bitjournal' ), 
+    'desc'            => esc_html__( 'Add a portrait of the person', 'bitjournal' ), 
+    'id'              => $prefix . 'picture',
+    'type'            => 'file',
+    'options'         => array( 'url' => false ),
+    'column'          => array(
+      'position'		=> 2,
+      'name'     		=> 'Photo',
     ),
   ) ); 
 
@@ -36,64 +39,52 @@ function bj_people_cmb2_fields() {
       'placeholder'   => 'Close Friend, Sibling, Soulmate, ...'          
     ),
     'column'          => array(
-      'position' => 3,
-      'name'     => 'Relationship',
+      'position' 		=> 3,
+      'name'     		=> 'Relationship',
     ),
   ) );
 
   $cmb_people->add_field( array(
-    'name' => 'Birthday',
-    'id'   => $prefix . 'birth',
-    'type' => 'text_date_timestamp',
+    'name' 				=> 'Birthday',
+    'id'   				=> $prefix . 'birth',
+    'type' 				=> 'text_date_timestamp',
     'date_format' => 'j F Y',
   ) );
 
   $cmb_people->add_field( array(
-    'name' => 'Death',
-    'id'   => $prefix . 'death',
-    'type' => 'text_date_timestamp',
+    'name' 				=> 'Death',
+    'id'   				=> $prefix . 'death',
+    'type' 				=> 'text_date_timestamp',
     'date_format' => 'j F Y',
   ) );
-
-	$cmb_people->add_field( array(
-		'name'           => 'TESTING! Taxonomy Select',
-		'desc'           => 'Description Goes Here',
-		'id'             => 'wiki_test_taxonomy_select',
-		'taxonomy'       => 'people', 
-		'type'           => 'taxonomy_select',
-		'remove_default' => 'true', // Removes the default metabox provided by WP core.
-		// Optionally override the args sent to the WordPress get_terms function.
-		'query_args' => array(
-			// 'orderby' => 'slug',
-			// 'hide_empty' => true,
-			),
-	) );
 
 }
 
 add_action( 'cmb2_admin_init', 'bj_people_cmb2_fields' ); 
 
 
-// Adds custom fields for entry post type.
+/**
+ * Adds custom fields for entry post type.
+ */
 function bj_mood_cmb2_fields() {
 
   $prefix = 'bj_mood_cmb2_'; 
 
   $cmb_mood = new_cmb2_box( array( 
-    'id'               => $prefix . 'box',
-    'title'            => 'Mood',
-    'object_types'     => array( 'entry' ),
+    'id'   				 => $prefix . 'box',
+    'title'        => 'Mood',
+    'object_types' => array( 'entry' ),
   ) ); 
 
   $cmb_mood->add_field( array(
-    'id'               => $prefix . 'mood',
-    'type'             => 'radio_inline',
-    'column'           => array( 
+    'id'           => $prefix . 'mood',
+    'type'         => 'radio_inline',
+    'column'       => array( 
       'position'   => 4, 
       'name'       => 'Mood' 
     ),
 
-    'options'          => array(
+    'options'      => array(
       'horrible'   => '<span id="horrible">' . esc_html__( 'Horrible',  'bitjournal' ) . '</span>',
       'very-bad'   => '<span id="very-bad">' . esc_html__( 'Very bad',  'bitjournal' ) . '</span>',
       'bad'        => '<span id="bad">' . esc_html__( 'Bad', 'bitjournal' ) . '</span>',
@@ -103,7 +94,7 @@ function bj_mood_cmb2_fields() {
       'excellent'  => '<span id="excellent">' . esc_html__( 'Excellent', 'bitjournal' ) . '</span>',
     ),
     
-    'default' => 'neutral',
+    'default' 		 => 'neutral',
   ) );
 
 }
