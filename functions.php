@@ -101,7 +101,11 @@ add_action('do_feed_atom', 'bitjournal_disable_feed', 1);
 add_action('do_feed_rss2_comments', 'bitjournal_disable_feed', 1);
 add_action('do_feed_atom_comments', 'bitjournal_disable_feed', 1);
 
-function bj_backend_error_messages() {
+
+/**
+ * Displays backend warning messages.
+ */
+function bj_backend_warning_messages() {
 
   $current_screen = get_current_screen();
 
@@ -115,5 +119,24 @@ function bj_backend_error_messages() {
 
 }
 
-add_action( 'admin_notices', 'bj_backend_error_messages' );
+add_action( 'admin_notices', 'bj_backend_warning_messages' );
+
+
+/**
+ * Change publish button text to 'Write entry'.
+ */
+function bj_change_publish_button_text() {
+  if ( wp_script_is( 'wp-i18n' ) ) :
+  ?>
+    <script>
+			wp.i18n.setLocaleData({
+				'Publish': ['Write entry'], 
+				'Publish…': ['Write entry']
+			});
+    </script>
+  <?php
+  endif;
+}
+
+add_action( 'admin_print_footer_scripts', 'bj_change_publish_button_text', 11 );
 
