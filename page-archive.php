@@ -1,8 +1,6 @@
 <?php
-/**
- * The template for displaying archive overview
- *
- * @package bitjournal
+/*
+ * Template for displaying archive overview.
  */
 
 get_header();
@@ -18,21 +16,18 @@ get_header();
     <div class="area__content auto-grid">
 
       <?php 
-      /**
-       * 
-       */
       global $wpdb;
       $limit = 0;
       $year_prev = null;
       $archive = $wpdb->get_results(
         "SELECT DISTINCT MONTH( post_date ) AS month,
         YEAR( post_date ) AS year, 
-        COUNT( id ) as post_count FROM $wpdb->posts WHERE post_status = 'publish' and post_date <= now( ) and post_type = 'entry' GROUP BY month,
+        COUNT( id ) AS post_count FROM $wpdb->posts WHERE post_status = 'publish' AND post_date <= now( ) AND post_type = 'entry' GROUP BY month,
         year ORDER BY post_date DESC"
       );
 
-      /**
-       * Generates an outputs archive overview structure.
+      /*
+       * Generates an outputs archive overview.
        * 
        * Structure:
        * 'div.archive-overview' always contains one year with
@@ -40,9 +35,7 @@ get_header();
        * every moth 'a.archive-overview__month-link' in which one or more entry was written.
        */
 
-       /**
-       * Opens first div.archive-overview.
-       */
+      // Opens first div.archive-overview.
       echo '<div class="archive-overview">';
 
         foreach($archive as $date) :
@@ -55,16 +48,12 @@ get_header();
               echo '</div><div class="archive-overview">';
             }
 
-            /**
-             * Prints year and link to year archive.
-             */
+            // Prints year and link to year archive.
             printf('<a class="archive-overview__year-link" href="%s/%s/?post_type=entry">%s</a>', get_bloginfo('url'), $date->year, $date->year);
 
           endif; 
 
-          /**
-           * Gets month archive URL.
-           */
+          // Gets month archive URL.
           $url_month = get_bloginfo('url') . '/' . $date->year . '/' . date("m", mktime(0, 0, 0, $date->month, 1, $date->year)) . '/?post_type=entry';
           ?>
 
@@ -79,9 +68,7 @@ get_header();
         
         endforeach;
 
-      /**
-       * Closes last div.archive-overview.
-       */
+      // Closes last div.archive-overview.
       echo '</div>';
 
       ?>

@@ -1,8 +1,6 @@
 <?php
-/**
- * The template to display all people.
- *
- * @package bitjournal
+/*
+ * Template to display all people.
  */
 
 get_header();
@@ -35,7 +33,9 @@ get_header();
 
         <?php
         endforeach;
+				
         echo '</div><!-- .person-overview -->';
+
       endif; ?>
 
     </div><!-- .area__content -->

@@ -9,7 +9,11 @@ $color__mood-bad:       #FFAA00;
 $color__mood-very-bad:  #FF6E00;
 $color__mood-horrible:  rgb(235, 35, 29);
 
-/**
+.edit-post-layout .interface-interface-skeleton__content {
+	background-color: white;
+}
+
+/*
  * Mood buttons styling on edit entry page.
  */
 .column-bj_mood_cmb2_mood {
@@ -114,7 +118,7 @@ $color__mood-horrible:  rgb(235, 35, 29);
 
 }
 
-/**
+/*
  * Admin bar menu styles
  */
 #wpadminbar #wp-admin-bar-exit-write {
@@ -130,8 +134,9 @@ $color__mood-horrible:  rgb(235, 35, 29);
 
 }
 
-/**
- * Hide option fields (which should not be changed by user) and some unnecessary information.
+/*
+ * Hide option fields and some unnecessary information.
+ * TODO: A better option would be to disable them via php.
  */
 .screen-options,          // Post per page option (pages: entries and pages overview).
 .edit-term-notes,         // Information about Terms/Categories (pages: categories and tags overview).

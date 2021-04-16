@@ -1,10 +1,6 @@
 <?php
-/**
- * Template part for displaying entry excerpt
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package bitjournal
+/*
+ * Template part for displaying entry excerpt.
  */
 ?>
 
@@ -15,63 +11,30 @@
     <div class="entry-header-container">
 
       <?php 
-      /**
-       * Display mood post meta.
-       */
-      bj_display_mood();
+			bj_display_mood();
 
-      /**
-       * Display date.
-       */
-      echo '<span class="date-bar"><i class="far fa-calendar-alt"></i>' . get_the_date() . '</span>';
+			echo '<span class="date-bar"><i class="far fa-calendar-alt"></i>' . get_the_date() . '</span>';
 
-        /** 
-         * Displays categories.
-         */ 
-        if ( has_category() ) {
-          bj_display_category_bar();
-        }
+			if ( has_category() ) {
+				bj_display_category_bar();
+			}
       ?>
     
     </div><!-- .entry-header-container -->
 
     <?php
-      /**
-       * Get edit post icon and link.
-       * Display post title with edit icon.
-       */
-      $edit_icon = '<a class="edit-entry-link" href="' . get_edit_post_link() . '"><i class="fas fa-pencil-alt"></i></a>';
-      the_title( '<h1 class="entry-title">', $edit_icon . '</h1>' );
-      printf('<div class="link" data-url="%s"><p>%s</p></div>', get_permalink(), get_the_excerpt() );
+		// Displays entry title, excerpt and edit icon.
+		$edit_icon = '<a class="edit-entry-link" href="' . get_edit_post_link() . '"><i class="fas fa-pencil-alt"></i></a>';
+
+		the_title( '<h1 class="entry-title"><a href="' . get_permalink() . '">', '</a>' . $edit_icon . '</h1>' );
+
+		printf('<div class="link" data-url="%s"><p>%s</p></div>', get_permalink(), get_the_excerpt() );
     ?>
 
   </article><!-- #post-<?php the_ID(); ?> -->
   
 </div><!-- .entry-content -->
 
-  <?php
 
-/** 
-     * Display people term meta of current post
-    */ 
-
-
-
-    $people = wp_get_post_terms(get_the_ID(), 'people'); 
-
-    
-
-    
- 
-
-   
-    ?>
-
-
-
-
-
-
-<footer class="entry-footer">
-</footer><!-- .entry-footer -->
+<footer class="entry-footer"></footer><!-- .entry-footer -->
 

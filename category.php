@@ -1,9 +1,6 @@
 <?php
-/**
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package bitjournal
+/*
+ * Category template.
  */
 
 get_header();

@@ -1,18 +1,9 @@
 <?php
-/**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package bitjournal
+/*
+ * Template for displaying a person.
  */
 
 get_header();
-
-/**
- * TODO: 
- * edit_term_link( 'Edit ' . $term->name, '<i class="fas fa-pencil-alt"></i> ' ); 
- */
 ?>
 
 <div id="primary" class="content-area">
@@ -23,12 +14,9 @@ get_header();
       <div class="people-info-box">
 
         <?php
-        /**
-         * Get people term meta.
-         */
+        // Gets people term meta.
         $term       = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
         $avatar     = wp_get_attachment_image_url( get_term_meta( $term->term_id, 'bj_people_cmb2_picture_id', true ), array('400') ); 
-        $sex        = get_term_meta( $term->term_id, 'bj_people_cmb2_sex', true );
         $birth      = get_term_meta( $term->term_id, 'bj_people_cmb2_birth', true );
         $death      = get_term_meta( $term->term_id, 'bj_people_cmb2_death', true );
         $relation   = get_term_meta( $term->term_id, 'bj_people_cmb2_relation', true);
@@ -43,7 +31,8 @@ get_header();
         
           <?php
 
-          echo '<h2>' . $term->name . ' <i class="' . $sex . '"></i></h2>';
+          echo '<h2>' . $term->name . '</h2>';
+					// TODO: edit_term_link( 'Edit ' . $term->name, '<i class="fas fa-pencil-alt"></i> ' ); 
 
           if ( $term->description ) {
           echo '<p>' . $term->description . '</p>';
@@ -70,6 +59,7 @@ get_header();
         </div><!-- .people-meta -->
 
       </div><!-- .people-info-box -->
+
     </header><!-- .entry-header -->
     
     <div class="area__content taxonomy-content">
@@ -79,7 +69,7 @@ get_header();
 
         while ( have_posts() ) : the_post();
 
-          get_template_part( 'template-parts/content', 'people' );
+          get_template_part( 'template-parts/content', 'entry_excerpt' );
 
         endwhile;
 
@@ -95,6 +85,7 @@ get_header();
     </div><!-- .area__content -->
 
   </main><!-- #main -->
+
 </div><!-- .content-area -->
 
 <?php

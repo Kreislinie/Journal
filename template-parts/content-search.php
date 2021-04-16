@@ -1,12 +1,7 @@
 <?php
-/**
- * Template part for displaying results in search pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package bitjournal
+/*
+ * Template part for displaying results in search pages.
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -17,13 +12,11 @@
 		<div class="entry-meta">
 			<?php
 			bitjournal_posted_on();
-			bitjournal_posted_by();
 			?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php bitjournal_post_thumbnail(); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>

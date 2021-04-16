@@ -1,8 +1,6 @@
 <?php
-/**
+/*
  * The main template file.
- * 
- * @package bitjournal
  */
 
 get_header();

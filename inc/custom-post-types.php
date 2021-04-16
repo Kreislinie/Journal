@@ -1,15 +1,10 @@
 <?php 
 
-/**
- * Custom Post-Types
- *
- * @package bitjournal
+/*
+ * Custom Post-Types.
  */
-
 function bj_custom_post_types() {
  
-  // Set UI labels for Custom Post Type
-
   $labels_entry = array(
     'name'                => __( 'Entries', 'bitjournal' ),
     'singular_name'       => __( 'Entry', 'bitjournal' ),
@@ -26,24 +21,6 @@ function bj_custom_post_types() {
     'not_found_in_trash'  => __( 'Not found in Trash', 'bitjournal' ),
   );
 
-  $labels_health_record = array(
-    'name'                => __( 'Health Record', 'bitjournal' ),
-    'singular_name'       => __( 'Healt Record', 'bitjournal' ),
-    'menu_name'           => __( 'Health Records', 'bitjournal' ),
-    'parent_item_colon'   => __( 'Parent Health Record', 'bitjournal' ),
-    'all_items'           => __( 'All Health Records', 'bitjournal' ),
-    'view_item'           => __( 'View Health Record', 'bitjournal' ),
-    'add_new_item'        => __( 'Add New Health Record', 'bitjournal' ),
-    'add_new'             => __( 'Add New', 'bitjournal' ),
-    'edit_item'           => __( 'Edit Health Record', 'bitjournal' ),
-    'update_item'         => __( 'Update Health Record', 'bitjournal' ),
-    'search_items'        => __( 'Search Health Records', 'bitjournal' ),
-    'not_found'           => __( 'Not Found', 'bitjournal' ),
-    'not_found_in_trash'  => __( 'Not found in Trash', 'bitjournal' ),
-  );
-
-  // Set other options for Custom Post Type
-    
   $args_entry = array(
     'labels'              => $labels_entry,
     'menu_icon'           => 'dashicons-edit',
@@ -64,38 +41,9 @@ function bj_custom_post_types() {
     'supports'            => array( 'editor', 'title', 'category' ),
   );
 
-  $args_health_record = array(
-    'labels'              => $labels_health_record,
-    'menu_icon'           => 'dashicons-plus-alt',
-    'hierarchical'        => false,
-    'public'              => true,
-    'show_ui'             => true,
-    'show_in_menu'        => true,
-    'show_in_nav_menus'   => true,
-    'show_in_admin_bar'   => true,
-    'menu_position'       => 6,
-    'can_export'          => true,
-    'has_archive'         => true,
-    'exclude_from_search' => false,
-    'publicly_queryable'  => true,
-    'show_in_rest'        => true, // Gutenberg needs this...
-    'capability_type'     => 'post',
-    'supports'            => array( 'editor', 'title', 'category' ),
-  );
-    
-  // Registering Entry post type
   register_post_type( 'entry', $args_entry );
   
-  /**
-   * Health entry, maybe for a future bitjournal version...
-   */
-  // register_post_type( 'health-record', $args_health_record );
-
 }
    
-  /* Hook into the 'init' action so that the function
-  * Containing our post type registration is not 
-  * unnecessarily executed. 
-  */
-   
-  add_action( 'init', 'bj_custom_post_types', 0 );
+add_action( 'init', 'bj_custom_post_types', 0 );
+

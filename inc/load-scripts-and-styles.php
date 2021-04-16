@@ -1,14 +1,13 @@
 <?php
 
-/* ------------------------------------------
-  LOAD SCRIPTS AND STYLES
-------------------------------------------- */
-
+/*
+ * Load scripts and styles.
+ */
 function bj_frontend_scripts() {
 
   wp_enqueue_style( 'bitjournal-style', get_stylesheet_directory_uri() . '/style.css' );
 
-	// wp_enqueue_script( 'bitjournal-custom', get_template_directory_uri() . '/js/custom.min.js', array(), null, true );
+	wp_enqueue_script( 'bitjournal-script', get_template_directory_uri() . '/js/bj-script.js', array(), null, true );
 
   wp_enqueue_script( 'jquery' );
 
