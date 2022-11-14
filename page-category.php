@@ -1,6 +1,6 @@
 <?php
 /*
- * The template to display all people.
+ * The template to display all categories.
  */
 
 get_header();
