@@ -1,85 +1,101 @@
 .edit-post-layout .interface-interface-skeleton__content {
-  background-color: white; }
+  background-color: white;
+}
 
 /*
  * Mood buttons styling on edit entry page.
  */
 .column-bj_mood_cmb2_mood span::before {
-  content: '';
+  content: "";
   height: 17px;
   width: 17px;
   display: block;
   float: left;
   border-radius: 100%;
-  margin-right: 7px; }
-
+  margin-right: 7px;
+}
 .column-bj_mood_cmb2_mood #excellent::before {
-  background-color: #03AF36; }
-
+  background-color: #03AF36;
+}
 .column-bj_mood_cmb2_mood #very-good::before {
-  background-color: #7BCD3E; }
-
+  background-color: #7BCD3E;
+}
 .column-bj_mood_cmb2_mood #good::before {
-  background-color: #2388A3; }
-
+  background-color: #2388A3;
+}
 .column-bj_mood_cmb2_mood #neutral::before {
-  background-color: #14B7BD; }
-
+  background-color: #14B7BD;
+}
 .column-bj_mood_cmb2_mood #bad::before {
-  background-color: #FFAA00; }
-
+  background-color: #FFAA00;
+}
 .column-bj_mood_cmb2_mood #very-bad::before {
-  background-color: #FF6E00; }
-
+  background-color: #FF6E00;
+}
 .column-bj_mood_cmb2_mood #horrible::before {
-  background-color: #eb231d; }
+  background-color: rgb(235, 35, 29);
+}
 
 #bj_mood_cmb2_box .cmb2-wrap {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+}
 
 .cmb2-id-bj-mood-cmb2-mood li {
   margin: 7px !important;
   padding-right: 0 !important;
   color: white;
-  border-radius: 20px; }
-  .cmb2-id-bj-mood-cmb2-mood li label {
-    padding: 9px 20px 9px 4px; }
-  .cmb2-id-bj-mood-cmb2-mood li input[name=bj_mood_cmb2_mood] {
-    border: none;
-    height: 17px;
-    width: 17px;
-    margin: 9px; }
-    .cmb2-id-bj-mood-cmb2-mood li input[name=bj_mood_cmb2_mood]:checked:before {
-      height: 11px;
-      width: 11px;
-      margin: 3px; }
-  .cmb2-id-bj-mood-cmb2-mood li:nth-child(1), .cmb2-id-bj-mood-cmb2-mood li:nth-child(1) input:checked:before {
-    background-color: #eb231d; }
-  .cmb2-id-bj-mood-cmb2-mood li:nth-child(2), .cmb2-id-bj-mood-cmb2-mood li:nth-child(2) input:checked:before {
-    background-color: #FF6E00; }
-  .cmb2-id-bj-mood-cmb2-mood li:nth-child(3), .cmb2-id-bj-mood-cmb2-mood li:nth-child(3) input:checked:before {
-    background-color: #FFAA00; }
-  .cmb2-id-bj-mood-cmb2-mood li:nth-child(4), .cmb2-id-bj-mood-cmb2-mood li:nth-child(4) input:checked:before {
-    background-color: #14B7BD; }
-  .cmb2-id-bj-mood-cmb2-mood li:nth-child(5), .cmb2-id-bj-mood-cmb2-mood li:nth-child(5) input:checked:before {
-    background-color: #2388A3; }
-  .cmb2-id-bj-mood-cmb2-mood li:nth-child(6), .cmb2-id-bj-mood-cmb2-mood li:nth-child(6) input:checked:before {
-    background-color: #7BCD3E; }
-  .cmb2-id-bj-mood-cmb2-mood li:nth-child(7), .cmb2-id-bj-mood-cmb2-mood li:nth-child(7) input:checked:before {
-    background-color: #03AF36; }
+  border-radius: 20px;
+}
+.cmb2-id-bj-mood-cmb2-mood li label {
+  padding: 9px 20px 9px 4px;
+}
+.cmb2-id-bj-mood-cmb2-mood li input[name=bj_mood_cmb2_mood] {
+  border: none;
+  height: 17px;
+  width: 17px;
+  margin: 9px;
+}
+.cmb2-id-bj-mood-cmb2-mood li input[name=bj_mood_cmb2_mood]:checked:before {
+  height: 11px;
+  width: 11px;
+  margin: 3px;
+}
+.cmb2-id-bj-mood-cmb2-mood li:nth-child(1), .cmb2-id-bj-mood-cmb2-mood li:nth-child(1) input:checked:before {
+  background-color: rgb(235, 35, 29);
+}
+.cmb2-id-bj-mood-cmb2-mood li:nth-child(2), .cmb2-id-bj-mood-cmb2-mood li:nth-child(2) input:checked:before {
+  background-color: #FF6E00;
+}
+.cmb2-id-bj-mood-cmb2-mood li:nth-child(3), .cmb2-id-bj-mood-cmb2-mood li:nth-child(3) input:checked:before {
+  background-color: #FFAA00;
+}
+.cmb2-id-bj-mood-cmb2-mood li:nth-child(4), .cmb2-id-bj-mood-cmb2-mood li:nth-child(4) input:checked:before {
+  background-color: #14B7BD;
+}
+.cmb2-id-bj-mood-cmb2-mood li:nth-child(5), .cmb2-id-bj-mood-cmb2-mood li:nth-child(5) input:checked:before {
+  background-color: #2388A3;
+}
+.cmb2-id-bj-mood-cmb2-mood li:nth-child(6), .cmb2-id-bj-mood-cmb2-mood li:nth-child(6) input:checked:before {
+  background-color: #7BCD3E;
+}
+.cmb2-id-bj-mood-cmb2-mood li:nth-child(7), .cmb2-id-bj-mood-cmb2-mood li:nth-child(7) input:checked:before {
+  background-color: #03AF36;
+}
 
 /*
  * Admin bar menu styles
  */
 #wpadminbar #wp-admin-bar-exit-write {
-  float: right; }
-  #wpadminbar #wp-admin-bar-exit-write .fas {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 1.4em;
-    margin-left: 8px;
-    transform: translateY(2px); }
+  float: right;
+}
+#wpadminbar #wp-admin-bar-exit-write .fas {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.4em;
+  margin-left: 8px;
+  transform: translateY(2px);
+}
 
 /*
  * Hide option fields and some unnecessary information.
@@ -89,6 +105,6 @@
 .edit-term-notes,
 .term-description-wrap p,
 .term-name-wrap p {
-  display: none; }
-
+  display: none;
+}
 /*# sourceMappingURL=style-backend.css.map */

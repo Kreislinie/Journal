@@ -1,5 +1,5 @@
 let gulp = require('gulp');
-let sass = require('gulp-sass');
+let sass = require('gulp-sass')(require('sass'));
 let uglify = require('gulp-uglify');
 let sourcemaps = require('gulp-sourcemaps');
 
