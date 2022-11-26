@@ -2,12 +2,6 @@
 /*
  * The header template.
  */
-
-// Redirects to login page if user not logged in.
-if( ! is_user_logged_in() ) :
-	wp_safe_redirect( get_dashboard_url() );
-	exit; 
-endif;
 ?>
 
 <!doctype html>
