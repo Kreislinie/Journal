@@ -90,6 +90,9 @@ require get_template_directory() . '/inc/admin-bar.php';
 // Add backend pages and menu.
 require get_template_directory() . '/inc/backend-pages.php';
 
+// Load gutenberg settings scripts.
+require get_template_directory() . '/inc/gutenberg-settings.php';
+
 
 /**
  * Blocks access to all REST API endpoints unless the user is logged in.
