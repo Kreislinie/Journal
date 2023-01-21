@@ -104,7 +104,8 @@
 .screen-options,
 .edit-term-notes,
 .term-description-wrap p,
-.term-name-wrap p {
+.term-name-wrap p,
+.edit-post-post-visibility {
   display: none;
 }
 /*# sourceMappingURL=style-backend.css.map */

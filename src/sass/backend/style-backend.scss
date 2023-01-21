@@ -141,7 +141,8 @@ $color__mood-horrible:  rgb(235, 35, 29);
 .screen-options,          // Post per page option (pages: entries and pages overview).
 .edit-term-notes,         // Information about Terms/Categories (pages: categories and tags overview).
 .term-description-wrap p, // Information about the tag and category description field.
-.term-name-wrap p         // Information about the tag and category name field.
+.term-name-wrap p,        // Information about the tag and category name field.
+.edit-post-post-visibility // Hide gutenberg post visibility.
 {
   display: none;
 }
