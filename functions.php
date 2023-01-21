@@ -37,6 +37,13 @@ add_action( 'after_setup_theme', 'bj_setup' );
 
 
 /**
+ * Loads cmb2.
+ */
+if ( file_exists( dirname( __FILE__ ) . '/vendors/cmb2/init.php' ) ) {
+	require_once dirname( __FILE__ ) . '/vendors/cmb2/init.php';
+}
+
+/**
  * Changes main query to show entry post type by default.
  */
 function bj_entry_queries( $query ) {
