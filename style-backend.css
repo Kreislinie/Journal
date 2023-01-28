@@ -55,6 +55,7 @@
   height: 17px;
   width: 17px;
   margin: 9px;
+  margin-right: 0;
 }
 .cmb2-id-bj-mood-cmb2-mood li input[name=bj_mood_cmb2_mood]:checked:before {
   height: 11px;
@@ -81,6 +82,11 @@
 }
 .cmb2-id-bj-mood-cmb2-mood li:nth-child(7), .cmb2-id-bj-mood-cmb2-mood li:nth-child(7) input:checked:before {
   background-color: #03AF36;
+}
+
+#side-sortables .cmb2-wrap label,
+.inner-sidebar .cmb2-wrap label {
+  padding: 9px 20px 9px 4px !important;
 }
 
 /*
