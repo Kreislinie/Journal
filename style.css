@@ -681,7 +681,7 @@ a:hover, a:active {
   left: 0;
   font-size: 15px;
 }
-.entry-meta p {
+.entry-meta p, .entry-meta a {
   text-align: center;
   font-weight: 300;
   height: 50px;
