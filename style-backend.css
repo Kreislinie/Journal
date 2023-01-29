@@ -1,3 +1,6 @@
+/*
+ * Variables
+ */
 .edit-post-layout .interface-interface-skeleton__content {
   background-color: white;
 }
@@ -90,7 +93,7 @@
 }
 
 /*
- * Admin bar menu styles
+ * 'Edit mode' toggle in the admin bar.
  */
 #wpadminbar #wp-admin-bar-exit-write {
   float: right;
@@ -103,9 +106,17 @@
   transform: translateY(2px);
 }
 
+@media only screen and (max-width: 782px) {
+  #wp-toolbar > ul > li {
+    display: inherit;
+  }
+  #wpadminbar ul#wp-admin-bar-root-default > li {
+    margin-right: 10px;
+  }
+}
 /*
  * Hide option fields and some unnecessary information.
- * TODO: A better option would be to disable them via php.
+ * TODO: A better option would be to disable them via php/js.
  */
 .screen-options,
 .edit-term-notes,

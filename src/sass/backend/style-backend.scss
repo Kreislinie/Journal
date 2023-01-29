@@ -1,4 +1,6 @@
-// Variables
+/*
+ * Variables
+ */
 $font__icon: 'Font Awesome 5 Free';
 
 $color__mood-excellent: #03AF36;
@@ -124,7 +126,7 @@ $color__mood-horrible:  rgb(235, 35, 29);
 }
 
 /*
- * Admin bar menu styles
+ * 'Edit mode' toggle in the admin bar.
  */
 #wpadminbar #wp-admin-bar-exit-write {
   float: right;
@@ -139,9 +141,19 @@ $color__mood-horrible:  rgb(235, 35, 29);
 
 }
 
+// Display 'edit mode' toggle on small screens.
+@media only screen and (max-width: 782px) {
+  #wp-toolbar>ul>li {
+    display: inherit;
+  }
+  #wpadminbar ul#wp-admin-bar-root-default>li {
+    margin-right: 10px;
+  }
+}
+
 /*
  * Hide option fields and some unnecessary information.
- * TODO: A better option would be to disable them via php.
+ * TODO: A better option would be to disable them via php/js.
  */
 .screen-options,          // Post per page option (pages: entries and pages overview).
 .edit-term-notes,         // Information about Terms/Categories (pages: categories and tags overview).
