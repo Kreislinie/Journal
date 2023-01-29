@@ -14,9 +14,11 @@ get_header();
       <div class="people-info-box">
 
         <?php
-        // Gets people term meta.
+        /*
+         * Get people term meta.
+         */
         $term       = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
-        $avatar     = wp_get_attachment_image_url( get_term_meta( $term->term_id, 'bj_people_cmb2_picture_id', true ), array('400') ); 
+        $avatar     = wp_get_attachment_image_url( get_term_meta( $term->term_id, 'bj_people_cmb2_picture_id', true ), 'large' ); 
         $birth      = get_term_meta( $term->term_id, 'bj_people_cmb2_birth', true );
         $death      = get_term_meta( $term->term_id, 'bj_people_cmb2_death', true );
         $relation   = get_term_meta( $term->term_id, 'bj_people_cmb2_relation', true);
@@ -35,7 +37,7 @@ get_header();
 					// TODO: edit_term_link( 'Edit ' . $term->name, '<i class="fas fa-pencil-alt"></i> ' ); 
 
           if ( $term->description ) {
-          echo '<p>' . $term->description . '</p>';
+            echo '<p>' . $term->description . '</p>';
           }
 
           if ( $term->count ) {
