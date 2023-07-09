@@ -1,0 +1,168 @@
+.wp-admin {
+
+  // input[type="text"],
+  input[type="password"],
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  select,
+  textarea,
+  #titlediv #title { 
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid $default-border-color;
+    border-bottom: 2px solid $default-border-color;
+    box-shadow: none;
+    color: #32373c;
+    outline: none; 
+    padding: 13px; 
+
+
+  &:hover {
+    border-bottom: 2px solid $link-focus;
+  }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $default-border-color;
+      border-bottom: 2px solid $link-focus;
+      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+
+    }
+
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"] {
+    height: $default-button-height;
+    border: 1px solid $default-border-color;
+  }
+
+}
+
+// Radio an d Checkbox.
+input[type=checkbox]:checked:before {
+  color: $base-color;
+  margin: -4px -6px;
+}
+
+// Disabled buttons.
+.wp-core-ui .button-primary[disabled], 
+.wp-core-ui .button-primary:disabled, 
+.wp-core-ui .button-primary.button-primary-disabled, 
+.wp-core-ui .button-primary.disabled {
+  color: rgb(212, 212, 212) !important;
+  background: rgb(255, 255, 255) !important;
+}
+
+// Select dropdown
+.wp-admin select {
+	box-shadow: none;
+  height: $default-button-height;
+  appearance: none;
+  padding: 0 39px 0 15px;
+
+  // base64 svg (src: imag/albus-admin-arrow.svg) see https://stackoverflow.com/a/21626701
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyNCcgaGVpZ2h0PScyNCcgdmlld0JveD0nMCAwIDI0IDI0Jz48cGF0aCBkPSdNMTggOC4ybC02IDcgLTYtN0gxOHonIGZpbGw9JyNlMmU0ZTcnLz48L3N2Zz4="); // FF does not support inline svg :(
+  background-position: 93% 59%;
+  background-repeat: no-repeat;
+  background-size: 22px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea {
+
+  &:focus {
+    border-bottom: 2px solid $link-focus;
+    box-shadow: none;
+    background-color: white;
+  }
+
+  &:hover {
+    background-color: white;
+  }
+
+}
+
+// Vertical center for tag fields.
+.components-form-token-field__input-container {
+	align-items: center;
+}
+
+// Vertical center label.
+.inline-edit-row fieldset label, 
+.inline-edit-row fieldset span.inline-edit-categories-label,
+.inline-edit-row fieldset label span.title, 
+.inline-edit-row fieldset.inline-edit-date legend,
+.inline-edit-row .inline-edit-or {
+	line-height: 3.9;
+}
+
+.inline-edit-row .inline-edit-or {
+    margin: .2em 12px .2em 0;
+}
+
+.form-field label {
+  font-size: 1.1em;
+}
+
+// Search field
+.search-box input[type="search"] {
+  height: $default-button-height;
+}
+
+// Posts quick edit fields.
+#wpbody-content .quick-edit-row fieldset .inline-edit-group label.alignleft:first-child {
+    margin-right: 1.3em;
+}
+
+ul.cat-checklist {
+	padding: 0 5px 0 17px;
+}
+
+input[type=checkbox] {
+  border-radius: 2px;
+  border: 2px solid #6c7781;
+  // margin-right: 12px;
+  transition: none;
+  
+  &:checked {
+    background: #11a0d2;
+    border-color: #11a0d2;
+    box-shadow: none;
+  }
+
+  // svg checkbox symbol
+  &:checked::before {
+    content: url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%23ffffff%27%2F%3E%3C%2Fsvg%3E);
+  }
+
+}
+

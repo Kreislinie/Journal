@@ -158,3 +158,15 @@ function bj_change_publish_button_text() {
 }
 
 add_action( 'admin_print_footer_scripts', 'bj_change_publish_button_text', 11 );
+
+
+// BACKEND
+
+
+function bj_display_custom_logo() {
+    
+  printf( '<li id="aa-custom-logo"><a href="%s"><img src="%s"></a></li>', home_url(), esc_url( get_template_directory_uri() . '/img/bitjournal-logo_path_wide.svg' ) );
+
+}
+
+add_action('adminmenu', 'bj_display_custom_logo');

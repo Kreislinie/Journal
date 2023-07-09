@@ -1,0 +1,108 @@
+// default button stylings.
+.wp-core-ui .button, 
+.wp-core-ui .button-primary, 
+.wp-core-ui .button-secondary {
+  height: $default-button-height;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  background: $button-color;
+  color: $text-color;
+  padding: 0 18px 1px;
+  margin-right: 5px;
+  line-height: 40px;
+
+  &:hover {
+    background: $link-focus;
+    color: white;
+  }
+
+}
+
+.wp-core-ui .button-primary {
+  border: 1px solid $highlight-color;
+  color: $highlight-color;
+
+  &:hover, &:focus {
+    border: 1px solid $highlight-color;
+    box-shadow: none;
+    background: $link-focus;
+    color: white;
+  }
+
+}
+
+.wp-core-ui .button.active, .wp-core-ui .button.active:hover {
+	background: $link-focus;
+	color: white;
+}
+
+// Buttons made out of an <a> element.
+.wp-core-ui a.button {
+	line-height: 44px;
+}
+
+// Center navigation button text.
+.tablenav .tablenav-pages .button, .tablenav .tablenav-pages .tablenav-pages-navspan {
+  line-height: 40px;
+}
+
+// Push table down (adds space for search field).
+.tablenav.top {
+  padding-top: 14px;
+}
+
+.wp-core-ui .button.button-primary.button-hero {
+  box-shadow: none;
+}
+// Small buttons.
+.wp-core-ui .button-group.button-small .button, .wp-core-ui .button.button-small {
+	height: 9px;
+}
+
+// Page title button.
+.wrap .page-title-action {
+  background: $link-focus;
+  border: none;
+  border-radius: $default-border-radius;
+  color: white;
+
+  &:hover {
+    background: $link-focus;
+    color: white;
+  }
+  
+}
+
+// Delete button.
+#delete-link,
+#delete-action {
+	line-height: 3.4;
+}
+
+// Dashboard update WP button.
+#dashboard_right_now #wp-version-message .button {
+	top: -29px;
+}
+
+// Dashboard cursomize button.
+.wp-core-ui .welcome-panel .button-primary.button-hero {
+	line-height: 23px;
+	box-shadow: none!important;
+}
+
+// Theme customizer buttons.
+#customize-save-button-wrapper .save {
+	height: 0px;
+	line-height: 0px;
+}
+
+#publish-settings {
+	height: 0px;
+}
+
+.preview-link-wrapper .customize-copy-preview-link.preview-control-element.button {
+	height: 0px;
+	line-height: 0px;
+	transform: translateY(2px);
+}

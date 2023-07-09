@@ -30,7 +30,7 @@ get_header();
 						'order'               => 'ASC',
 						'orderby'             => 'name',
 						'separator'           => '<br />',
-						// 'show_count'          => 1,
+						//'show_count'          => 1,
 						'show_option_all'     => '',
 						'style'               => 'list',
 						'taxonomy'            => 'category',

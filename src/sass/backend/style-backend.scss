@@ -1,18 +1,23 @@
-/*
- * Variables
- */
-$font__icon: 'Font Awesome 5 Free';
+@import 'variables';
 
-$color__mood-excellent: #03AF36;
-$color__mood-very-good: #7BCD3E;
-$color__mood-good:      #2388A3;
-$color__mood-neutral:   #14B7BD;
-$color__mood-bad:       #FFAA00;
-$color__mood-very-bad:  #FF6E00;
-$color__mood-horrible:  rgb(235, 35, 29);
+@import 'colors/colors';
+
+@import 'buttons';
+
+@import 'admin-menu';
+
+@import 'forms';
+
+@import 'list-tables';
+
+@import 'custom_albus';
+
+@import 'pages/pages';
+
+@import 'global';
 
 .edit-post-layout .interface-interface-skeleton__content {
-	background-color: white;
+	background-color: $base-color;
 }
 
 /*
@@ -159,7 +164,8 @@ $color__mood-horrible:  rgb(235, 35, 29);
 .edit-term-notes,         // Information about Terms/Categories (pages: categories and tags overview).
 .term-description-wrap p, // Information about the tag and category description field.
 .term-name-wrap p,        // Information about the tag and category name field.
-.edit-post-post-visibility // Hide gutenberg post visibility check in sidebar.
+.edit-post-post-visibility, // Hide gutenberg post visibility check in sidebar.
+.term-slug-wrap
 {
   display: none;
 }

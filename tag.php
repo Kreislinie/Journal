@@ -1,9 +1,4 @@
 <?php
-/**
- *
- * @package bitjournal
- */
-
 get_header();
 ?>
 
