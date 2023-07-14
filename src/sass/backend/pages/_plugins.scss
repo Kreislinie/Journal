@@ -1,3 +1,5 @@
+@use '../variables' as var;
+
 #plugin-information-footer {
 	height: 45px;
 }
@@ -12,5 +14,5 @@
 
 #plugin-information-footer {
 	background: white;
-	box-shadow: $shadow-minimal;
+	box-shadow: var.$shadow-small;
 }

@@ -1,0 +1,29 @@
+@use 'variables' as var;
+
+// Lists and Tables
+
+// Table styling
+table.wp-list-table.widefat {
+  margin: 20px 0px;
+  border: none;
+  border: var.$border-default
+}
+
+// Table rows padding
+.widefat td, 
+.widefat th,
+.updates-table tbody td.check-column, 
+.widefat tbody th.check-column, 
+.widefat tfoot td.check-column, 
+.widefat thead td.check-column {
+  padding: 18px 10px;
+}
+
+// Table rows border
+td, .check-column {
+border-bottom: var.$border-default}
+
+// Table navigation container
+.tablenav {
+  height: var.$size-button-height;
+}

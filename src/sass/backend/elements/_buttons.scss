@@ -1,39 +1,41 @@
+@use 'variables' as var;
+
 // default button stylings.
 .wp-core-ui .button, 
 .wp-core-ui .button-primary, 
 .wp-core-ui .button-secondary {
-  height: $default-button-height;
+  height: var.$size-button-height;
   border: none;
   box-shadow: none;
   text-shadow: none;
-  background: $button-color;
-  color: $text-color;
+  background: var.$color-button;
+  color: var.$color-text;
   padding: 0 18px 1px;
   margin-right: 5px;
   line-height: 40px;
 
   &:hover {
-    background: $link-focus;
+    background: var.$color-link-focus;
     color: white;
   }
 
 }
 
 .wp-core-ui .button-primary {
-  border: 1px solid $highlight-color;
-  color: $highlight-color;
+  border: 1px solid var.$color-focus;
+  color: var.$color-focus;
 
   &:hover, &:focus {
-    border: 1px solid $highlight-color;
+    border: 1px solid var.$color-focus;
     box-shadow: none;
-    background: $link-focus;
+    background: var.$color-link-focus;
     color: white;
   }
 
 }
 
 .wp-core-ui .button.active, .wp-core-ui .button.active:hover {
-	background: $link-focus;
+	background: var.$color-link-focus;
 	color: white;
 }
 
@@ -62,13 +64,13 @@
 
 // Page title button.
 .wrap .page-title-action {
-  background: $link-focus;
+  background: var.$color-link-focus;
   border: none;
-  border-radius: $default-border-radius;
+  border-radius: var.$border-default-radius;
   color: white;
 
   &:hover {
-    background: $link-focus;
+    background: var.$color-link-focus;
     color: white;
   }
   

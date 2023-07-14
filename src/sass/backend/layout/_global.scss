@@ -1,0 +1,90 @@
+@use 'variables' as var;
+
+body {
+	background: var.$color-main;
+}
+
+// Hide option fields and some unnecessary information.
+// TODO: A better option would be to disable them via php/js.
+.screen-options,          // Post per page option (pages: entries and pages overview).
+.edit-term-notes,         // Information about Terms/Categories (pages: categories and tags overview).
+.term-description-wrap p, // Information about the tag and category description field.
+.term-name-wrap p,        // Information about the tag and category name field.
+.edit-post-post-visibility, // Hide gutenberg post visibility check in sidebar.
+.term-slug-wrap {
+  display: none;
+}
+
+// Place main content.
+html.wp-toolbar {
+  padding-top: var.$size-admin-bar-height;
+
+  @media screen and (max-width: 600px) {
+    padding-top: 0;
+  }
+
+}
+
+a {
+	color: var.$color-link;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: var.$color-link-focus;
+	}
+}
+
+#media-upload a.del-link:hover,
+div.dashboard-widget-submit input:hover,
+.subsubsub a:hover,
+.subsubsub a.current:hover {
+	color: var.$color-link-focus;
+}
+
+#wpcontent,
+#wpfooter {
+  margin-left: var.$size-admin-menu-width;
+  padding-left: var.$size-content-margin;
+}
+
+// Adapt margin to folded admin menu.
+.folded #wpcontent,
+.folded #wpfooter {
+  margin-left: var.$size-admin-menu-collapse-width;
+
+  @media only screen and (max-width: 960px) {
+    margin-left: var.$size-admin-menu-collapse-width;
+  }
+
+  @media only screen and (max-width: 782px) {
+    margin-left: 0;
+  }
+
+}
+
+
+@media only screen and (min-width: 960px) {
+	.wrap {
+ 		margin: 55px var.$size-content-margin 0 2px;
+	}
+}
+
+#screen-meta-links {
+  margin-right: var.$size-content-margin;
+}
+
+// Error and update messages.
+.notice-error, 
+div.error,
+div.updated,
+.update-nag,
+#update-nag {
+  border-top: var.$border-default;
+  border-right: var.$border-default;
+  border-bottom: var.$border-default;
+  box-shadow: none;
+}
+
+
+

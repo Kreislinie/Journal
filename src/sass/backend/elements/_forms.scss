@@ -1,3 +1,5 @@
+@use 'variables' as var;
+
 .wp-admin {
 
   // input[type="text"],
@@ -19,8 +21,8 @@
   #titlediv #title { 
     background-color: white;
     border-radius: 5px 5px 0 0;
-    border: 1px solid $default-border-color;
-    border-bottom: 2px solid $default-border-color;
+    border: 1px solid var.$color-border;
+    border-bottom: 2px solid var.$color-border;
     box-shadow: none;
     color: #32373c;
     outline: none; 
@@ -28,13 +30,13 @@
 
 
   &:hover {
-    border-bottom: 2px solid $link-focus;
+    border-bottom: 2px solid var.$color-link-focus;
   }
 
     &:focus {
       outline: none;
-      border: 1px solid $default-border-color;
-      border-bottom: 2px solid $link-focus;
+      border: 1px solid var.$color-border;
+      border-bottom: 2px solid var.$color-link-focus;
       box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
 
     }
@@ -55,15 +57,15 @@
   input[type="time"],
   input[type="url"],
   input[type="week"] {
-    height: $default-button-height;
-    border: 1px solid $default-border-color;
+    height: var.$size-button-height;
+    border: 1px solid var.$color-border;
   }
 
 }
 
 // Radio an d Checkbox.
 input[type=checkbox]:checked:before {
-  color: $base-color;
+  color: var.$color-main;
   margin: -4px -6px;
 }
 
@@ -79,7 +81,7 @@ input[type=checkbox]:checked:before {
 // Select dropdown
 .wp-admin select {
 	box-shadow: none;
-  height: $default-button-height;
+  height: var.$size-button-height;
   appearance: none;
   padding: 0 39px 0 15px;
 
@@ -100,7 +102,7 @@ input[type="url"],
 textarea {
 
   &:focus {
-    border-bottom: 2px solid $link-focus;
+    border-bottom: 2px solid var.$color-link-focus;
     box-shadow: none;
     background-color: white;
   }
@@ -135,7 +137,7 @@ textarea {
 
 // Search field
 .search-box input[type="search"] {
-  height: $default-button-height;
+  height: var.$size-button-height;
 }
 
 // Posts quick edit fields.
@@ -166,3 +168,15 @@ input[type=checkbox] {
 
 }
 
+input[type=checkbox]:checked:before {
+	color: var.$color-form-checked;
+}
+
+input[type=radio]:checked:before {
+	background: var.$color-form-checked;
+}
+
+.wp-core-ui input[type="reset"]:hover,
+.wp-core-ui input[type="reset"]:active {
+	color: var.$color-link-focus;
+}

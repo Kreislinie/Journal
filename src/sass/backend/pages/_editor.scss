@@ -1,3 +1,5 @@
+@use '../variables' as var;
+
 /* ------------------------------------------------------------
   1.0 - Edit Post Header
 ------------------------------------------------------------ */
@@ -9,7 +11,7 @@
 @media (min-width: 782px) {
   .block-editor-editor-skeleton,
 	.interface-interface-skeleton {
-    left: $admin-menu-width; 
+    left: var.$size-admin-menu-width; 
   } 
 	.edit-post-layout .editor-post-publish-panel {
 		top: 51px;
@@ -20,14 +22,14 @@
 @media (min-width: 782px) {
   .auto-fold .block-editor-editor-skeleton,
 	.auto-fold .interface-interface-skeleton {
-    left: $admin-menu-collapse-width;
+    left: var.$size-admin-menu-collapse-width;
   }  
 }  
 
 @media (min-width: 960px) {
   .auto-fold .block-editor-editor-skeleton,
 	.auto-fold .interface-interface-skeleton {
-    left: $admin-menu-width;
+    left: var.$size-admin-menu-width;
   } 
 }
 
@@ -35,7 +37,7 @@
 @media (min-width: 782px) {
   .folded .block-editor-editor-skeleton,
 	.folded .interface-interface-skeleton {
-    left: $admin-menu-collapse-width;
+    left: var.$size-admin-menu-collapse-width;
   } 
 }
 
@@ -57,31 +59,31 @@
 
   // Post content area position.
   body .edit-post-layout__content {
-    top: 56px + $admin-bar-height;
+    top: 56px + var.$size-admin-bar-height;
   }
 
   // Push sidebar down.
   .edit-post-sidebar {
-    top: 57px + $admin-bar-height;
+    top: 57px + var.$size-admin-bar-height;
   }
   
 }
 
 @media (min-width: 782px) {
   body.auto-fold .edit-post-layout__content {
-    margin-left: $admin-menu-collapse-width;
+    margin-left: var.$size-admin-menu-collapse-width;
   } 
 }
 
 @media (min-width: 782px) and (min-width: 960px) {
   body.auto-fold .edit-post-layout__content {
-    margin-left: $admin-menu-width; 
+    margin-left: var.$size-admin-menu-width; 
   } 
 }
 
 @media (min-width: 782px) { 
   body.folded .edit-post-layout__content {
-    margin-left: $admin-menu-collapse-width; 
+    margin-left: var.$size-admin-menu-collapse-width; 
   }
 	
 	.folded .edit-post-layout .components-editor-notices__snackbar {
@@ -99,4 +101,8 @@
   .auto-fold .edit-post-layout .components-editor-notices__snackbar {
     left: 220px;
   }
+}
+
+.edit-post-layout .interface-interface-skeleton__content {
+	background-color: var.$color-main;
 }

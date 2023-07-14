@@ -1,3 +1,4 @@
+@use '../variables' as var;
 /* ============================================================
   Media Library
 ============================================================ */
@@ -35,14 +36,14 @@
     box-shadow: none;
 
     .attachment-preview {
-      border: 2px solid $highlight-color;
-      box-shadow: $standard-shadow-hover;
+      border: 2px solid var.$color-focus;
+      box-shadow: var.$shadow-main-hover;
     }
 
   }
 
   &:hover .attachment-preview {
-    box-shadow: $standard-shadow;
+    box-shadow: var.$shadow-main;
   }
 
 }

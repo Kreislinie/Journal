@@ -113,13 +113,13 @@
 }
 
 // Mood colors
-#excellent  { background-color: $color__mood-excellent; }
-#very-good  { background-color: $color__mood-very-good; }
-#good       { background-color: $color__mood-good;      }
-#neutral    { background-color: $color__mood-neutral;   }
-#bad        { background-color: $color__mood-bad;       }
-#very-bad   { background-color: $color__mood-very-bad;  }
-#horrible   { background-color: $color__mood-horrible;  }
+#excellent  { background-color: $color-mood-excellent; }
+#very-good  { background-color: $color-mood-very-good; }
+#good       { background-color: $color-mood-good;      }
+#neutral    { background-color: $color-mood-neutral;   }
+#bad        { background-color: $color-mood-bad;       }
+#very-bad   { background-color: $color-mood-very-bad;  }
+#horrible   { background-color: $color-mood-horrible;  }
 
 .date-bar {
   padding: 0;

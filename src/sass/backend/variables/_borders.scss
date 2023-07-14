@@ -1,0 +1,6 @@
+// Borders
+
+@use 'colors' as color;
+
+$border-default: 1px solid color.$color-border;
+$border-default-radius: 5px;

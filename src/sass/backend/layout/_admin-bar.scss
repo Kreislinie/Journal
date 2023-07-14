@@ -1,0 +1,257 @@
+@use '../variables' as var;
+
+/*
+ * 'Edit mode' toggle in the admin bar.
+ */
+#wpadminbar #wp-admin-bar-exit-write {
+  float: right;
+
+  .fas {
+    font-family: var.$font-icon;
+    font-weight: 900;
+    font-size: 1.4em;
+    margin-left: 8px;
+    transform: translateY(2px);
+  }
+
+}
+
+// Display 'edit mode' toggle on small screens.
+@media only screen and (max-width: 782px) {
+  #wp-toolbar>ul>li {
+    display: inherit;
+  }
+  #wpadminbar ul#wp-admin-bar-root-default>li {
+    margin-right: 10px;
+  }
+}
+
+
+#wpadminbar {
+	color: var.$color-text;
+	background: var.$color-main;
+}
+
+#wpadminbar .ab-item,
+#wpadminbar a.ab-item,
+#wpadminbar > #wp-toolbar span.ab-label,
+#wpadminbar > #wp-toolbar span.noticon {
+	color: var.$color-text;
+}
+
+#wpadminbar .ab-icon,
+#wpadminbar .ab-icon:before,
+#wpadminbar .ab-item:before,
+#wpadminbar .ab-item:after {
+	color: var.$color-icon;
+}
+
+#wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item,
+#wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus,
+#wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
+#wpadminbar.nojs .ab-top-menu > li.menupop:hover > .ab-item,
+#wpadminbar .ab-top-menu > li.menupop.hover > .ab-item {
+	color: var.$color-link-focus;
+	background: transparent;
+}
+
+#wpadminbar:not(.mobile) > #wp-toolbar li:hover span.ab-label,
+#wpadminbar:not(.mobile) > #wp-toolbar li.hover span.ab-label,
+#wpadminbar:not(.mobile) > #wp-toolbar a:focus span.ab-label {
+	color: var.$color-link-focus;
+}
+
+#wpadminbar:not(.mobile) li:hover .ab-icon:before,
+#wpadminbar:not(.mobile) li:hover .ab-item:before,
+#wpadminbar:not(.mobile) li:hover .ab-item:after,
+#wpadminbar:not(.mobile) li:hover #adminbarsearch:before {
+	color: var.$color-text;
+}
+
+
+/* Admin Bar: submenu */
+
+#wpadminbar .menupop .ab-sub-wrapper {
+	background: var.$color-main;
+}
+
+#wpadminbar .quicklinks .menupop ul.ab-sub-secondary,
+#wpadminbar .quicklinks .menupop ul.ab-sub-secondary .ab-submenu {
+	background: var.$color-main;
+}
+
+#wpadminbar .ab-submenu .ab-item,
+#wpadminbar .quicklinks .menupop ul li a,
+#wpadminbar .quicklinks .menupop.hover ul li a,
+#wpadminbar.nojs .quicklinks .menupop:hover ul li a {
+	color: mix( var.$color-main, var.$color-text, 30% );
+}
+
+#wpadminbar .quicklinks li .blavatar,
+#wpadminbar .menupop .menupop > .ab-item:before {
+	color: var.$color-icon;
+}
+
+#wpadminbar .quicklinks .menupop ul li a:hover,
+#wpadminbar .quicklinks .menupop ul li a:focus,
+#wpadminbar .quicklinks .menupop ul li a:hover strong,
+#wpadminbar .quicklinks .menupop ul li a:focus strong,
+#wpadminbar .quicklinks .ab-sub-wrapper .menupop.hover > a,
+#wpadminbar .quicklinks .menupop.hover ul li a:hover,
+#wpadminbar .quicklinks .menupop.hover ul li a:focus,
+#wpadminbar.nojs .quicklinks .menupop:hover ul li a:hover,
+#wpadminbar.nojs .quicklinks .menupop:hover ul li a:focus,
+#wpadminbar li:hover .ab-icon:before,
+#wpadminbar li:hover .ab-item:before,
+#wpadminbar li a:focus .ab-icon:before,
+#wpadminbar li .ab-item:focus:before,
+#wpadminbar li .ab-item:focus .ab-icon:before,
+#wpadminbar li.hover .ab-icon:before,
+#wpadminbar li.hover .ab-item:before,
+#wpadminbar li:hover #adminbarsearch:before,
+#wpadminbar li #adminbarsearch.adminbar-focused:before {
+	color: var.$color-link-focus;
+}
+
+#wpadminbar .quicklinks li a:hover .blavatar,
+#wpadminbar .quicklinks li a:focus .blavatar,
+#wpadminbar .quicklinks .ab-sub-wrapper .menupop.hover > a .blavatar,
+#wpadminbar .menupop .menupop > .ab-item:hover:before,
+#wpadminbar.mobile .quicklinks .ab-icon:before,
+#wpadminbar.mobile .quicklinks .ab-item:before {
+	color: var.$color-link-focus;
+}
+
+#wpadminbar.mobile .quicklinks .hover .ab-icon:before,
+#wpadminbar.mobile .quicklinks .hover .ab-item:before {
+	color: var.$color-icon;
+}
+
+
+/* Admin Bar: search */
+
+#wpadminbar #adminbarsearch:before {
+	color: var.$color-icon;
+}
+
+/* Responsive Component */
+
+div#wp-responsive-toggle a:before {
+	color: var.$color-icon;
+}
+
+.wp-responsive-open div#wp-responsive-toggle a {
+	// ToDo: make inset border
+	border-color: transparent;
+	background: var.$color-transparent;
+}
+
+.wp-responsive-open #wpadminbar #wp-admin-bar-menu-toggle a {
+	background: var.$color-main;
+}
+
+.wp-responsive-open #wpadminbar #wp-admin-bar-menu-toggle .ab-icon:before {
+	color: var.$color-icon;
+}
+
+// Admin bar styling.
+html #wpadminbar {
+  height: var.$size-admin-bar-height;
+  padding: 0 var.$size-content-margin;
+  border-bottom: var.$border-default;
+  box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.33);
+  left: unset;
+  right: 0;
+  z-index: 9998;
+
+  li a {
+    line-height: var.$size-admin-bar-height;
+  }
+
+  // Height for mobile version.
+  @media only screen and (max-width: 782px) {
+    height: 50px;
+  }
+
+}
+
+// Admin bar width.
+#wpwrap #wpadminbar {
+  width: calc( 100% - #{var.$size-admin-menu-width} - 2 * #{var.$size-content-margin} );
+
+  @media screen and ( max-width: 782px ) {
+    padding: 0;
+  }
+  
+}
+
+// Sets width if menu folded. (This possibly could work with less calculations...)
+.folded #wpwrap #wpadminbar {
+  width: calc( 100% - #{var.$size-admin-menu-collapse-width} - 2 * #{var.$size-content-margin} );
+}
+
+.auto-fold #wpwrap #wpadminbar {
+
+  @media only screen and (max-width: 960px) {
+    width: calc( 100% - #{var.$size-admin-menu-collapse-width} - 2 * #{var.$size-content-margin} );
+  }
+
+  // Full width on mobile.
+  @media only screen and (max-width: 782px) {
+    width: 100%;
+  }
+  
+}
+
+// Sets admin bar item height.
+#wpadminbar .quicklinks .ab-empty-item, 
+#wpadminbar .quicklinks a, 
+#wpadminbar .shortlink-input {
+  height: var.$size-admin-bar-height;
+}
+
+// Adjust admin bar icons padding.
+#wpadminbar .ab-icon, 
+#wpadminbar .ab-item:before, 
+#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default .ab-icon, 
+.wp-admin-bar-arrow {
+  padding-top: calc(var.$size-admin-bar-height / 4);
+
+  @media only screen and (max-width: 782px) {
+    padding-top: 0;
+  }
+
+}
+
+// Admin bar submenu.
+#wpadminbar .menupop .ab-sub-wrapper, 
+#wpadminbar .shortlink-input {
+  border: var.$border-default
+}
+
+// Place avatar image.
+#wp-admin-bar-user-info .avatar {
+  left: -79px;
+  top: 9px;
+}
+
+@media screen and (min-width: 782px) {
+	#wpadminbar #wp-admin-bar-my-account.with-avatar #wp-admin-bar-user-actions>li {
+		margin-left: 104px;
+	}
+}
+
+// Frontend search icon placement.
+#adminbarsearch {
+	margin-top: 8px;
+}
+
+// Hide avatar image in admin menu.
+#wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
+  display: none;
+}
+
+// Hide WP-Logo in admin menu.
+#wp-admin-bar-wp-logo {
+	display: none;
+}
