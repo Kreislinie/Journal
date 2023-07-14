@@ -1106,7 +1106,7 @@ span.mobile-nav.active:after {
 .area__head {
   display: grid;
   grid-area: head;
-  margin-top: 180px;
+  margin-top: 140px;
 }
 .area__head h1 {
   text-align: center;
@@ -1324,7 +1324,7 @@ span.mobile-nav.active:after {
 }
 
 .page-people .area__head, .page-archive .area__head {
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 .page-people .area__head a, .page-archive .area__head a {
   margin-left: 0;

@@ -19,7 +19,7 @@ get_header();
 
     </header><!-- .entry-header -->
 
-    <div class="area__content taxonomy-content">
+    <div class="area__content">
       
       <?php 
       if ( have_posts() ) :
