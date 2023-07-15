@@ -40,8 +40,23 @@ add_action( 'after_setup_theme', 'bj_setup' );
  * Loads cmb2.
  */
 if ( file_exists( dirname( __FILE__ ) . '/vendors/cmb2/init.php' ) ) {
-	require_once dirname( __FILE__ ) . '/vendors/cmb2/init.php';
+  require_once dirname( __FILE__ ) . '/vendors/cmb2/init.php';
 }
+
+/**
+ * Loads plugin update checker.
+ */
+require_once dirname( __FILE__ ) . '/vendors/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$bjUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/Kreislinie/bitjournal',
+	__FILE__,
+	'bitjournal'
+);
+
+//Set the branch that contains the stable release.
+$bjUpdateChecker->setBranch('main');
 
 /**
  * Changes main query to show entry post type by default.
