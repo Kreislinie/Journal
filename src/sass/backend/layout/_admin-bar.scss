@@ -3,18 +3,34 @@
 /*
  * 'Edit mode' toggle in the admin bar.
  */
-#wpadminbar #wp-admin-bar-exit-write {
-  float: right;
+#wpadminbar {
 
-  .fas {
-    font-family: var.$font-icon;
-    font-weight: 900;
-    font-size: 1.4em;
-    margin-left: 8px;
-    transform: translateY(2px);
+  svg {
+    width: 18px;
+    margin: 0 5px -4px 0;
+  }
+
+  #wp-admin-bar-view-mode,
+  #wp-admin-bar-add-entry {
+    float: right;
   }
 
 }
+
+/*
+#wpadminbar #wp-admin-bar-view-mode {
+  //background-color: rgb(13, 200, 219);
+  border-radius: 7px;
+  margin: 5px 0 0 12px;
+  a {
+    height: 40px;
+    line-height: 40px;
+    color: #404040;
+    padding: 0px 14px;
+  }
+}
+*/
+
 
 // Display 'edit mode' toggle on small screens.
 @media only screen and (max-width: 782px) {
@@ -141,7 +157,6 @@ div#wp-responsive-toggle a:before {
 }
 
 .wp-responsive-open div#wp-responsive-toggle a {
-	// ToDo: make inset border
 	border-color: transparent;
 	background: var.$color-transparent;
 }
@@ -184,7 +199,6 @@ html #wpadminbar {
   }
   
 }
-
 // Sets width if menu folded. (This possibly could work with less calculations...)
 .folded #wpwrap #wpadminbar {
   width: calc( 100% - #{var.$size-admin-menu-collapse-width} - 2 * #{var.$size-content-margin} );
@@ -202,7 +216,6 @@ html #wpadminbar {
   }
   
 }
-
 // Sets admin bar item height.
 #wpadminbar .quicklinks .ab-empty-item, 
 #wpadminbar .quicklinks a, 
@@ -210,6 +223,9 @@ html #wpadminbar {
   height: var.$size-admin-bar-height;
 }
 
+
+
+/*
 // Adjust admin bar icons padding.
 #wpadminbar .ab-icon, 
 #wpadminbar .ab-item:before, 
@@ -247,6 +263,7 @@ html #wpadminbar {
 }
 
 // Hide avatar image in admin menu.
+/*
 #wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
   display: none;
 }
@@ -255,3 +272,5 @@ html #wpadminbar {
 #wp-admin-bar-wp-logo {
 	display: none;
 }
+
+*/

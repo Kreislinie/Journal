@@ -77,25 +77,36 @@ function bj_add_admin_bar_items( $admin_bar ) {
     $exit_edit_mode_url .= '/page/' . get_query_var('paged');
   }
   
-  // Creates "Edit mode" menu item.
+  // Creates "View mode" menu item.
   $admin_bar->add_menu( array(
-    'id'    => 'exit-write',
-    'title' => ' <span class="screen-reader-text">Exit</span>' . esc_html__( 'Edit mode', 'bitjournal' ) . '<i class="fas fa-toggle-on"></i>',
+    'id'    => 'view-mode',
+    'title' => '<span class="screen-reader-text">View</span>' . '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>' . esc_html__( 'View', 'bitjournal' ) ,
     'href'  => $exit_edit_mode_url,
     'meta'  => array(
-      'title' => esc_html__( 'Exit edit mode', 'bitjournal' ),            
+      'title' => esc_html__( 'Switch to view mode', 'bitjournal' ),            
     ),
   ));
 
 	// Adds add entry menu item
 	$admin_bar->add_menu( array(
 		'id'    => 'add-entry',
-		'title' => esc_html__( 'Add Entry', 'bitjournal' ),
+    'title' => '<span class="screen-reader-text">Add a new entry</span>' . '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-circle"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>' . esc_html__( 'Add entry', 'bitjournal' ),
 		'href'  => admin_url( 'post-new.php?post_type=entry' ),
 		'meta'  => array(
 			'title' => esc_html__( 'Add Entry', 'bitjournal' ),            
 		),
 	));
+
+	// Adds Log Out menu item
+	$admin_bar->add_menu( array(
+		'id'    => 'bj-logout',
+    'title' => '<span class="screen-reader-text">Log Out</span>' . '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>' . esc_html__( 'Log Out', 'bitjournal' ),
+		'href'  => wp_logout_url(),
+		'meta'  => array(
+			'title' => esc_html__( 'Log Out', 'bitjournal' ),            
+		),
+	));
+
 
 }
 
