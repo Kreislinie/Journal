@@ -27,8 +27,11 @@
     padding-right: 38px;
   }
 
-  i {
-    transform: translateY(-7px);
+  svg {
     margin-right: 15px;
+    //color: $color__text-light;
+    height: 40px;
+    width: 40px;
+    stroke-width: 3px;
   }
 }

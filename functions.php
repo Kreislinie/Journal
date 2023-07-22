@@ -185,3 +185,19 @@ function bj_display_custom_logo() {
 }
 
 add_action('adminmenu', 'bj_display_custom_logo');
+
+
+class Bj_Category_Walker extends Walker_Category {
+
+  // Override the start_el method to add the SVG icon before each category item.
+  function start_el(&$output, $category, $depth = 0, $args = array(), $id = 0) {
+      $output .= '<li class="categories-list-item">';
+      $icon = file_get_contents( get_template_directory_uri() . '/img/icons/folder.svg' );
+      $output .= '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . $icon . $category->name . '</a>';
+  }
+
+  // Override the end_el method to close the list item properly.
+  function end_el(&$output, $page, $depth = 0, $args = array()) {
+      $output .= '</li>';
+  }
+}

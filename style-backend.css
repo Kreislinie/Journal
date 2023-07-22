@@ -210,7 +210,7 @@
   }
 }
 .edit-post-layout .interface-interface-skeleton__content {
-  background-color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0, 0%, 100%);
 }
 
 #plugin-information-footer {
@@ -265,7 +265,7 @@
 }
 #wpadminbar {
   color: rgb(65, 65, 65);
-  background: hsl(0deg, 0%, 100%);
+  background: hsl(0, 0%, 100%);
 }
 
 #wpadminbar .ab-item,
@@ -306,12 +306,12 @@
 
 /* Admin Bar: submenu */
 #wpadminbar .menupop .ab-sub-wrapper {
-  background: hsl(0deg, 0%, 100%);
+  background: hsl(0, 0%, 100%);
 }
 
 #wpadminbar .quicklinks .menupop ul.ab-sub-secondary,
 #wpadminbar .quicklinks .menupop ul.ab-sub-secondary .ab-submenu {
-  background: hsl(0deg, 0%, 100%);
+  background: hsl(0, 0%, 100%);
 }
 
 #wpadminbar .ab-submenu .ab-item,
@@ -377,7 +377,7 @@ div#wp-responsive-toggle a:before {
 }
 
 .wp-responsive-open #wpadminbar #wp-admin-bar-menu-toggle a {
-  background: hsl(0deg, 0%, 100%);
+  background: hsl(0, 0%, 100%);
 }
 
 .wp-responsive-open #wpadminbar #wp-admin-bar-menu-toggle .ab-icon:before {
@@ -506,7 +506,7 @@ html #wpadminbar li a {
 }
 #adminmenuback {
   border-right: 1px solid rgb(211, 211, 211);
-  background: hsl(0deg, 0%, 100%);
+  background: hsl(0, 0%, 100%);
   box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.33);
 }
 
@@ -649,7 +649,7 @@ html #wpadminbar li a {
 }
 
 #adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
-  border-right-color: hsl(0deg, 0%, 100%);
+  border-right-color: hsl(0, 0%, 100%);
 }
 
 #adminmenu .wp-submenu .wp-submenu-head {
@@ -671,7 +671,7 @@ html #wpadminbar li a {
 #adminmenuback,
 #adminmenuwrap,
 #adminmenu {
-  background: hsl(0deg, 0%, 100%);
+  background: hsl(0, 0%, 100%);
 }
 
 #adminmenu a {
@@ -701,11 +701,11 @@ html #wpadminbar li a {
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu,
 .folded #adminmenu .wp-has-current-submenu .wp-submenu,
 #adminmenu a.wp-has-current-submenu:focus + .wp-submenu {
-  background: hsl(0deg, 0%, 100%);
+  background: hsl(0, 0%, 100%);
 }
 
 #adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
-  border-right-color: hsl(0deg, 0%, 100%);
+  border-right-color: hsl(0, 0%, 100%);
 }
 
 #adminmenu .wp-submenu .wp-submenu-head {
@@ -747,7 +747,7 @@ html #wpadminbar li a {
 
 ul#adminmenu a.wp-has-current-submenu:after,
 ul#adminmenu > li.current > a.current:after {
-  border-right-color: hsl(0deg, 0%, 96%);
+  border-right-color: hsl(0, 0%, 96%);
 }
 
 #adminmenu li.current a.menu-top,
@@ -780,7 +780,7 @@ ul#adminmenu > li.current > a.current:after {
 }
 
 body {
-  background: hsl(0deg, 0%, 100%);
+  background: hsl(0, 0%, 100%);
 }
 
 .screen-options,
@@ -1028,7 +1028,7 @@ div.updated,
 }
 
 input[type=checkbox]:checked:before {
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0, 0%, 100%);
   margin: -4px -6px;
 }
 

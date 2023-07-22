@@ -23,19 +23,19 @@ get_header();
 				if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) :
 
 					$args = array(
-						'echo'                => 1,
+						'echo'                => true,
 						'hide_empty'          => 0,
-
+						'walker' => new Bj_Category_Walker(),
 						'hierarchical'        => true,
 						'order'               => 'ASC',
 						'orderby'             => 'name',
-						'separator'           => '<br />',
-						//'show_count'          => 1,
+						//'separator'           => '',
+						'show_count'          => true,
 						'show_option_all'     => '',
-						'style'               => 'list',
+						//'style'               => 'list',
 						'taxonomy'            => 'category',
 						'title_li'            => '',
-						'use_desc_for_title'  => 1,
+						//'use_desc_for_title'  => 1,
 					);
 				
 					wp_list_categories( $args );

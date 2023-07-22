@@ -13,7 +13,7 @@
       <?php 
 			bj_display_mood();
 
-			echo '<span class="date-bar"><i class="far fa-calendar-alt"></i>' . get_the_date() . '</span>';
+			echo '<span class="date-bar">'. file_get_contents( get_template_directory_uri() . '/img/icons/calendar-days.svg' ) . get_the_date() . '</span>';
 
 			if ( has_category() ) {
 				bj_display_category_bar();
@@ -24,7 +24,7 @@
 
     <?php
 		// Displays entry title, excerpt and edit icon.
-		$edit_icon = '<a class="edit-entry-link" href="' . get_edit_post_link() . '"><i class="fas fa-pencil-alt"></i></a>';
+		$edit_icon = '<a class="edit-entry-link" href="' . get_edit_post_link() . '">' . file_get_contents( get_template_directory_uri() . '/img/icons/pencil.svg') . '</a>';
 
 		the_title( '<h1 class="entry-title"><a href="' . get_permalink() . '">', '</a>' . $edit_icon . '</h1>' );
 

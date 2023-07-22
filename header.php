@@ -54,9 +54,9 @@
              */
             if( is_single() ) : 
               echo '<p>';
-              previous_post_link('%link', '<i class="fas fa-angle-left" title="' . esc_html__( 'Previous Entry', 'bitjournal' ) . '"></i>');
+              previous_post_link('%link', file_get_contents( get_template_directory_uri() . '/img/icons/chevron-left.svg' ) );
               bitjournal_posted_on(); 
-              next_post_link('%link', '<i class="fas fa-angle-right" title="' . esc_html__( 'Next Entry', 'bitjournal' ) . '"></i>');
+              next_post_link('%link', file_get_contents( get_template_directory_uri() . '/img/icons/chevron-right.svg' ) );
               echo '</p>';
               
               elseif ( is_tax() ) :
@@ -67,8 +67,8 @@
 
               the_posts_navigation(
                 array(
-                  'prev_text'          => esc_html__( 'Older entries', 'bitjournal' ),
-                  'next_text'          => esc_html__( 'Newer entries', 'bitjournal' ),
+                  'prev_text'          => file_get_contents( get_template_directory_uri() . '/img/icons/chevron-left.svg' ) . 'Older entries',
+                  'next_text'          => 'Newer entries' . file_get_contents( get_template_directory_uri() . '/img/icons/chevron-right.svg' ),
                   'screen_reader_text' => esc_html__( 'Entries navigation', 'bitjournal' ),
                 )
               );
@@ -152,7 +152,7 @@
               $edit_mode_link .= '&paged=' . get_query_var('paged');
             }
 
-            printf( '<a href="%s" title="%s">Edit mode <i class="fas fa-toggle-off"></i></a>', $edit_mode_link,  $edit_mode_text );
+            printf( '<a href="%s" title="%s">' . file_get_contents( get_template_directory_uri() . '/img/icons/pencil.svg' ) . 'Edit</a>', $edit_mode_link,  $edit_mode_text );
             ?>
 
           </div>

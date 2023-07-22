@@ -7,7 +7,7 @@ get_header();
 
     <header class="entry-header area__head tags-header">
       <?php 
-      echo '<h1 class="entry-title">' . single_tag_title('<i class="fas fa-tags"></i>', false) . '</h1>';
+      echo '<h1 class="entry-title">' . single_tag_title( file_get_contents( get_template_directory_uri() . '/img/icons/tag.svg' ), false) . '</h1>';
       echo tag_description();
       ?>
     </header><!-- .entry-header -->

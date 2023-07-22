@@ -62,6 +62,18 @@ $size__font-menu: 15px;
 /*
  * Content in the middle of the navbar (mainly used for showing date, page number, ...).
  */
+.entry-meta p,
+.nav-next a,
+.nav-previous a {
+  text-align: center;
+  font-weight: 300;
+  height: $height__navbar;
+  line-height: $height__navbar;
+  margin: 0;
+  font-size: $size__font-menu;
+  text-decoration: none;
+}
+
 .entry-meta {
   position: absolute;
   width: 100%;
@@ -70,23 +82,13 @@ $size__font-menu: 15px;
   left: 0;
   font-size: $size__font-menu;
 
-  p, a {
-    text-align: center;
-    font-weight: 300;
-    height: $height__navbar;
-    line-height: $height__navbar;
-    margin: 0;
-		font-size: $size__font-menu;
-  }
-
   a {
-    text-decoration: none;
-    text-align: center;
-    color: $color__text-main;
+    display: inline-block;
   }
 
-  i {
-    padding: 0 10px;
+  svg {
+    transform: translateY(6px);
+    color: $color__icon;
   }
 
   // Display navigation on the bottom of the screen on small screens.
@@ -108,21 +110,6 @@ $size__font-menu: 15px;
   float: left;
   text-align: right;
   padding-right: 25px;
-
-  a {
-    padding-left: 25px;
-  }
-
-  // Font Awesome Icon: https://fontawesome.com/icons/angle-left?style=solid
-  &:before {
-    content: "\f104";
-    font-family: $font__icon;
-    font-weight: 900;
-    margin-right: -13px;
-    color: $color__icon;
-    pointer-events: none;
-  }
-
 }
 
 // 'Next' arrow
@@ -131,23 +118,7 @@ $size__font-menu: 15px;
   float: right;
   text-align: left;
   padding-left: 25px;
-
-  a {
-    padding-right: 25px;
-  }
-
-  // Font Awesome Icon: https://fontawesome.com/icons/angle-right?style=solid
-  &:after {
-    content: "\f105";
-    font-family: $font__icon;
-    font-weight: 900;
-    margin-left: -13px;
-    color: $color__icon;
-    pointer-events: none;
-  }
-
 }
-
 
 /*
  * Mobile menu

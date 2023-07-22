@@ -652,6 +652,18 @@ a:hover, a:active {
 /*
  * Content in the middle of the navbar (mainly used for showing date, page number, ...).
  */
+.entry-meta p,
+.nav-next a,
+.nav-previous a {
+  text-align: center;
+  font-weight: 300;
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  font-size: 15px;
+  text-decoration: none;
+}
+
 .entry-meta {
   position: absolute;
   width: 100%;
@@ -660,21 +672,12 @@ a:hover, a:active {
   left: 0;
   font-size: 15px;
 }
-.entry-meta p, .entry-meta a {
-  text-align: center;
-  font-weight: 300;
-  height: 50px;
-  line-height: 50px;
-  margin: 0;
-  font-size: 15px;
-}
 .entry-meta a {
-  text-decoration: none;
-  text-align: center;
-  color: rgb(60, 60, 60);
+  display: inline-block;
 }
-.entry-meta i {
-  padding: 0 10px;
+.entry-meta svg {
+  transform: translateY(6px);
+  color: #dedede;
 }
 @media only screen and (max-width: 782px) {
   .entry-meta {
@@ -694,34 +697,12 @@ a:hover, a:active {
   text-align: right;
   padding-right: 25px;
 }
-.nav-previous a {
-  padding-left: 25px;
-}
-.nav-previous:before {
-  content: "\f104";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: -13px;
-  color: #dedede;
-  pointer-events: none;
-}
 
 .nav-next {
   width: 50%;
   float: right;
   text-align: left;
   padding-left: 25px;
-}
-.nav-next a {
-  padding-right: 25px;
-}
-.nav-next:after {
-  content: "\f105";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-left: -13px;
-  color: #dedede;
-  pointer-events: none;
 }
 
 /*
@@ -943,7 +924,7 @@ span.mobile-nav.active:after {
 .archive-overview__month-link {
   display: block;
   padding: 5px 5px 5px 20px;
-  border: 1px solid hsl(0deg, 0%, 90%);
+  border: 1px solid hsl(0, 0%, 90%);
   text-decoration: none;
   transition: all ease 0.7s;
   border-radius: 7px;
@@ -954,7 +935,7 @@ span.mobile-nav.active:after {
   border: 1px solid rgb(13, 200, 219);
 }
 .archive-overview__count {
-  border-left: 1px solid hsl(0deg, 0%, 90%);
+  border-left: 1px solid hsl(0, 0%, 90%);
   width: 25px;
   height: 25px;
   line-height: 25px;
@@ -989,9 +970,11 @@ span.mobile-nav.active:after {
 .tags-header h1 {
   padding-right: 38px;
 }
-.tags-header i {
-  transform: translateY(-7px);
+.tags-header svg {
   margin-right: 15px;
+  height: 40px;
+  width: 40px;
+  stroke-width: 3px;
 }
 
 .cat-list div {
@@ -1004,21 +987,20 @@ span.mobile-nav.active:after {
 .cat-list div li {
   list-style: none;
 }
-.cat-list div li:before {
-  content: "\f0da";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: hsl(0deg, 0%, 90%);
-  padding: 0 7px;
-  float: left;
-}
 .cat-list div ul {
   padding: 0;
   margin-left: 15px;
 }
-
-.fas, .fa {
-  color: #dedede;
+.cat-list div svg {
+  color: #757575;
+  height: 18px;
+  stroke-width: 3px;
+  transform: translateY(2px);
+}
+.cat-list div .children {
+  border-left: 2px solid #e1e1e1;
+  margin-left: 12px;
+  padding-left: 8px;
 }
 
 .entry-title {
@@ -1074,7 +1056,7 @@ span.mobile-nav.active:after {
 }
 
 .entry-category {
-  color: hsl(0deg, 0%, 70%);
+  color: hsl(0, 0%, 70%);
   font-size: 0.8em;
   white-space: nowrap;
 }
@@ -1109,10 +1091,6 @@ span.mobile-nav.active:after {
   font-size: 0.8em;
 }
 
-.category {
-  margin-top: 2px;
-}
-
 #excellent {
   background-color: rgb(3, 175, 54);
 }
@@ -1141,40 +1119,47 @@ span.mobile-nav.active:after {
   background-color: rgb(235, 35, 29);
 }
 
+.category-bar,
 .date-bar {
-  padding: 0;
-  margin: 0 15px 0 0;
-  list-style: none;
-  float: left;
-  white-space: nowrap;
+  margin-right: 15px;
   font-size: 0.9em;
   line-height: 1.9em;
   text-decoration: none;
-  color: hsl(0deg, 0%, 70%);
+  display: inline-flex;
+  align-items: center;
+  color: hsl(0, 0%, 70%);
 }
-.date-bar i {
-  font-size: 1.2em;
+.category-bar svg,
+.date-bar svg {
+  margin-right: 3px;
+  height: 20px;
 }
 
-.tags i, .category-bar i, .date-bar i {
-  margin-right: 5px;
-  color: hsl(0deg, 0%, 70%);
+.category-bar a {
+  text-decoration: none;
+  color: hsl(0, 0%, 70%);
 }
 
 .tags {
   margin-bottom: 25px;
+  display: inline-flex;
+  align-items: center;
+}
+.tags svg {
+  color: hsl(0, 0%, 70%);
+  margin-right: 3px;
 }
 .tags a {
   display: inline-block;
   text-decoration: none;
   white-space: nowrap;
-  margin: 0 6px 8px 0;
+  margin-right: 6px;
   font-size: 0.8em;
   padding: 0px 4px;
   border-radius: 5px;
   transition: background-color 0.5s, color 0.2s;
-  border: 1px solid hsl(0deg, 0%, 70%);
-  color: hsl(0deg, 0%, 70%);
+  border: 1px solid hsl(0, 0%, 70%);
+  color: hsl(0, 0%, 70%);
 }
 .tags a:hover {
   background-color: rgb(13, 200, 219);
@@ -1196,7 +1181,7 @@ span.mobile-nav.active:after {
 .post-categories li a {
   font-size: 0.9em;
   text-decoration: none;
-  color: hsl(0deg, 0%, 70%);
+  color: hsl(0, 0%, 70%);
 }
 .post-categories li a:before {
   content: "\f0da";
@@ -1220,22 +1205,22 @@ span.mobile-nav.active:after {
 }
 
 .edit-entry-link {
-  display: inline-block;
-  height: 20px;
+  display: inline-grid;
   margin-left: 15px;
-  transform: scale(0.8);
-}
-.edit-entry-link i {
   color: #dedede;
-  padding: 8px;
   border-radius: 100%;
   border: 1px solid #dedede;
   transition: all ease 1s;
 }
-.edit-entry-link i:hover {
+.edit-entry-link:hover {
   color: rgb(13, 200, 219);
   border: 1px solid rgb(13, 200, 219);
   background-color: #e9fcfe;
+}
+.edit-entry-link svg {
+  padding: 9px;
+  width: 40px;
+  height: 40px;
 }
 
 .post-meta-seperator {
@@ -1263,9 +1248,15 @@ span.mobile-nav.active:after {
   text-align: center;
 }
 .people-meta span {
-  color: hsl(0deg, 0%, 70%);
+  color: hsl(0, 0%, 70%);
   font-size: 0.9em;
   padding: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+.people-meta svg {
+  margin-right: 3px;
+  height: 20px;
 }
 
 .people-profile-large {
@@ -1284,7 +1275,7 @@ span.mobile-nav.active:after {
   display: grid;
   grid-row: 1/2;
   grid-column: 1/4;
-  background-color: hsl(0deg, 0%, 95%);
+  background-color: hsl(0, 0%, 95%);
   height: 80%;
   z-index: -99;
 }
@@ -1295,11 +1286,11 @@ span.mobile-nav.active:after {
 
 .read-more {
   text-decoration: none;
-  color: hsl(0deg, 0%, 70%);
+  color: hsl(0, 0%, 70%);
 }
 .read-more i {
   margin-left: 5px;
-  color: hsl(0deg, 0%, 70%);
+  color: hsl(0, 0%, 70%);
 }
 
 .page-people .area__head, .page-archive .area__head {

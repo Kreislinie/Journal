@@ -34,26 +34,26 @@ get_header();
           <?php
 
           echo '<h2>' . $term->name . '</h2>';
-					// TODO: edit_term_link( 'Edit ' . $term->name, '<i class="fas fa-pencil-alt"></i> ' ); 
+					//edit_term_link( 'Edit ' . $term->name, 'icon' ); 
 
           if ( $term->description ) {
             echo '<p>' . $term->description . '</p>';
           }
 
           if ( $term->count ) {
-            echo '<span><i class="far fa-bookmark"></i> ' . $term->count . '</span>';
+            echo '<span>' . file_get_contents( get_template_directory_uri() . '/img/icons/bookmark.svg' ) . $term->count . '</span>';
           }
           
           if ( $birth ) {
-            echo '<span><i class="fas fa-star-of-life"></i> ' . date( 'd.m.Y', $birth ) . '</span>';
+            echo '<span>' . file_get_contents( get_template_directory_uri() . '/img/icons/asterisk.svg' ) . date( 'd.m.Y', $birth ) . '</span>';
           }
 
           if ( $death ) {
-            echo '<span><i class="fas fa-cross"></i> ' . date( 'd.m.Y', $death ) . '</span>';
+            echo '<span>' . file_get_contents( get_template_directory_uri() . '/img/icons/x-circle.svg' ) . date( 'd.m.Y', $death ) . '</span>';
           }
 
           if ( $relation ) {
-            echo '<span><i class="fas fa-user-friends"></i> ' . $relation . '</span>';
+            echo '<span>' . file_get_contents( get_template_directory_uri() . '/img/icons/users.svg' ) . $relation . '</span>';
           }
 
           ?>
