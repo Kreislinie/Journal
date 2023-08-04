@@ -1,3 +1,5 @@
+@use '../variables' as var;
+
 html {
 	box-sizing: border-box;
 }
@@ -9,20 +11,18 @@ html {
 }
 
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	background: var.$color-background-body; /* Fallback for when there is no custom background color defined. */
 }
 
 // hr element
 hr {
-	background-color: $color__icon;
+	background-color: var.$color-icon;
   border: 10px;
   height: 2px;
   margin-bottom: 4.5em;
   width: 45%;
   margin-top: 4.5em;
 }
-
-@import "lists";
 
 img {
 	height: auto; /* Make sure images are scaled correctly. */
@@ -36,9 +36,6 @@ figure {
 .wp-block-image {
   margin: 3em 0;
 }
-
-@import "tables";
-
 
 .link {
   cursor: pointer;

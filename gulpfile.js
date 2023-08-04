@@ -29,6 +29,7 @@ gulp.task('watch', function() {
 	gulp.watch('src/js/*.js', gulp.series('js'));
 	gulp.watch('src/sass/frontend/**/*.scss', gulp.series('sassFront'));
 	gulp.watch('src/sass/backend/**/*.scss', gulp.series('sassBack'));
+	gulp.watch('src/sass/variables/**/*.scss', gulp.series('sassBack', 'sassFront'));
 });
 
 

@@ -1,5 +1,7 @@
+@use '../variables' as var;
+
 h1, h2, h3, h4, h5, h6 {
-  color: $color__text-main;
+  color: var.$color-text-main;
   clear: both;
 }
 
@@ -7,6 +9,9 @@ h1 { font-size: 3.1em; }
 h2 { font-size: 2.4em; }
 h3 { font-size: 1.6em; }
 
-@media only screen and (max-width: $tablet) {
-  h1 { font-size: 2.5em; line-height: 1.1em; }
+@media only screen and (max-width: var.$tablet) {
+  h1 { 
+    font-size: 2.5em; 
+    line-height: 1.1em; 
+  }
 }

@@ -1,8 +1,10 @@
+@use '../variables' as var;
+
 .entry-title {
   margin: 0;
 
   i {
-    color: $color__bitjournal-blue;
+    color: var.$color-bitjournal-blue;
     font-size: 0.5em;
   }
 
@@ -25,7 +27,7 @@
   justify-self: start;
   padding: 11px 9px;
   // background-color: hsl(0, 0%, 95%);
-  border-radius: $border__default-radius;
+  border-radius: var.$size-border-radius-main;
   justify-self: left;
   text-align: center;
   width: 115px;
@@ -36,15 +38,15 @@
 
 
   &:hover {
-    border: 1px solid $color__bitjournal-blue;
-    background: lighten($color__bitjournal-blue, 50);
+    border: 1px solid var.$color-bitjournal-blue;
+    background: lighten(var.$color-bitjournal-blue, 50);
   }
 
   img {
     border-radius: 100%;
     // border: 3px solid white;
     width: 90px;
-    box-shadow: $shadow__default;
+    box-shadow: var.$shadow__default;
   }
 
   p {
@@ -63,7 +65,7 @@
 }
 
 .entry-category {
-  color: $color__text-light;
+  color: var.$color-text-light;
   font-size: .8em;
   white-space: nowrap;
 
@@ -82,7 +84,7 @@
     text-align: center;
   }
 
-  @media screen and ( max-width: $tablet ) {
+  @media screen and ( max-width: var.$tablet ) {
     margin-top: 110px;
    }
 
@@ -108,13 +110,13 @@
 }
 
 // Mood colors
-#excellent  { background-color: $color-mood-excellent; }
-#very-good  { background-color: $color-mood-very-good; }
-#good       { background-color: $color-mood-good;      }
-#neutral    { background-color: $color-mood-neutral;   }
-#bad        { background-color: $color-mood-bad;       }
-#very-bad   { background-color: $color-mood-very-bad;  }
-#horrible   { background-color: $color-mood-horrible;  }
+#excellent  { background-color: var.$color-mood-excellent; }
+#very-good  { background-color: var.$color-mood-very-good; }
+#good       { background-color: var.$color-mood-good;      }
+#neutral    { background-color: var.$color-mood-neutral;   }
+#bad        { background-color: var.$color-mood-bad;       }
+#very-bad   { background-color: var.$color-mood-very-bad;  }
+#horrible   { background-color: var.$color-mood-horrible;  }
 
 
 .category-bar,
@@ -125,7 +127,7 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  color: $color__text-light;
+  color: var.$color-text-light;
 
   svg {
     margin-right: 3px;
@@ -135,7 +137,7 @@
 
 .category-bar a {
   text-decoration: none;
-  color: $color__text-light;
+  color: var.$color-text-light;
 }
 
 .tags {
@@ -144,7 +146,7 @@
   align-items: center;
 
   svg {
-    color: $color__text-light;
+    color: var.$color-text-light;
     margin-right: 3px;
   }
 
@@ -158,12 +160,12 @@
     padding: 0px 4px;
     border-radius: 5px;
     transition: background-color 0.5s, color 0.2s;
-    border: 1px solid $color__text-light;
-    color: $color__text-light;
+    border: 1px solid var.$color-text-light;
+    color: var.$color-text-light;
 
     &:hover {
-      background-color: $color__bitjournal-blue;
-      border: 1px solid $color__bitjournal-blue;
+      background-color: var.$color-bitjournal-blue;
+      border: 1px solid var.$color-bitjournal-blue;
       color: white;
     }
 
@@ -185,14 +187,8 @@
     a {
       font-size: .9em;
       text-decoration: none;
-      color: $color__text-light;
+      color: var.$color-text-light;
 
-      &:before {
-        content: "\f0da";
-        font-family: $font__icon; 
-        font-weight: 900; 
-        padding: 0 7px;
-      }
 
       &:first-of-type:before {
         content: none;
@@ -223,15 +219,15 @@
 .edit-entry-link {
   display: inline-grid;
   margin-left: 15px;
-  color: $color__icon;
+  color: var.$color-icon;
   border-radius: 100%;
-  border: 1px solid $color__icon;
+  border: 1px solid var.$color-icon;
   transition: all ease 1s;
 
   &:hover {
-    color: $color__bitjournal-blue;
-    border: 1px solid $color__bitjournal-blue;
-    background-color: lighten($color__bitjournal-blue, 50) ;
+    color: var.$color-bitjournal-blue;
+    border: 1px solid var.$color-bitjournal-blue;
+    background-color: lighten(var.$color-bitjournal-blue, 50) ;
   }
 
   svg {

@@ -1,21 +1,23 @@
+@use '../variables' as var;
+
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: none;
-	border-color: $color__border-button;
+	border-color: var.$color-border-button;
 	border-radius: 3px;
-	background: $color__background-button;
+	background: var.$color-background-button;
 	color: rgba(0, 0, 0, .8);
 	line-height: 1;
 	padding: 8px;
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		border-color: var.$color-border-button-hover;
 	}
 
 	&:active,
 	&:focus {
-		border-color: $color__border-button-focus;
+		border-color: var.$color-border-button-focus;
 	}
 }

@@ -1,14 +1,18 @@
 # bitjournal
 
-bitjournal is your personal online diary. Private, opensource and based on Wordpress. Keep your diary digital and access it anywhere. Sort your entries in categorys, track your mood and see which people you engage with. 
+bitjournal is your personal online journal. Private, opensource and based on Wordpress. Keep your diary digital and access it anywhere. Manage your entries using tags and categories, track your mood and see which people you engage with. 
 
 ## Installation
-:warning: Early beta version! A lot of bugs... Features and functionality could change until first official release!
+:warning: Early beta version! Features and functionality could change until first official release!
 
-bitjournal is basically a WordPress theme. All you need is a fresh WordPress install, then you can upload the bitjournal theme. bitjournal creates and manages all your pages, post types and settings on activation. 
+bitjournal is basically a WordPress theme. All you need is a fresh WordPress install, then you can upload the latest bitjournal theme. bitjournal creates and manages all your pages, post types and settings on activation. 
 
-### Update bitjournal
-bitjournal is currently not updatable via WordPress backend. You can upload the latest version or manage updates with git, just pull the master branch (stable version).
+## Built with 
+bitjournal is built with other great open source software:
 
-## Development
-Development happens on the develope branch.
+- WordPress
+- CMB2
+- PUC by Yahnis Elsts
+- Sass
+- Gulp
+- Lucide Icons

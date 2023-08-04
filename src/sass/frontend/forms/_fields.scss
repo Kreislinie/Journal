@@ -1,3 +1,5 @@
+@use '../variables' as var;
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -14,18 +16,18 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
+	color: var.$color-text-input;
+	border: 1px solid var.$color-border-input;
 	border-radius: 3px;
 	padding: 3px 8px;
 
 	&:focus {
-		color: $color__text-input-focus;
+		color: var.$color-text-input-focus;
 	}
 }
 
 select {
-	border: 1px solid $color__border-input;
+	border: 1px solid var.$color-border-input;
 }
 
 textarea {
@@ -35,4 +37,3 @@ textarea {
 .page-error, .search-no-results {
 	text-align: center;
 }
-

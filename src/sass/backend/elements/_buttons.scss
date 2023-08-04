@@ -1,4 +1,4 @@
-@use 'variables' as var;
+@use '../variables' as var;
 
 // default button stylings.
 .wp-core-ui .button, 
@@ -9,7 +9,7 @@
   box-shadow: none;
   text-shadow: none;
   background: var.$color-button;
-  color: var.$color-text;
+  color: var.$color-text-main;
   padding: 0 18px 1px;
   margin-right: 5px;
   line-height: 40px;

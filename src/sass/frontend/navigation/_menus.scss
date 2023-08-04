@@ -1,6 +1,4 @@
-$height__navbar: 50px;
-$size__font-menu: 15px;
-
+@use '../variables' as var;
 
 /*
  * Navigation bar styling.
@@ -8,7 +6,7 @@ $size__font-menu: 15px;
 .main-navigation {
   border-bottom: 1px solid rgb(223, 223, 223);
   background-color: rgb(255, 255, 255);
-  height: $height__navbar;
+  height: var.$size-navbar-height;
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -16,7 +14,7 @@ $size__font-menu: 15px;
   top: 0;
 
   img {
-    height: $height__navbar;
+    height: var.$size-navbar-height;
     padding: 9px;
     float: left;
   }
@@ -25,15 +23,15 @@ $size__font-menu: 15px;
 
 // Link styling
 .navbar-right a, .navbar-left a {
-  font-size: $size__font-menu;
+  font-size: var.$type-font-size-menu;
   text-decoration: none;
   cursor: pointer;
-  line-height: $height__navbar - 1px;
+  line-height: var.$size-navbar-height - 1px;
   transition: all ease .4s;
   display: inline;
 
   &:hover {
-    color: $color__bitjournal-blue;
+    color: var.$color-bitjournal-blue;
   }   
 
 }
@@ -67,10 +65,10 @@ $size__font-menu: 15px;
 .nav-previous a {
   text-align: center;
   font-weight: 300;
-  height: $height__navbar;
-  line-height: $height__navbar;
+  height: var.$size-navbar-height;
+  line-height: var.$size-navbar-height;
   margin: 0;
-  font-size: $size__font-menu;
+  font-size: var.$type-font-size-menu;
   text-decoration: none;
 }
 
@@ -80,7 +78,7 @@ $size__font-menu: 15px;
   z-index: -5;
   top: 0;
   left: 0;
-  font-size: $size__font-menu;
+  font-size: var.$type-font-size-menu;
 
   a {
     display: inline-block;
@@ -88,11 +86,11 @@ $size__font-menu: 15px;
 
   svg {
     transform: translateY(6px);
-    color: $color__icon;
+    color: var.$color-icon;
   }
 
   // Display navigation on the bottom of the screen on small screens.
-  @media only screen and (max-width: $tablet){
+  @media only screen and (max-width: var.$tablet){
     position: fixed; 
     border-top: 1px solid rgb(223, 223, 223);
     background-color: rgb(255, 255, 255);
@@ -123,14 +121,14 @@ $size__font-menu: 15px;
 /*
  * Mobile menu
  */
-@media only screen and ( max-width: $tablet ) {
+@media only screen and ( max-width: var.$tablet ) {
 
   // Mobile menu styling.
   .navbar-left {
     transform: translateX(-100vw);
     transition: all .4s ease-in-out;
     width: 0;
-    top: $height__navbar;
+    top: var.$size-navbar-height;
     height: 100vh;
     background: white;
     display: grid;
@@ -143,18 +141,18 @@ $size__font-menu: 15px;
       font-size: 1.5em;
 
       &:last-of-type {
-        padding-bottom: 2 * $height__navbar;
+        padding-bottom: 2 * var.$size-navbar-height;
       }
 
       img {
         width: 100%;
-        height: 2 * $height__navbar;
+        height: 2 * var.$size-navbar-height;
       }
 
     }
 
     .home-logo {
-      height: 2 * $height__navbar;
+      height: 2 * var.$size-navbar-height;
       margin-bottom: 75px;
     }
 
@@ -188,17 +186,17 @@ $size__font-menu: 15px;
   display: none;
 
   // Burger menu
-  @media only screen and (max-width: $tablet) {
+  @media only screen and (max-width: var.$tablet) {
     position: relative;
     display: block;
     width: 20px;
     height: 2px;
-    background: $color__text-main;
+    background: var.$color-text-main;
     transition: all .2s ease-in-out;
     
     &:before, &:after {
       position: absolute;
-      background: $color__text-main;
+      background: var.$color-text-main;
       content: '';
       width: 20px;
       height: 2px;

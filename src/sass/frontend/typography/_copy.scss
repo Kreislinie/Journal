@@ -1,8 +1,10 @@
+@use '../variables' as var;
+
 p {
   font-size: 1.15em;
   font-weight: 400;
   line-height: 1.7em;
-  color: $color__text-main;
+  color: var.$color-text-main;
 	margin-bottom: 1.5em;
 }
 
@@ -19,10 +21,10 @@ address {
 }
 
 pre {
-	background: $color__background-pre;
-	font-family: $font__pre;
-	@include font-size(0.9375);
-	line-height: $font__line-height-pre;
+	background: var.$color-background-pre;
+	font-family: var.$typo-font-pre;
+	font-size: 16px;
+	line-height: var.$typo-line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
@@ -30,22 +32,20 @@ pre {
 }
 
 code, kbd, tt, var {
-	font-family: $font__code;
-	@include font-size(0.9375);
+	font-family: var.$typo-font-code;
+	font-size: 16px;
 }
 
 abbr, acronym {
-	border-bottom: 1px dotted $color__border-abbr;
+	border-bottom: 1px dotted var.$color-border-abbr;
 	cursor: help;
 }
 
 mark, ins {
-	background: $color__background-ins;
+	background: var.$color-background-ins;
 	text-decoration: none;
 }
 
 big {
 	font-size: 125%;
 }
-
-

@@ -1,3 +1,4 @@
+@use '../variables' as var;
 
 .auto-grid {
   display: grid;
@@ -9,12 +10,12 @@
   cursor: pointer;
   height: auto;
   background-color: white;
-  border-radius: $border__default-radius;
+  border-radius: var.$size-border-radius-main;
   padding: 15px;
 
   &__year-link {
     transition: all ease .4s;
-    color: $color__text-main;
+    color: var.$color-text-main;
     display: block;
     text-align: center;
     padding: 20px;
@@ -23,7 +24,7 @@
     font-size: 1.7em;
 
     &:hover {
-      color: $color__bitjournal-blue;
+      color: var.$color-bitjournal-blue;
     }
 
   }
@@ -31,22 +32,22 @@
   &__month-link {
     display: block;
     padding: 5px 5px 5px 20px;
-    border: 1px solid $color__ultralight;
+    border: 1px solid var.$color-border-light;
     text-decoration: none;
     transition: all ease .7s;
-    border-radius: $border__default-radius;
+    border-radius: var.$size-border-radius-main;
     margin-top: 5px;
 
     &:hover {
-      background-color: lighten($color__bitjournal-blue, 50);
-      border: 1px solid $color__bitjournal-blue;
+      background-color: lighten(var.$color-bitjournal-blue, 50);
+      border: 1px solid var.$color-bitjournal-blue;
 
     }
 
   }
 
   &__count {
-    border-left: 1px solid $color__ultralight;
+    border-left: 1px solid var.$color-border-light;
 
     width: 25px;
     height: 25px;
@@ -59,4 +60,3 @@
   }
 
 }
-

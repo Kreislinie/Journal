@@ -1,0 +1,49 @@
+// Colors
+
+$color-bitjournal-blue:     rgb(13, 200, 219);
+
+// Moods
+$color-mood-excellent:      rgb(3, 176, 55);
+$color-mood-very-good:      rgb(123, 205, 60);
+$color-mood-good:           rgb(35, 136, 163);
+$color-mood-neutral:        rgb(20, 183, 189);
+$color-mood-bad:            rgb(255, 170, 0);
+$color-mood-very-bad:       rgb(255, 110, 0);
+$color-mood-horrible:       rgb(235, 35, 29);
+
+// Borders
+$color-border:              hsl(0, 0%, 83%);
+$color-border-light:        hsl(0, 0%, 90%);
+$color-border-button:       hsl(0, 0%, 80%);
+$color-border-button-hover: hsl(0, 0%, 73%);
+$color-border-button-focus: hsl(0, 0%, 67%);
+$color-border-input:        hsl(0, 0%, 80%);
+$color-border-abbr:         hsl(0, 0%, 40%);
+
+// Text
+$color-text-main:           hsl(0, 0%, 24%);
+$color-text-light:          hsl(0, 0%, 70%);
+$color-text-screen:         rgb(33, 117, 155);
+$color-text-input:          hsl(0, 0%, 40%);
+$color-text-input-focus:    hsl(0, 0%, 7%);
+$color-link:                $color-text-main;
+$color-link-hover:          $color-text-main;
+$color-link-focus:          rgb(0, 137, 172);
+
+// Background
+$color-background-body:     hsl(0, 0%, 100%);
+$color-background-screen:   hsl(0, 0%, 100%);
+$color-background-button:   hsl(0, 0%, 90%);
+$color-background-pre:      hsl(0, 0%, 93%);
+$color-background-ins:      rgb(255, 249, 192);
+
+
+$color-main-background:     hsl(0, 0%, 96%);
+$color-main:                hsl(0, 0%, 100%);
+$color-icon:                hsl(0, 0%, 87%);
+$color-focus:               rgb(0, 137, 172);
+$color-notification:        rgb(213, 78, 33);
+$color-wpcontent:           hsl(0, 0%, 94%);
+$color-button:              hsl(0, 0%, 95%);
+$color-form-checked:        rgb(0, 137, 172);
+$color-transparent:         rgba(0, 0, 0, 0);

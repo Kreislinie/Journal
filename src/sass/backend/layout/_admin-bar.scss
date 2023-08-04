@@ -44,7 +44,7 @@
 
 
 #wpadminbar {
-	color: var.$color-text;
+	color: var.$color-text-main;
 	background: var.$color-main;
 }
 
@@ -52,7 +52,7 @@
 #wpadminbar a.ab-item,
 #wpadminbar > #wp-toolbar span.ab-label,
 #wpadminbar > #wp-toolbar span.noticon {
-	color: var.$color-text;
+	color: var.$color-text-main;
 }
 
 #wpadminbar .ab-icon,
@@ -81,7 +81,7 @@
 #wpadminbar:not(.mobile) li:hover .ab-item:before,
 #wpadminbar:not(.mobile) li:hover .ab-item:after,
 #wpadminbar:not(.mobile) li:hover #adminbarsearch:before {
-	color: var.$color-text;
+	color: var.$color-text-main;
 }
 
 
@@ -100,7 +100,7 @@
 #wpadminbar .quicklinks .menupop ul li a,
 #wpadminbar .quicklinks .menupop.hover ul li a,
 #wpadminbar.nojs .quicklinks .menupop:hover ul li a {
-	color: mix( var.$color-main, var.$color-text, 30% );
+	color: mix( var.$color-main, var.$color-text-main, 30% );
 }
 
 #wpadminbar .quicklinks li .blavatar,
