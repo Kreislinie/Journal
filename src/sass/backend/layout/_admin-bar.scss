@@ -1,13 +1,15 @@
 @use '../variables' as var;
+@use 'sass:color';
 
-/*
- * 'Edit mode' toggle in the admin bar.
- */
-#wpadminbar {
+#wpcontent > #wpadminbar {
+	color: var.$color-text-main;
+	background: var.$color-main;
+  //padding: 0 0 0 35px;
+
 
   svg {
-    width: 18px;
-    margin: 0 5px -4px 0;
+    width: 19px;
+    margin: 0 5px -5px 0;
   }
 
   #wp-admin-bar-view-mode,
@@ -17,20 +19,49 @@
 
 }
 
-/*
-#wpadminbar #wp-admin-bar-view-mode {
-  //background-color: rgb(13, 200, 219);
-  border-radius: 7px;
-  margin: 5px 0 0 12px;
+#wp-admin-bar-root-default > #wp-admin-bar-view-mode {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background: #1e8a9d;
+  margin: 8px 0 0 12px;
+  box-shadow: 2px -1px 32px -10px rgba(23, 201, 219, 0.68);
+
   a {
-    height: 40px;
-    line-height: 40px;
-    color: #404040;
-    padding: 0px 14px;
+    line-height: 78px;
+    text-align: center;
+  }
+
+  svg {
+    width: 30px;
+    margin: 0;
+    color: white;
   }
 }
-*/
+/*
+#wp-admin-bar-root-default > #wp-admin-bar-view-mode {
+  //color: var.$color-main;
+  //background-color: var.$color-bitjournal-blue;
+  //background-color: lighten(var.$color-bitjournal-blue, 25);
+  background-color: var.$color-mood-neutral;
+  width: 100px;
+  text-align: center;
+  height: var.$size-admin-bar-height - 1px;
+  border-left: 1px solid var.$color-bitjournal-blue;
+  border-bottom: 1px solid var.$color-bitjournal-blue;
 
+  :hover {
+    background-color: color.scale(var.$color-bitjournal-blue, $lightness: -8%);
+    color: var.$color-main;
+
+  }
+
+}
+
+*/
 
 // Display 'edit mode' toggle on small screens.
 @media only screen and (max-width: 782px) {
@@ -43,10 +74,6 @@
 }
 
 
-#wpadminbar {
-	color: var.$color-text-main;
-	background: var.$color-main;
-}
 
 #wpadminbar .ab-item,
 #wpadminbar a.ab-item,
@@ -175,12 +202,14 @@ html #wpadminbar {
   padding: 0 var.$size-content-margin;
   border-bottom: var.$border-default;
   box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.33);
-  left: unset;
-  right: 0;
-  z-index: 9998;
+  box-sizing: border-box;
+  //left: unset;
+  //right: 0;
+  z-index: 10000;
 
   li a {
     line-height: var.$size-admin-bar-height;
+    font-size: 15px;
   }
 
   // Height for mobile version.
@@ -192,7 +221,7 @@ html #wpadminbar {
 
 // Admin bar width.
 #wpwrap #wpadminbar {
-  width: calc( 100% - #{var.$size-admin-menu-width} - 2 * #{var.$size-content-margin} );
+  //width: calc( 100% - #{var.$size-admin-menu-width} - 2 * #{var.$size-content-margin} );
 
   @media screen and ( max-width: 782px ) {
     padding: 0;
@@ -201,13 +230,13 @@ html #wpadminbar {
 }
 // Sets width if menu folded. (This possibly could work with less calculations...)
 .folded #wpwrap #wpadminbar {
-  width: calc( 100% - #{var.$size-admin-menu-collapse-width} - 2 * #{var.$size-content-margin} );
+  //width: calc( 100% - #{var.$size-admin-menu-collapse-width} - 2 * #{var.$size-content-margin} );
 }
 
 .auto-fold #wpwrap #wpadminbar {
 
   @media only screen and (max-width: 960px) {
-    width: calc( 100% - #{var.$size-admin-menu-collapse-width} - 2 * #{var.$size-content-margin} );
+    //width: calc( 100% - #{var.$size-admin-menu-collapse-width} - 2 * #{var.$size-content-margin} );
   }
 
   // Full width on mobile.
@@ -220,7 +249,7 @@ html #wpadminbar {
 #wpadminbar .quicklinks .ab-empty-item, 
 #wpadminbar .quicklinks a, 
 #wpadminbar .shortlink-input {
-  height: var.$size-admin-bar-height;
+  height: var.$size-navbar-height;
 }
 
 

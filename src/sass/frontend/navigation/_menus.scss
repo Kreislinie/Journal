@@ -10,7 +10,8 @@
   position: fixed;
   z-index: 1;
   width: 100%;
-  padding-left: 15px;
+  //padding-left: 15px;
+  padding: 0 var.$size-content-margin;
   top: 0;
 
   img {
@@ -41,13 +42,41 @@
  * Content on the right side of the navbar ('Edit mode') 
  * and on the left side of the navbar (menu items).
  */
+#bj-edit-link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background: #1e8a9d;
+  box-shadow: 2px -1px 32px -10px rgba(23, 201, 219, 0.68);
+
+  a {
+    line-height: 78px;
+    text-align: center;
+  }
+
+  svg {
+    width: 30px;
+    margin: 17px 0 0 16px;
+    color: white;
+  }
+}
+/*
 .navbar-right {
   text-align: right;
   float: right;
   width: auto;
-  padding: 0 15px;
+  padding: 0 8px 0 7px;
+
+  svg {
+    width: 19px;
+    margin: 0 5px -4px 0;
+  }
 }
 
+*/
 .navbar-left {
   float: left;
 

@@ -1,5 +1,5 @@
 p {
-  font-size: 1.15em;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.7em;
   color: hsl(0, 0%, 24%);
@@ -507,7 +507,7 @@ a:hover, a:active {
   position: fixed;
   z-index: 1;
   width: 100%;
-  padding-left: 15px;
+  padding: 0 35px;
   top: 0;
 }
 .main-navigation img {
@@ -532,13 +532,40 @@ a:hover, a:active {
  * Content on the right side of the navbar ('Edit mode') 
  * and on the left side of the navbar (menu items).
  */
+#bj-edit-link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background: #1e8a9d;
+  box-shadow: 2px -1px 32px -10px rgba(23, 201, 219, 0.68);
+}
+#bj-edit-link a {
+  line-height: 78px;
+  text-align: center;
+}
+#bj-edit-link svg {
+  width: 30px;
+  margin: 17px 0 0 16px;
+  color: white;
+}
+
+/*
 .navbar-right {
   text-align: right;
   float: right;
   width: auto;
-  padding: 0 15px;
+  padding: 0 8px 0 7px;
+
+  svg {
+    width: 19px;
+    margin: 0 5px -4px 0;
+  }
 }
 
+*/
 .navbar-left {
   float: left;
 }
@@ -934,6 +961,7 @@ html {
 
 body {
   background: hsl(0, 0%, 100%); /* Fallback for when there is no custom background color defined. */
+  margin: 0px;
 }
 
 hr {

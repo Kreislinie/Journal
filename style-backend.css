@@ -230,30 +230,60 @@
   box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14);
 }
 
-/*
- * 'Edit mode' toggle in the admin bar.
- */
-#wpadminbar svg {
-  width: 18px;
-  margin: 0 5px -4px 0;
+#wpcontent > #wpadminbar {
+  color: hsl(0, 0%, 24%);
+  background: hsl(0, 0%, 100%);
 }
-#wpadminbar #wp-admin-bar-view-mode,
-#wpadminbar #wp-admin-bar-add-entry {
+#wpcontent > #wpadminbar svg {
+  width: 19px;
+  margin: 0 5px -5px 0;
+}
+#wpcontent > #wpadminbar #wp-admin-bar-view-mode,
+#wpcontent > #wpadminbar #wp-admin-bar-add-entry {
   float: right;
 }
 
-/*
-#wpadminbar #wp-admin-bar-view-mode {
-  //background-color: rgb(13, 200, 219);
-  border-radius: 7px;
-  margin: 5px 0 0 12px;
-  a {
-    height: 40px;
-    line-height: 40px;
-    color: #404040;
-    padding: 0px 14px;
-  }
+#wp-admin-bar-root-default > #wp-admin-bar-view-mode {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background: #1e8a9d;
+  margin: 8px 0 0 12px;
+  box-shadow: 2px -1px 32px -10px rgba(23, 201, 219, 0.68);
 }
+#wp-admin-bar-root-default > #wp-admin-bar-view-mode a {
+  line-height: 78px;
+  text-align: center;
+}
+#wp-admin-bar-root-default > #wp-admin-bar-view-mode svg {
+  width: 30px;
+  margin: 0;
+  color: white;
+}
+
+/*
+#wp-admin-bar-root-default > #wp-admin-bar-view-mode {
+  //color: var.$color-main;
+  //background-color: var.$color-bitjournal-blue;
+  //background-color: lighten(var.$color-bitjournal-blue, 25);
+  background-color: var.$color-mood-neutral;
+  width: 100px;
+  text-align: center;
+  height: var.$size-admin-bar-height - 1px;
+  border-left: 1px solid var.$color-bitjournal-blue;
+  border-bottom: 1px solid var.$color-bitjournal-blue;
+
+  :hover {
+    background-color: color.scale(var.$color-bitjournal-blue, $lightness: -8%);
+    color: var.$color-main;
+
+  }
+
+}
+
 */
 @media only screen and (max-width: 782px) {
   #wp-toolbar > ul > li {
@@ -263,11 +293,6 @@
     margin-right: 10px;
   }
 }
-#wpadminbar {
-  color: hsl(0, 0%, 24%);
-  background: hsl(0, 0%, 100%);
-}
-
 #wpadminbar .ab-item,
 #wpadminbar a.ab-item,
 #wpadminbar > #wp-toolbar span.ab-label,
@@ -389,12 +414,12 @@ html #wpadminbar {
   padding: 0 35px;
   border-bottom: 1px solid hsl(0, 0%, 83%);
   box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.33);
-  left: unset;
-  right: 0;
-  z-index: 9998;
+  box-sizing: border-box;
+  z-index: 10000;
 }
 html #wpadminbar li a {
   line-height: 50px;
+  font-size: 15px;
 }
 @media only screen and (max-width: 782px) {
   html #wpadminbar {
@@ -402,24 +427,12 @@ html #wpadminbar li a {
   }
 }
 
-#wpwrap #wpadminbar {
-  width: calc( 100% - 200px - 2 * 35px );
-}
 @media screen and (max-width: 782px) {
   #wpwrap #wpadminbar {
     padding: 0;
   }
 }
 
-.folded #wpwrap #wpadminbar {
-  width: calc( 100% - 57px - 2 * 35px );
-}
-
-@media only screen and (max-width: 960px) {
-  .auto-fold #wpwrap #wpadminbar {
-    width: calc( 100% - 57px - 2 * 35px );
-  }
-}
 @media only screen and (max-width: 782px) {
   .auto-fold #wpwrap #wpadminbar {
     width: 100%;

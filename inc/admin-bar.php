@@ -80,7 +80,8 @@ function bj_add_admin_bar_items( $admin_bar ) {
   // Adds view menu item.
   $admin_bar->add_menu( array(
     'id'    => 'view-mode',
-    'title' => '<span class="screen-reader-text">View</span>' . file_get_contents( get_template_directory_uri() . '/img/icons/eye.svg' ) . esc_html__( 'View', 'bitjournal' ) ,
+    //'title' => '<span class="screen-reader-text">View</span>' . file_get_contents( get_template_directory_uri() . '/img/icons/eye.svg' ) . esc_html__( 'View', 'bitjournal' ) ,
+    'title' => '<span class="screen-reader-text">View</span>' . file_get_contents( get_template_directory_uri() . '/img/icons/eye.svg' ),
     'href'  => $exit_edit_mode_url,
     'meta'  => array(
       'title' => esc_html__( 'Switch to view mode', 'bitjournal' ),            
