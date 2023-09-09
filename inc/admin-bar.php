@@ -81,7 +81,7 @@ function bj_add_admin_bar_items( $admin_bar ) {
   $admin_bar->add_menu( array(
     'id'    => 'view-mode',
     //'title' => '<span class="screen-reader-text">View</span>' . file_get_contents( get_template_directory_uri() . '/img/icons/eye.svg' ) . esc_html__( 'View', 'bitjournal' ) ,
-    'title' => '<span class="screen-reader-text">View</span>' . file_get_contents( get_template_directory_uri() . '/img/icons/eye.svg' ),
+    'title' => '<span class="screen-reader-text">View</span>' . file_get_contents( get_template_directory_uri() . '/img/icons/eye.svg' ) . 'View Mode',
     'href'  => $exit_edit_mode_url,
     'meta'  => array(
       'title' => esc_html__( 'Switch to view mode', 'bitjournal' ),            
@@ -89,6 +89,7 @@ function bj_add_admin_bar_items( $admin_bar ) {
   ));
 
 	// Adds add entry menu item.
+  /*
 	$admin_bar->add_menu( array(
 		'id'    => 'add-entry',
     'title' => '<span class="screen-reader-text">Add a new entry</span>' . file_get_contents( get_template_directory_uri() . '/img/icons/plus-circle.svg' ) . esc_html__( 'Add entry', 'bitjournal' ),
@@ -97,6 +98,7 @@ function bj_add_admin_bar_items( $admin_bar ) {
 			'title' => esc_html__( 'Add Entry', 'bitjournal' ),            
 		),
 	));
+  */
 
 	// Adds Log Out menu item.
 	$admin_bar->add_menu( array(

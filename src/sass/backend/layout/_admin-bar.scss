@@ -20,25 +20,29 @@
 }
 
 #wp-admin-bar-root-default > #wp-admin-bar-view-mode {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 60px;
-  background: #1e8a9d;
-  margin: 8px 0 0 12px;
-  box-shadow: 2px -1px 32px -10px rgba(23, 201, 219, 0.68);
+  width: 129px;
 
   a {
-    line-height: 78px;
-    text-align: center;
+  padding: 0;
+  width: 129px;
+    position: fixed;
+    top: 6px;
+    right: 20px;
+    height: 37px;
+    border-radius: 7px;
+    background: #1e8a9d;
+    box-shadow: 2px -1px 32px -10px rgba(23, 201, 219, 0.68);
+    line-height: unset; 
+    color: white;
   }
 
+
   svg {
-    width: 30px;
-    margin: 0;
+    width: 23px;
     color: white;
+    margin-right: 7px;
+    margin-left: 10px;
+    transform: translateY(1px);
   }
 }
 /*
@@ -203,9 +207,9 @@ html #wpadminbar {
   border-bottom: var.$border-default;
   box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.33);
   box-sizing: border-box;
-  //left: unset;
-  //right: 0;
-  z-index: 10000;
+  left: unset;
+  right: 0;
+  z-index: 100;
 
   li a {
     line-height: var.$size-admin-bar-height;
@@ -221,7 +225,7 @@ html #wpadminbar {
 
 // Admin bar width.
 #wpwrap #wpadminbar {
-  //width: calc( 100% - #{var.$size-admin-menu-width} - 2 * #{var.$size-content-margin} );
+  width: calc( 100% - #{var.$size-admin-menu-width} );
 
   @media screen and ( max-width: 782px ) {
     padding: 0;
@@ -230,7 +234,7 @@ html #wpadminbar {
 }
 // Sets width if menu folded. (This possibly could work with less calculations...)
 .folded #wpwrap #wpadminbar {
-  //width: calc( 100% - #{var.$size-admin-menu-collapse-width} - 2 * #{var.$size-content-margin} );
+  width: calc( 100% - #{var.$size-admin-menu-collapse-width} );
 }
 
 .auto-fold #wpwrap #wpadminbar {

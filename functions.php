@@ -64,7 +64,7 @@ $bjUpdateChecker->setBranch('main');
 function bj_entry_queries( $query ) {
 
   if ( $query->is_home() && $query->is_main_query() || is_archive() && $query->is_main_query() ) {
-    $query->set( 'posts_per_page', 3 );
+    $query->set( 'posts_per_page', 10 );
     $query->set( 'post_type', 'entry');
   }
 

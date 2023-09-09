@@ -10,8 +10,7 @@
   position: fixed;
   z-index: 1;
   width: 100%;
-  //padding-left: 15px;
-  padding: 0 var.$size-content-margin;
+  padding: 0 6px;
   top: 0;
 
   img {
@@ -44,23 +43,22 @@
  */
 #bj-edit-link {
   position: fixed;
-  bottom: 20px;
+  top: 6px;
   right: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 60px;
+  width: 129px;
+  height: 37px;
+  border-radius: 7px;
   background: #1e8a9d;
   box-shadow: 2px -1px 32px -10px rgba(23, 201, 219, 0.68);
-
-  a {
-    line-height: 78px;
-    text-align: center;
-  }
+  line-height: unset;
+  color: white;
 
   svg {
-    width: 30px;
-    margin: 17px 0 0 16px;
+    width: 20px;
     color: white;
+    margin-right: 10px;
+    margin-left: 12px;
+    transform: translateY(5px);
   }
 }
 /*

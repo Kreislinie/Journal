@@ -152,7 +152,7 @@
               $edit_mode_link .= '&paged=' . get_query_var('paged');
             }
 
-            printf( '<a id="bj-edit-link" href="%s" title="%s">' . file_get_contents( get_template_directory_uri() . '/img/icons/pen-square.svg' ) . '</a>', $edit_mode_link,  $edit_mode_text );
+            printf( '<a id="bj-edit-link" href="%s" title="%s">' . file_get_contents( get_template_directory_uri() . '/img/icons/pen-square.svg' ) . 'Edit Mode</a>', $edit_mode_link,  $edit_mode_text );
             ?>
 
           </div>

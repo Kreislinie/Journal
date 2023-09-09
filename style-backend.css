@@ -244,24 +244,27 @@
 }
 
 #wp-admin-bar-root-default > #wp-admin-bar-view-mode {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 60px;
-  background: #1e8a9d;
-  margin: 8px 0 0 12px;
-  box-shadow: 2px -1px 32px -10px rgba(23, 201, 219, 0.68);
+  width: 129px;
 }
 #wp-admin-bar-root-default > #wp-admin-bar-view-mode a {
-  line-height: 78px;
-  text-align: center;
+  padding: 0;
+  width: 129px;
+  position: fixed;
+  top: 6px;
+  right: 20px;
+  height: 37px;
+  border-radius: 7px;
+  background: #1e8a9d;
+  box-shadow: 2px -1px 32px -10px rgba(23, 201, 219, 0.68);
+  line-height: unset;
+  color: white;
 }
 #wp-admin-bar-root-default > #wp-admin-bar-view-mode svg {
-  width: 30px;
-  margin: 0;
+  width: 23px;
   color: white;
+  margin-right: 7px;
+  margin-left: 10px;
+  transform: translateY(1px);
 }
 
 /*
@@ -415,7 +418,9 @@ html #wpadminbar {
   border-bottom: 1px solid hsl(0, 0%, 83%);
   box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.33);
   box-sizing: border-box;
-  z-index: 10000;
+  left: unset;
+  right: 0;
+  z-index: 100;
 }
 html #wpadminbar li a {
   line-height: 50px;
@@ -427,10 +432,17 @@ html #wpadminbar li a {
   }
 }
 
+#wpwrap #wpadminbar {
+  width: calc( 100% - 200px );
+}
 @media screen and (max-width: 782px) {
   #wpwrap #wpadminbar {
     padding: 0;
   }
+}
+
+.folded #wpwrap #wpadminbar {
+  width: calc( 100% - 57px );
 }
 
 @media only screen and (max-width: 782px) {
