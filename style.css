@@ -137,6 +137,7 @@ textarea {
   font-size: 0.9em;
   border: 1px solid rgb(13, 200, 219);
   color: hsl(0, 0%, 24%);
+  margin-bottom: 8px;
 }
 .tags .tag-overview span {
   color: white;
@@ -241,7 +242,7 @@ textarea {
 }
 
 .entry-category {
-  color: hsl(0, 0%, 70%);
+  color: hsl(0, 0%, 48%);
   font-size: 0.8em;
   white-space: nowrap;
 }
@@ -252,7 +253,7 @@ textarea {
 .area__head {
   display: grid;
   grid-area: head;
-  margin-top: 140px;
+  margin-top: 96px;
 }
 .area__head h1 {
   text-align: center;
@@ -312,7 +313,7 @@ textarea {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  color: hsl(0, 0%, 70%);
+  color: hsl(0, 0%, 48%);
 }
 .category-bar svg,
 .date-bar svg {
@@ -322,29 +323,30 @@ textarea {
 
 .category-bar a {
   text-decoration: none;
-  color: hsl(0, 0%, 70%);
+  color: hsl(0, 0%, 48%);
 }
 
 .tags {
   margin-bottom: 25px;
   display: inline-flex;
+  flex-flow: wrap;
   align-items: center;
 }
 .tags svg {
-  color: hsl(0, 0%, 70%);
-  margin-right: 3px;
+  color: hsl(0, 0%, 48%);
+  margin-right: 8px;
 }
 .tags a {
   display: inline-block;
   text-decoration: none;
   white-space: nowrap;
-  margin-right: 6px;
-  font-size: 0.8em;
+  margin-right: 8px;
+  font-size: 15px;
   padding: 0px 4px;
   border-radius: 5px;
   transition: background-color 0.5s, color 0.2s;
-  border: 1px solid hsl(0, 0%, 70%);
-  color: hsl(0, 0%, 70%);
+  border: 1px solid hsl(0, 0%, 48%);
+  color: hsl(0, 0%, 48%);
 }
 .tags a:hover {
   background-color: rgb(13, 200, 219);
@@ -366,7 +368,7 @@ textarea {
 .post-categories li a {
   font-size: 0.9em;
   text-decoration: none;
-  color: hsl(0, 0%, 70%);
+  color: hsl(0, 0%, 48%);
 }
 .post-categories li a:first-of-type:before {
   content: none;
@@ -423,11 +425,10 @@ textarea {
   margin: 0 auto 0 auto;
   border-radius: 7px;
   padding: 20px 10% 20px 10%;
-  z-index: 3;
   text-align: center;
 }
 .people-meta span {
-  color: hsl(0, 0%, 70%);
+  color: hsl(0, 0%, 48%);
   font-size: 0.9em;
   padding: 10px;
   display: inline-flex;
@@ -447,7 +448,14 @@ textarea {
   background-position: center;
   background-size: cover;
   box-shadow: 0 0px 14px rgba(0, 0, 0, 0.13);
-  margin: -65px auto 65px auto;
+  margin: -18px auto 28px auto;
+}
+@media screen and (max-width: 782px) {
+  .people-profile-large {
+    width: 130px;
+    height: 130px;
+    margin-top: -40px;
+  }
 }
 
 .people-background {
@@ -460,16 +468,16 @@ textarea {
 }
 
 .taxonomy-content {
-  margin-top: 175px;
+  margin-top: 60px;
 }
 
 .read-more {
   text-decoration: none;
-  color: hsl(0, 0%, 70%);
+  color: hsl(0, 0%, 48%);
 }
 .read-more i {
   margin-left: 5px;
-  color: hsl(0, 0%, 70%);
+  color: hsl(0, 0%, 48%);
 }
 
 .page-people .area__head, .page-archive .area__head {
@@ -1027,7 +1035,7 @@ Theme URI: https://github.com/Kreislinie/bitjournal
 Author: Simon Mettler
 Author URI: https://simonmettler.com
 Description: Your private online journal. 
-Version: 0.1.2
+Version: 0.1.3
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: bitjournal

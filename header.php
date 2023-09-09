@@ -136,14 +136,17 @@
               $edit_mode_link = admin_url( 'edit-tags.php?taxonomy=post_tag&post_type=entry' );
               $edit_mode_text = esc_html__( 'Manage Tags', 'bitjournal');
 
-            // Checks if page is "tags".
+            // Checks if page is "archive".
             } elseif ( is_archive() ) {
 
+              $edit_mode_link = admin_url( 'edit.php?post_type=entry' );
+              /*
               $year     = get_query_var('year');
               $monthnum = get_query_var('monthnum');
               $day      = get_query_var('day');
 
-              $edit_mode_link = admin_url() . $year;
+              $edit_mode_link = admin_url();
+              */
 
             }
 

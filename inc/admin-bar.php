@@ -64,12 +64,20 @@ function bj_add_admin_bar_items( $admin_bar ) {
 
     $exit_edit_mode_url = home_url( '/' . $post->post_type . '/' . $post->post_name );
 
+  // Go back to archive if coming from archive.
   } elseif ( wp_get_referer() == get_home_url('', '/archive/') ) {
 
     $exit_edit_mode_url = get_home_url('', '/archive/');
 
-  } elseif ( is_category() ) {
-    $exit_edit_mode_url = get_category_link( get_queried_object()->term_id );
+  // Checks if current page is category.
+  } elseif ( $current_screen->taxonomy === 'category' ) {
+
+    // Checks if current page is single category.
+    if ( $current_screen->base == 'term' ) {
+      $exit_edit_mode_url .= '/category/' . $term->slug;
+    } else {
+      $exit_edit_mode_url .= '/categories/';
+    }
   }
 
   // Adds page number if paged.
