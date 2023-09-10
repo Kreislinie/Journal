@@ -28,7 +28,6 @@ node_modules/
 ######################
 **.DS_Store*
 ehthumbs.db
-Icon?
 Thumbs.db
 ._*
 
@@ -42,28 +41,3 @@ Thumbs.db
 ##########
 **/.sass-cache
 **/.sass-cache/*
-
-# Composer #
-##########
-!assets/js/vendor/
-wpcs/
-/vendor/
-
-# Bower #
-##########
-assets/bower_components/*
-
-# Codekit #
-##########
-/codekit-config.json
-*.codekit
-**.codekit-cache/*
-
-# Compiled Files and Build Dirs #
-##########
-/README.html
-
-# PhpStrom Project Files #
-.idea/
-library/vendors/composer
-assets/img/.DS_Store
