@@ -1,11 +1,16 @@
+![bitjournal header image](https://raw.githubusercontent.com/Kreislinie/bitjournal/main/.github/img/bitjournal_header.png
+)
+
 # bitjournal
 
-bitjournal is your personal online journal. Private, opensource and based on Wordpress. Keep your diary digital and access it anywhere. Manage your entries using tags and categories, track your mood and see which people you engage with. 
+bitjournal serves as your private online journal, open-source and built with WordPress. Organize your journal entries with tags and categories, monitor your emotional journey, and gain insights into your interactions with others.
+
+:warning: Early beta version! Features and functionality could change until first official release! Please open a issue for bugs, questions and feature requests.
+
 
 ## Installation
-:warning: Early beta version! Features and functionality could change until first official release!
 
-bitjournal is basically a WordPress theme. All you need is a fresh WordPress installation, then you can upload the latest bitjournal theme. bitjournal creates and manages all your pages, post types and settings on activation. 
+bitjournal is essentially a WordPress theme. To get started, simply install a **fresh** WordPress instance, and then upload the [latest bitjournal theme](https://github.com/Kreislinie/bitjournal/releases). Upon activation, bitjournal automatically generates and oversees all your pages, post types, and settings.
 
 ## Built with 
 bitjournal is built with other great open source software:
