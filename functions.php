@@ -8,17 +8,15 @@ define( 'DISALLOW_FILE_EDIT', true );
 
 
 /**
- * Allows access to bitjournal only when the user is logged in.
+ * Restricts access to bitjournal to logged-in users only.
  */
-function bj_make_private() {
-  global $wp;
-
-  if(!is_user_logged_in() && $GLOBALS['pagenow'] !== 'wp-login.php') {
-    wp_redirect(wp_login_url($wp -> request));
+function bj_restrict_access() {
+  if (!is_user_logged_in() && $GLOBALS['pagenow'] !== 'wp-login.php') {
+    wp_redirect(wp_login_url($_SERVER['REQUEST_URI']));
     exit;
   }
 }
-add_action('wp', 'bj_make_private');
+add_action('wp', 'bj_restrict_access');
 
 
 /**
@@ -59,28 +57,26 @@ $bjUpdateChecker = PucFactory::buildUpdateChecker(
 $bjUpdateChecker->setBranch('main');
 
 /**
- * Changes main query to show entry post type by default.
+ * Modifies the main query to display the 'entry' post type with 10 posts per page on the home and archive pages.
  */
-function bj_entry_queries( $query ) {
-
-  if ( $query->is_home() && $query->is_main_query() || is_archive() && $query->is_main_query() ) {
+function bj_entry_query( $query ) {
+  if ( ( $query->is_home() || is_archive() ) && $query->is_main_query() ) {
     $query->set( 'posts_per_page', 10 );
-    $query->set( 'post_type', 'entry');
+    $query->set( 'post_type', 'entry' );
   }
-
 }
-add_action( 'pre_get_posts', 'bj_entry_queries' );
+add_action( 'pre_get_posts', 'bj_entry_query' );
 
 
 /**
  * Changes 'read more' string to '...'
  */
-function bj_excerpt_more( $more ) {
+function bj_excerpt_more( $excerpt_more ) {
   if ( ! is_single() ) {
-    $more = ' ...';
+    $excerpt_more = ' ...';
   }
 
-  return $more;
+  return $excerpt_more;
 }
 add_filter( 'excerpt_more', 'bj_excerpt_more' );
 
@@ -175,13 +171,10 @@ function bj_change_publish_button_text() {
 add_action( 'admin_print_footer_scripts', 'bj_change_publish_button_text', 11 );
 
 
-// BACKEND
-
-
 function bj_display_custom_logo() {
-    
-  printf( '<li id="aa-custom-logo"><a href="%s"><img src="%s"></a></li>', home_url(), esc_url( get_template_directory_uri() . '/img/bitjournal-logo_path_wide.svg' ) );
-
+  $home_url = home_url();
+  $logo_path = esc_url(get_template_directory_uri() . '/img/bitjournal-logo_path_wide.svg');
+  echo '<li id="aa-custom-logo"><a href="' . $home_url . '"><img src="' . $logo_path . '"></a></li>';
 }
 
 add_action('adminmenu', 'bj_display_custom_logo');
