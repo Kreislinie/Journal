@@ -1,3 +1,14 @@
+/*!
+Theme Name: bitjournal
+Theme URI: https://github.com/Kreislinie/bitjournal
+Author: Simon Mettler
+Author URI: https://simonmettler.com
+Description: Your private online journal. 
+Version: 0.1.3
+License: GNU General Public License v3
+License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
+Text Domain: bitjournal
+*/
 p {
   font-size: 18px;
   font-weight: 400;
@@ -1028,16 +1039,4 @@ table {
   margin: 0 0 1.5em;
   width: 100%;
 }
-
-/*!
-Theme Name: bitjournal
-Theme URI: https://github.com/Kreislinie/bitjournal
-Author: Simon Mettler
-Author URI: https://simonmettler.com
-Description: Your private online journal. 
-Version: 0.1.3
-License: GNU General Public License v3
-License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
-Text Domain: bitjournal
-*/
 /*# sourceMappingURL=style.css.map */

@@ -433,7 +433,7 @@ html #wpadminbar li a {
 }
 
 #wpwrap #wpadminbar {
-  width: calc( 100% - 200px );
+  width: calc(100% - 200px);
 }
 @media screen and (max-width: 782px) {
   #wpwrap #wpadminbar {
@@ -442,7 +442,7 @@ html #wpadminbar li a {
 }
 
 .folded #wpwrap #wpadminbar {
-  width: calc( 100% - 57px );
+  width: calc(100% - 57px);
 }
 
 @media only screen and (max-width: 782px) {
