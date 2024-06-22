@@ -4,8 +4,6 @@
 #wpcontent > #wpadminbar {
 	color: var.$color-text-main;
 	background: var.$color-main;
-  //padding: 0 0 0 35px;
-
 
   svg {
     width: 19px;
@@ -20,11 +18,10 @@
 }
 
 #wp-admin-bar-root-default > #wp-admin-bar-view-mode {
-  width: 129px;
 
   a {
-  padding: 0;
-  width: 129px;
+    padding: 0;
+    width: 87px;
     position: fixed;
     top: 6px;
     right: 6px;
@@ -36,7 +33,6 @@
     color: white;
   }
 
-
   svg {
     width: 23px;
     color: white;
@@ -44,40 +40,8 @@
     margin-left: 10px;
     transform: translateY(1px);
   }
-}
-/*
-#wp-admin-bar-root-default > #wp-admin-bar-view-mode {
-  //color: var.$color-main;
-  //background-color: var.$color-bitjournal-blue;
-  //background-color: lighten(var.$color-bitjournal-blue, 25);
-  background-color: var.$color-mood-neutral;
-  width: 100px;
-  text-align: center;
-  height: var.$size-admin-bar-height - 1px;
-  border-left: 1px solid var.$color-bitjournal-blue;
-  border-bottom: 1px solid var.$color-bitjournal-blue;
-
-  :hover {
-    background-color: color.scale(var.$color-bitjournal-blue, $lightness: -8%);
-    color: var.$color-main;
-
-  }
 
 }
-
-*/
-
-// Display 'edit mode' toggle on small screens.
-@media only screen and (max-width: 782px) {
-  #wp-toolbar>ul>li {
-    display: inherit;
-  }
-  #wpadminbar ul#wp-admin-bar-root-default>li {
-    margin-right: 10px;
-  }
-}
-
-
 
 #wpadminbar .ab-item,
 #wpadminbar a.ab-item,
@@ -255,55 +219,3 @@ html #wpadminbar {
 #wpadminbar .shortlink-input {
   height: var.$size-navbar-height;
 }
-
-
-
-/*
-// Adjust admin bar icons padding.
-#wpadminbar .ab-icon, 
-#wpadminbar .ab-item:before, 
-#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default .ab-icon, 
-.wp-admin-bar-arrow {
-  padding-top: calc(var.$size-admin-bar-height / 4);
-
-  @media only screen and (max-width: 782px) {
-    padding-top: 0;
-  }
-
-}
-
-// Admin bar submenu.
-#wpadminbar .menupop .ab-sub-wrapper, 
-#wpadminbar .shortlink-input {
-  border: var.$border-default
-}
-
-// Place avatar image.
-#wp-admin-bar-user-info .avatar {
-  left: -79px;
-  top: 9px;
-}
-
-@media screen and (min-width: 782px) {
-	#wpadminbar #wp-admin-bar-my-account.with-avatar #wp-admin-bar-user-actions>li {
-		margin-left: 104px;
-	}
-}
-
-// Frontend search icon placement.
-#adminbarsearch {
-	margin-top: 8px;
-}
-
-// Hide avatar image in admin menu.
-/*
-#wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
-  display: none;
-}
-
-// Hide WP-Logo in admin menu.
-#wp-admin-bar-wp-logo {
-	display: none;
-}
-
-*/

@@ -21,7 +21,7 @@ function bj_remove_admin_bar_items( $wp_admin_bar ) {
 add_action( 'admin_bar_menu', 'bj_remove_admin_bar_items', 999 );
 
 /*
- * Creates "Exit edit mode" menu item.
+ * Creates "Read" menu item.
  * Checks which backend page is displayed and links to corresponding frontend page.
  */ 
 function bj_add_admin_bar_items( $admin_bar ) {
@@ -88,8 +88,7 @@ function bj_add_admin_bar_items( $admin_bar ) {
   // Adds view menu item.
   $admin_bar->add_menu( array(
     'id'    => 'view-mode',
-    //'title' => '<span class="screen-reader-text">View</span>' . file_get_contents( get_template_directory_uri() . '/img/icons/eye.svg' ) . esc_html__( 'View', 'bitjournal' ) ,
-    'title' => '<span class="screen-reader-text">View</span>' . file_get_contents( get_template_directory_uri() . '/img/icons/eye.svg' ) . 'View Mode',
+    'title' => '<span class="screen-reader-text">Read</span>' . file_get_contents( get_template_directory_uri() . '/img/icons/eye.svg' ) . esc_html__( 'Read', 'bitjournal' ),
     'href'  => $exit_edit_mode_url,
     'meta'  => array(
       'title' => esc_html__( 'Switch to view mode', 'bitjournal' ),            

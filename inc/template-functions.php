@@ -39,16 +39,8 @@ function bj_hide_the_archive_title( $title ) {
 	$title_parts = explode( ': ', $title, 2 );
 
 	// Glue it back together again.
-	if ( ! empty( $title_parts[1] ) ) {
-		$title = wp_kses(
-			$title_parts[1],
-			array(
-				'span' => array(
-					'class' => array(),
-				),
-			)
-		);
-		$title = '<span class="screen-reader-text">' . esc_html( $title_parts[0] ) . ': </span>' . $title;
+  if ( ! empty( $title_parts[1] ) ) {
+		$title = '<span class="screen-reader-text">' . esc_html( $title_parts[0] ) . ': </span>' . wp_kses( $title_parts[1], array( 'span' => array( 'class' => array() ) ) );
 	}
 
 	return $title;
@@ -62,49 +54,30 @@ function bj_display_mood() {
 
   $mood = get_post_meta( get_the_ID(), 'bj_mood_cmb2_mood', true );
 
-  echo '<div class="mood">';
+  $mood_labels = [
+    'excellent' => 'Excellent',
+    'very-good' => 'Very good',
+    'good' => 'Good',
+    'neutral' => 'Neutral',
+    'bad' => 'Bad',
+    'very-bad' => 'Very bad',
+    'horrible' => 'Horrible',
+  ];
 
-  switch( $mood ) {
-
-    case 'excellent': 
-      echo '<span id="excellent">' . esc_html__( 'Excellent', 'bitjournal' ) . '</span>';
-    break;
-
-    case 'very-good':
-      echo '<span id="very-good">' . esc_html__( 'Very good', 'bitjournal' ) . '</span>';
-    break;
-
-    case 'good':
-      echo '<span id="good">' . esc_html__( 'Good', 'bitjournal' ) . '</span>';
-    break;
-
-    case 'neutral':
-      echo '<span id="neutral">' . esc_html__( 'Neutral', 'bitjournal' ) . '</span>';
-    break;
-    
-    case 'bad':
-      echo '<span id="bad">' . esc_html__( 'Bad', 'bitjournal' ) . '</span>';
-    break;
-
-    case 'very-bad':
-      echo '<span id="very-bad">' . esc_html__( 'Very bad',  'bitjournal' ) . '</span>';
-    break;
-
-    case 'horrible':
-      echo '<span id="horrible">' . esc_html__( 'Horrible',  'bitjournal' ) . '</span>';
-    break;
-  } 
-
-  echo '</div>';
+  echo '<div class="mood"><span id="' . esc_attr($mood) . '">' . esc_html($mood_labels[$mood]) . '</span></div>';
   
 }
 
 // Displays category.
 function bj_display_category_bar() {
 
-  echo '<div class="category-bar">' . file_get_contents( get_template_directory_uri() . '/img/icons/folder-tree.svg' );
-  the_category( ', ', 'multiple' ) ;
-  echo '</div>';
+  $category_icon = file_get_contents( get_template_directory_uri() . '/img/icons/folder-tree.svg' );
+  $categories = get_the_category();
+  $category_names = array_map(function ($category) {
+    return $category->name;
+  }, $categories);
+
+  echo '<div class="category-bar">' . $category_icon . implode(', ', $category_names) . '</div>';
 
 }
 

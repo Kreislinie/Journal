@@ -21,7 +21,9 @@
 
 // Hide logo if menu folded.
 .folded #adminmenu #aa-custom-logo {
-  display: none;
+  width: 50px;
+  overflow: hidden;
+  margin-left: -12px;
 }
 
 @media screen and (max-width: 960px) {
