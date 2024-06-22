@@ -23,10 +23,7 @@
     </div><!-- .entry-header-container -->
 
     <?php
-		// Displays entry title, excerpt and edit icon.
-		$edit_icon = '<a class="edit-entry-link" href="' . get_edit_post_link() . '">' . file_get_contents( get_template_directory_uri() . '/img/icons/pencil.svg') . '</a>';
-
-		the_title( '<h1 class="entry-title"><a href="' . get_permalink() . '">', '</a>' . $edit_icon . '</h1>' );
+		the_title( '<h1 class="entry-title"><a href="' . get_permalink() . '">', '</a></h1>' );
 
 		printf('<div class="link" data-url="%s"><p>%s</p></div>', get_permalink(), get_the_excerpt() );
     ?>

@@ -23,9 +23,7 @@
       </div><!-- .entry-header-container -->
 
       <?php 
-      // Displays entry title, edit icon and content.
-		  $edit_icon = '<a class="edit-entry-link" href="' . get_edit_post_link() . '">' . file_get_contents( get_template_directory_uri() . '/img/icons/pencil.svg') . '</a>';
-      the_title( '<h1 class="entry-title">', $edit_icon . '</h1>' );
+      the_title( '<h1 class="entry-title">', '</h1>' );
 			the_content();
       ?>
 
